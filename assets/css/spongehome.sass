@@ -466,7 +466,16 @@ section
     -webkit-display: flex
 
     a
+        transition: background .2s ease-in-out
+        -webkit-transition: background .2s ease-in-out
+        -moz-transition: background .2s ease-in-out
+        -o-transition: background .2s ease-in-out
         width: 25%
+        border-radius: 10px
+
+        &:hover
+            background-color: rgba(0, 0, 0, .2)
+
     img
         width: 50%
         margin: 0 auto
