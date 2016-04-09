@@ -139,8 +139,10 @@ hr
         margin-right: 20px
         cursor: pointer
 
-    .navbar-collapse
+    #main-navbar-collapse
         background-color: #3a3a3a
+
+    .navbar-collapse
         padding: 0 40px
 
     .container
@@ -268,18 +270,32 @@ header
             color: rgba(0, 0, 0, 0.8)
 
     #offsite-links
+        display: flex
+        -webkit-display: flex
+        flex-wrap: wrap
+        -webkit-flex-wrap: wrap
         margin-top: 30px
         margin-bottom: 20px
 
-        .col-xs-2
+        @media (max-width: 500px)
+            display: none
+
+        a
+            width: 20%
             opacity: .6
             transition: opacity .2s ease-in-out
             -webkit-transition: opacity .2s ease-in-out
             -moz-transition: opacity .2s ease-in-out
             -o-transition: opacity .2s ease-in-out
 
+            img
+                width: 50%
+                @media (max-width: 1000px)
+                    width: 70%
+
             &:hover
                 opacity: 1
+
 
 @media (min-width: 768px)
     header
