@@ -10,24 +10,24 @@
     <meta name="author" content="">
 
     <title>Sponge - Minecraft Modding API</title>
-	<link rel="icon" type="image/png" href="https://forums-cdn.spongepowered.org/uploads/default/original/2X/9/9ba706a80e45cf427617525ee2a19fad7bb6b109.png">
-	
+    <link rel="icon" type="image/png" href="https://forums-cdn.spongepowered.org/uploads/default/original/2X/9/9ba706a80e45cf427617525ee2a19fad7bb6b109.png">
+
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/spongehome.css" rel="stylesheet">
+    <link href="assets/css/spongehome.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/fontello/fontello.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -36,65 +36,78 @@
 
     <!-- Navigation -->
     <div class="topbar">
-      <div role="navigation" aria-label="related navigation">
-        <div class="menu-left">
-          <a href="#page-top">
-            <img src="img/icons/spongelogo.png" height="40px" style="vertical-align:middle"/>
-            <i class="icon-down-open-big lights-icon" style="vertical-align:middle"></i>
-          </a>
-          <ul class="dropdown" id="ddleft">
-            <a href="https://www.spongepowered.org"><li><i class="icon-home lights-icon"></i> Homepage</li></a>
-            <a href="https://forums.spongepowered.org"><li><i class="icon-pencil lights-icon"></i> Forums</li></a>
-            <a href="https://github.com/SpongePowered"><li><i class="icon-code lights-icon"></i> Code</li></a>
-            <a href="https://docs.spongepowered.org"><li><i class="icon-book-open lights-icon"></i> SpongeDocs</li></a>
-            <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap lights-icon"></i> JavaDocs</li></a>
-            <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools lights-icon"></i> Plugins</li></a>
-            <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download lights-icon"></i> Get Sponge</li></a>
-			<a href="Chat.html"><li><i class="icon-download lights-icon"></i> Chat</li></a>
-          </ul>
-        </div>
-		<div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <div role="navigation" aria-label="related navigation">
+            <div class="container">
+                <div class="menu-left">
+                    <div class="sp-logo-bg"></div>
+                    <a href="index.html">
+                        <img src="assets/img/icons/spongelogo.png" height="40px" />
+                        <i class="icon-down-open-big"></i>
+                    </a>
+                    <ul class="dropdown" id="ddleft">
+                        <a href="https://www.spongepowered.org"><li><i class="icon-home"></i> Homepage</li></a>
+                        <a href="https://forums.spongepowered.org"><li><i class="icon-pencil"></i> Forums</li></a>
+                        <a href="https://github.com/SpongePowered"><li><i class="icon-code"></i> Code</li></a>
+                        <a href="https://docs.spongepowered.org"><li><i class="icon-book-open"></i> SpongeDocs</li></a>
+                        <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap"></i> JavaDocs</li></a>
+                        <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools"></i> Plugins</li></a>
+                        <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download"></i> Get Sponge</li></a>
+                        <a href="chat.html"><li><i class="icon-comment"></i> Chat</li></a>
+                    </ul>
+                </div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse"></button>
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="main-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="index.html#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.html#announcements" style="color:#F8CE0F">Announcements</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.html#downloads" style="color:#F8CE0F">Downloads</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.html#sponsors" style="color:#F8CE0F">Sponsors</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.html#about" style="color:#F8CE0F">About</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.html#social" style="color:#F8CE0F">Social</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#irc" style="color:#F8CE0F">Chat</a>
-                    </li>					
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>		
-      </div>
-    </div>   
+        </div>
+    </div>
 
-	
+
     <!-- IRC Section -->
     <section class="irc" id="irc">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-					<center>
-						<img class="img-responsive" src="img/icons/spongie-mark.png" alt="">
-						<h1>SpongePowered</h1>
-						<br>
-					</center>
+                    <center>
+                        <img class="img-responsive" src="assets/img/icons/spongie-mark.png" alt="">
+                        <h1>SpongePowered</h1>
+                        <br>
+                    </center>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-			<iframe src="https://webchat.esper.net/?nick=&channels=sponge%2Cspongedev%2Cspongedocs" width="100%" height="600"></iframe>
-		</div>
+                    <iframe src="https://webchat.esper.net/?nick=&channels=sponge%2Cspongedev%2Cspongedocs" width="100%" height="600"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -110,7 +123,7 @@
                         <p>Sponge is an Open Source project, our source code is freely available on <a href="https://github.com/SpongePowered">Github</a> </p>
                     </div>
                     <div class="footer-col col-md-4">
-						<h3>Experienced Staff</h3>
+                        <h3>Experienced Staff</h3>
                         <p><a href="https://docs.spongepowered.org/master/en/about/staff.html">Our Team</a> has decades of collective experience of working on Minecraft. </p>
                     </div>
                     <div class="footer-col col-md-4">
@@ -137,20 +150,20 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-	
+
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="assets/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/cbpAnimatedHeader.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
+    <script src="assets/js/freelancer.js"></script>
 
 </body>
 
