@@ -4,8 +4,15 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0
 
+// fix for 4k
+html
+    background-color: #272626
+
 body
+    position: relative
     overflow-x: hidden
+    max-width: 1920px
+    margin: 0 auto
 
 p
     font-size: 20px
@@ -119,6 +126,7 @@ hr
     background-color: #3a3a3a
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25)
     width: 100%
+    max-width: 1920px
     height: 63px
     z-index: 9999
     -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25)
@@ -215,11 +223,13 @@ hr
 
 header
     background-attachment: fixed
-    background-image: url(backgrounds/header.jpg)
+    background-image: url(backgrounds/sponsors-content.jpg)
     background-repeat: no-repeat
-    background-size: 100% 100%
+    background-size: 1920px 100%
+    background-position: center
     color: #000
     text-align: center
+    padding: 50px
 
     .container
         padding-top: 100px
@@ -276,13 +286,6 @@ section
         font-size: 3em
         margin: 0
 
-    &.downloads
-        background-attachment: fixed
-        background-image: url(backgrounds/downloads.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #000
-
     &.sponsors
         position: relative
         background-attachment: fixed
@@ -321,17 +324,26 @@ section
             width: 100%
             height: 100%
 
-    &.sponsors::before
+    &.sponsors::before, &.downloads::before
         content: ''
         display: block
         position: absolute
         top: 0
         left: 0
-        background-color: rgba(0, 0, 0, 0.5)
         background-color: rgba(0, 0, 0, 0.3)
         width: 100%
         height: 100%
 
+    &.downloads
+        position: relative
+        background-attachment: fixed
+        background-image: url(backgrounds/downloads.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+        &::before
+            background-color: rgba(0, 0, 0, .2)
     &.irc
         background-attachment: fixed
         background-image: url(backgrounds/irc.jpg)
