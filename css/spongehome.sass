@@ -97,8 +97,12 @@ hr
 .navbar-default, .navbar-inverse
     border: 0
 
-.nav > li > a:hover
-    background: #2a2a2a
+.nav > li
+    a:focus
+        background-color: transparent
+
+    a:hover
+        background: #2a2a2a
 
 @media (min-width: 768px)
     .navbar-nav > li > a
@@ -392,7 +396,6 @@ section
     transition: all .3s ease-in-out
 
     &:hover, &:focus, &:active, &.active
-        background: #fff
         color: #cc8800
         border: solid 2px #fff
 
