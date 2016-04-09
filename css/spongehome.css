@@ -515,10 +515,10 @@ section.success a.active {
     transition: top .3s ease,opacity .3s ease;
 }
 
-.floating-label-form-group::not(:first-child) {
+/*.floating-label-form-group::not(:first-child) {
     padding-left: 14px;
     border-left: 1px solid #eee;
-}
+}*/
 
 .floating-label-form-group-with-value label {
     top: 0;
