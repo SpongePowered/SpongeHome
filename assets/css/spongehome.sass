@@ -456,18 +456,35 @@ section
 
 #social .col-lg-12
     margin-bottom: 50px
+    text-align: center
 
     h2
         border-color: white
 
+#socialIcons
+    display: flex
+    -webkit-display: flex
+
+    a
+        width: 25%
+    img
+        width: 50%
+        margin: 0 auto
+
+
 #announcements .col-lg-12 h2
     border-color: white
 
-#social .portfolio-item img
-    width: 70%
+#social .portfolio-item
 
-    @media (max-width: 768px)
-        width: 100%
+    i
+        font-size: 70px
+        color: white
+
+    img
+        width: 60%
+        @media (max-width: 768px)
+            width: 100%
 
 #about img
     @media (max-width: 1180px)
