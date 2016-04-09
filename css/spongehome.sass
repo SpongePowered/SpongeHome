@@ -1,0 +1,431 @@
+/*!
+ * SpongeHome Theme
+ * Modified from: Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0
+
+body
+  overflow-x: hidden
+
+p
+  font-size: 20px
+  &.small
+    font-size: 16px
+
+a
+  outline: 0
+  color: #F8CE0F
+  &:hover, &:focus, &:active, &.active
+    outline: 0
+    color: #F8CE0F
+
+h1, h2, h3, h4, h5, h6
+  text-transform: uppercase
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+  font-weight: 700
+
+hr
+  &.star-light, &.star-primary
+    margin: 25px auto 30px
+    padding: 0
+    max-width: 250px
+    border: 0
+    border-top: solid 5px
+    text-align: center
+  &.star-light:after, &.star-primary:after
+    content: "\f005"
+    display: inline-block
+    position: relative
+    top: -.8em
+    padding: 0 .25em
+    font-family: FontAwesome
+    font-size: 2em
+  &.star-light
+    border-color: #000
+    &:after
+      color: #000
+      background-color: transparent
+  &.star-primary
+    border-color: #2c3e50
+    &:after
+      color: #2c3e50
+      background-color: #fff
+
+.img-centered
+  margin: 0 auto
+
+@media (min-width: 768px)
+  .navbar-fixed-top
+    padding: 25px 0
+    -webkit-transition: padding .3s
+    -moz-transition: padding .3s
+    transition: padding .3s
+    .navbar-brand
+      font-size: 2em
+      -webkit-transition: all .3s
+      -moz-transition: all .3s
+      transition: all .3s
+    &.navbar-shrink
+      padding: 10px 0
+      .navbar-brand
+        font-size: 1.5em
+
+.navbar
+  text-transform: uppercase
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+  font-weight: 700
+  a:focus
+    outline: 0
+  .navbar-nav
+    letter-spacing: 1px
+    li a:focus
+      outline: 0
+
+.navbar-default, .navbar-inverse
+  border: 0
+
+.nav > li > a:hover
+  background: #2a2a2a
+
+@media (min-width: 768px)
+  .navbar-nav > li > a
+    padding-top: 21px
+    padding-bottom: 21px
+
+.topbar
+  position: fixed
+  top: 0
+  z-index: 9999
+  width: 100%
+  height: 63px
+  background-color: #3a3a3a
+  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25)
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25)
+  \:first-child
+    max-width: 1110px
+    margin: 0 auto
+    position: center
+    h3
+      display: none
+
+.menu-left:hover ul, .menu-right:hover ul
+  display: block
+
+.menu-left
+  position: relative
+  float: left
+  padding: 11px 0 0
+  padding-left: 10px
+  cursor: pointer
+  height: 63px
+  i
+    color: #bdc3c7
+  &:hover
+    background-color: #2a2a2a
+
+.dropdown
+  margin-top: 20px
+  position: relative
+  width: 106.5%
+  left: -10px
+  background-color: #fff
+  display: none
+  -webkit-border-radius: 0 0 4px 4px
+  border-radius: 0 0 4px 4px
+  border: 1px solid #e4e4e4
+  a
+    color: #474a54
+    text-decoration: none
+  li
+    color: #474a54
+    display: block
+    &:hover
+      background-color: #eee
+
+.active, .lights
+  background-color: #f6cf17
+
+.dropdown
+  li i
+    color: #474a54
+    margin-right: 10px
+  &#ddleft
+    margin-top: 12px
+    padding: 10px 0 4px
+    li
+      padding: 10px 20px 10px 10px
+    i
+      padding: 0 10px 0 5px
+  &#ddvers
+    margin-top: 47px
+    padding: 10px 0
+    li
+      padding: 10px 5px
+
+header
+  text-align: center
+  color: #000
+  background-image: url(backgrounds/header.jpg)
+  background-size: 100% 100%
+  background-repeat: no-repeat
+  background-attachment: fixed
+  .container
+    padding-top: 100px
+    padding-bottom: 50px
+  img
+    display: block
+    margin: 0 auto 20px
+  .intro-text
+    .name
+      display: block
+      text-transform: uppercase
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+      font-size: 2em
+      font-weight: 700
+    .skills
+      font-size: 1.25em
+      font-weight: 300
+      color: rgba(0, 0, 0, 0.8)
+  #offsite-links
+    margin-top: 30px
+    margin-bottom: 20px
+    .col-xs-2
+      opacity: .6
+      transition: opacity .2s ease-in-out
+      -webkit-transition: opacity .2s ease-in-out
+      -moz-transition: opacity .2s ease-in-out
+      -o-transition: opacity .2s ease-in-out
+      &:hover
+        opacity: 1
+
+@media (min-width: 768px)
+  header
+    .container
+      padding-top: 100px
+      padding-bottom: 50px
+    .intro-text
+      .name
+        font-size: 4.75em
+      .skills
+        font-size: 1.75em
+
+section
+  padding: 100px 0
+  h2
+    margin: 0
+    font-size: 3em
+  &.downloads
+    color: #000
+    background-image: url(backgrounds/downloads.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.sponsors
+    position: relative
+    color: #000
+    background-image: url(backgrounds/sponsors.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    z-index: 1
+    .container
+      position: relative
+      z-index: 2
+  &.about
+    color: #000
+    background-image: url(backgrounds/about.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.announcements
+    position: relative
+    color: white
+    background-image: url(backgrounds/announcements.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    &::before
+      position: absolute
+      left: 0
+      top: 0
+      content: ''
+      display: block
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.5)
+  &.sponsors::before
+    position: absolute
+    left: 0
+    top: 0
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.3)
+  &.irc
+    color: #000
+    background-image: url(backgrounds/irc.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.sponsors-content
+    color: #000
+    background-image: url(backgrounds/sponsors-content.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.sponsors-about
+    color: #fff
+    background-image: url(backgrounds/sponsors-about.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.sponsors-why
+    color: #000
+    background-image: url(backgrounds/sponsors-why.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.social
+    color: #fff
+    background-image: url(backgrounds/social.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  &.success a
+    outline: 0
+    color: #2c3e50
+    &:hover, &:focus, &:active, &.active
+      outline: 0
+      color: #2c3e50
+
+#about .col-lg-12, #announcements .col-lg-12
+  margin-bottom: 50px
+
+#social .col-lg-12
+  margin-bottom: 50px
+  h2
+    border-color: white
+
+#announcements .col-lg-12 h2
+  border-color: white
+
+#social .portfolio-item img
+  width: 70%
+
+#announcements
+  p
+    font-size: 18px
+    color: rgba(255, 255, 255, 0.8)
+  h3
+    margin-bottom: 20px
+
+.col-lg-12 h2
+  display: inline-block
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8)
+
+@media (max-width: 767px)
+  section
+    padding: 75px 0
+    &.first
+      padding-top: 75px
+
+.btn-outline
+  margin-top: 15px
+  border: solid 2px #fff
+  font-size: 20px
+  color: #fff
+  background: 0 0
+  transition: all .3s ease-in-out
+  &:hover, &:focus, &:active, &.active
+    border: solid 2px #fff
+    color: #cc8800
+    background: #fff
+
+.floating-label-form-group
+  position: relative
+  margin-bottom: 0
+  padding-bottom: .5em
+  border-bottom: 1px solid #eee
+  input, textarea
+    z-index: 1
+    position: relative
+    padding-right: 0
+    padding-left: 0
+    border: 0
+    border-radius: 0
+    font-size: 1.5em
+    background: 0 0
+    box-shadow: none !important
+    resize: none
+  label
+    display: block
+    z-index: 0
+    position: relative
+    top: 2em
+    margin: 0
+    font-size: .85em
+    line-height: 1.764705882em
+    vertical-align: middle
+    vertical-align: baseline
+    opacity: 0
+    -webkit-transition: top .3s ease,opacity .3s ease
+    -moz-transition: top .3s ease,opacity .3s ease
+    -ms-transition: top .3s ease,opacity .3s ease
+    transition: top .3s ease,opacity .3s ease
+
+.floating-label-form-group-with-value label
+  top: 0
+  opacity: 1
+
+.floating-label-form-group-with-focus label
+  color: #cc8800
+
+form .row:first-child .floating-label-form-group
+  border-top: 1px solid #eee
+
+footer
+  color: #fff
+  h3
+    margin-bottom: 30px
+  .footer-above
+    padding-top: 50px
+    background-color: #3a3a3a
+  .footer-col
+    margin-bottom: 50px
+    p
+      font-weight: 100
+  .footer-below
+    padding: 25px 0
+    background-color: #262626
+
+.btn-social
+  display: inline-block
+  width: 80px
+  height: 80px
+  border: 2px solid #fff
+  border-radius: 100%
+  text-align: center
+  font-size: 55px
+  line-height: 80px
+
+.btn
+  &:focus, &:active, &.active
+    outline: 0
+
+.scroll-top
+  z-index: 1049
+  position: fixed
+  right: 2%
+  bottom: 2%
+  width: 50px
+  height: 50px
+  .btn
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    font-size: 20px
+    line-height: 28px
+    &:focus
+      outline: 0
