@@ -28,6 +28,12 @@ a
         color: #F8CE0F
         outline: 0
 
+=transition( $trans )
+    transition: $trans
+    -webkit-transition: $trans
+    -moz-transition: $trans
+    -ms-transition: $trans
+
 .container
     position: relative
     max-width: 1110px
@@ -143,7 +149,7 @@ hr
         position: relative
         background-color: #3a3a3a
         z-index: 1
-        
+
     .navbar-collapse
         padding: 0 40px
 
@@ -627,3 +633,15 @@ footer
 
     #sponsorsRight
         width: 25%
+
+        h1
+            margin-bottom: 30px
+
+        #sponsorsLogos
+
+            .sponsorsLogo
+                width: 100%
+                margin-bottom: 50px
+
+                img
+                    width: 80%
