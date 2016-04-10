@@ -432,8 +432,8 @@ section
 #about .col-lg-12, #announcements .col-lg-12
     margin-bottom: 50px
 
-#social .col-lg-12
-    margin-bottom: 50px
+#social
+    padding: 80px 0
     text-align: center
 
     h2
@@ -442,11 +442,14 @@ section
 #socialIcons
     display: flex
     -webkit-display: flex
+    padding-top: 80px
 
     a
+        font-size: 80px
         +transition( background .2s ease-in-out )
         width: 25%
         border-radius: 10px
+        color: white
 
         &:hover
             background-color: rgba(0, 0, 0, .2)
@@ -639,7 +642,7 @@ footer
 
         #sponsors-why
             text-align: left
-            
+
             ul
                 margin: 0
                 padding: 0
