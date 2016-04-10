@@ -1,0 +1,21 @@
+{
+  "name": "spongehome",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A brand new homepage for SpongePowered",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpongePowered/SpongeHome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SpongePowered/SpongeHome/issues"
+  },
+  "homepage": "https://github.com/SpongePowered/SpongeHome",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0"
+  }
+}
