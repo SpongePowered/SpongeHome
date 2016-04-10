@@ -415,7 +415,7 @@ section
         background-repeat: no-repeat
         background-size: cover
         color: #000
-        
+
     &.social
         background-attachment: fixed
         background-image: url(../css/backgrounds/social.jpg)
@@ -623,6 +623,9 @@ footer
 
     .container
         display: flex
+        flex-wrap: wrap
+        -webkit-display: flex
+        -webkit-flex-wrap: wrap
         padding: 0
 
     #sponsorsLeft, #sponsorsRight
@@ -631,6 +634,9 @@ footer
     #sponsorsLeft
         width: 70%
         margin-right: 5%
+
+        @media (max-width: 850px)
+            width: 100%
 
         section
             padding: 10px 0
@@ -672,15 +678,30 @@ footer
 
     #sponsorsRight
         width: 25%
+        @media (max-width: 850px)
+            width: 100%
 
         h1
             margin-bottom: 30px
 
         #sponsorsLogos
+            @media (max-width: 850px)
+                display: flex
+                flex-wrap: wrap
+                -webkit-display: flex
+                -webkit-flex-wrap: wrap
 
             .sponsorsLogo
+                display: block
                 width: 100%
                 margin-bottom: 50px
+                @media (max-width: 850px)
+                    width: 50%
+
+                @media (max-width: 560px)
+                    width: 100%
 
                 img
                     width: 80%
+                    @media (max-width: 560px)
+                        width: 100%
