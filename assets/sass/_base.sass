@@ -1,0 +1,246 @@
+// fix for 4k
+html
+    background-color: #272626
+
+body
+    position: relative
+    overflow-x: hidden
+    max-width: 1920px
+    margin: 0 auto
+
+p
+    font-size: 20px
+
+    &.small
+        font-size: 16px
+
+a
+    color: #F8CE0F
+    outline: 0
+
+    &:hover, &:focus, &:active, &.active
+        color: #F8CE0F
+        outline: 0
+
+.container
+    position: relative
+    max-width: 1110px
+
+h1, h2, h3, h4, h5, h6
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 700
+    text-transform: uppercase
+
+hr
+    &.star-light, &.star-primary
+        padding: 0
+        margin: 25px auto 30px
+        border: 0
+        border-top: solid 5px
+        text-align: center
+        max-width: 250px
+
+    &.star-light:after, &.star-primary:after
+        content: "\f005"
+        display: inline-block
+        position: relative
+        top: -.8em
+        font-family: FontAwesome
+        font-size: 2em
+        padding: 0 .25em
+
+    &.star-light
+        border-color: #000
+
+        &:after
+            background-color: transparent
+            color: #000
+
+    &.star-primary
+        border-color: #2c3e50
+
+        &:after
+            background-color: #fff
+            color: #2c3e50
+
+.img-centered
+    margin: 0 auto
+
+header
+    background-attachment: fixed
+    background-image: url(../css/backgrounds/sponsors-content.jpg)
+    background-repeat: no-repeat
+    background-size: 1920px 100%
+    background-position: center
+    color: #000
+    text-align: center
+    padding: 50px 0
+
+    .container
+        padding-top: 100px
+        padding-bottom: 50px
+
+    img
+        display: block
+        margin: 0 auto 20px
+
+    .intro-text
+        .name
+            display: block
+            font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+            font-size: 2em
+            font-weight: 700
+            text-transform: uppercase
+
+        .skills
+            font-size: 1.25em
+            font-weight: 300
+            color: rgba(0, 0, 0, 0.8)
+
+    #offsite-links
+        display: flex
+        -webkit-display: flex
+        flex-wrap: wrap
+        -webkit-flex-wrap: wrap
+        margin-top: 30px
+        margin-bottom: 20px
+
+        @media (max-width: 500px)
+            display: none
+
+        a
+            width: 20%
+            opacity: .6
+            transition: opacity .2s ease-in-out
+            -webkit-transition: opacity .2s ease-in-out
+            -moz-transition: opacity .2s ease-in-out
+            -o-transition: opacity .2s ease-in-out
+
+            img
+                width: 50%
+                @media (max-width: 1000px)
+                    width: 70%
+
+            &:hover
+                opacity: 1
+
+
+@media (min-width: 768px)
+    header
+        .container
+            padding-top: 100px
+            padding-bottom: 50px
+
+        .intro-text
+            .name
+                font-size: 4.75em
+
+            .skills
+                font-size: 1.75em
+
+
+
+.col-lg-12 h2
+    display: inline-block
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8)
+
+@media (max-width: 767px)
+    section
+        padding: 75px 0
+
+        &.first
+            padding-top: 75px
+
+.btn-outline
+    font-size: 20px
+    background: 0 0
+    color: #fff
+    margin-top: 15px
+    border: solid 2px #fff
+    transition: all .3s ease-in-out
+
+    &:hover, &:focus, &:active, &.active
+        color: #cc8800
+        border: solid 2px #fff
+        background-color: white
+
+.floating-label-form-group
+    position: relative
+    padding-bottom: .5em
+    margin-bottom: 0
+    border-bottom: 1px solid #eee
+
+    input, textarea
+        position: relative
+        font-size: 1.5em
+        background: 0 0
+        box-shadow: none !important
+        padding-left: 0
+        padding-right: 0
+        border: 0
+        border-radius: 0
+        z-index: 1
+        resize: none
+
+    label
+        display: block
+        position: relative
+        top: 2em
+        font-size: .85em
+        margin: 0
+        line-height: 1.764705882em
+        opacity: 0
+        transition: top .3s ease,opacity .3s ease
+        vertical-align: baseline
+        vertical-align: middle
+        z-index: 0
+        -webkit-transition: top .3s ease,opacity .3s ease
+        -moz-transition: top .3s ease,opacity .3s ease
+        -ms-transition: top .3s ease,opacity .3s ease
+
+/*.floating-label-form-group::not(:first-child) {
+ *        padding-left: 14px;
+ *        border-left: 1px solid #eee;
+ *}
+
+.floating-label-form-group-with-value label
+    top: 0
+    opacity: 1
+
+.floating-label-form-group-with-focus label
+    color: #cc8800
+
+form .row:first-child .floating-label-form-group
+    border-top: 1px solid #eee
+
+.btn-social
+    display: inline-block
+    font-size: 55px
+    border: 2px solid #fff
+    border-radius: 100%
+    line-height: 80px
+    text-align: center
+    width: 80px
+    height: 80px
+
+.btn
+    &:focus, &:active, &.active
+        outline: 0
+
+.scroll-top
+    position: fixed
+    bottom: 2%
+    right: 2%
+    width: 50px
+    height: 50px
+    z-index: 1049
+
+    .btn
+        font-size: 20px
+        border-radius: 100%
+        line-height: 28px
+        width: 50px
+        height: 50px
+
+        &:focus
+            outline: 0

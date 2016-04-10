@@ -1,0 +1,191 @@
+section
+    padding: 100px 0
+    border-bottom: 1px solid rgba(0, 0, 0, .2)
+
+    h2
+        font-size: 3em
+        margin: 0
+
+    &.sponsors
+        position: relative
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/sponsors.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+        z-index: 1
+
+        .container
+            position: relative
+            z-index: 2
+
+    &.about
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/about.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+    &.announcements
+        position: relative
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/announcements.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: white
+
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            background-color: rgba(0, 0, 0, 0.5)
+            width: 100%
+            height: 100%
+
+    &.sponsors::before, &.downloads::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        background-color: rgba(0, 0, 0, 0.3)
+        width: 100%
+        height: 100%
+
+    &.downloads
+        position: relative
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/downloads.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+        &::before
+            background-color: rgba(255, 255, 255, .2)
+
+        .col-lg-4
+            @media (max-width: 1180px)
+                margin-bottom: 20px
+
+            img
+                cursor: pointer
+                opacity: .7
+                transition: opacity .2s ease-in-out
+                -webkit-transition: opacity .2s ease-in-out
+                -moz-transition: opacity .2s ease-in-out
+                -o-transition: opacity .2s ease-in-out
+
+                @media (max-width: 1180px)
+                    width: 70%
+
+                @media (max-width: 400px)
+                    width: 100%
+
+                &:hover
+                    opacity: 1
+
+    &.irc
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/irc.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+    &.sponsors-content
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/sponsors-content.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+    &.sponsors-about
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/sponsors-about.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #fff
+
+    &.sponsors-why
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/sponsors-why.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+
+    &.social
+        background-attachment: fixed
+        background-image: url(../css/backgrounds/social.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        color: #fff
+
+    &.success a
+        color: #2c3e50
+        outline: 0
+
+        &:hover, &:focus, &:active, &.active
+            color: #2c3e50
+            outline: 0
+
+#about
+    color: white
+
+    p
+        padding: 0 10px
+        text-align: justify
+
+    h2
+        border-color: white
+
+#about .col-lg-12, #announcements .col-lg-12
+    margin-bottom: 50px
+
+#social .col-lg-12
+    margin-bottom: 50px
+    text-align: center
+
+    h2
+        border-color: white
+
+#socialIcons
+    display: flex
+    -webkit-display: flex
+
+    a
+        transition: background .2s ease-in-out
+        -webkit-transition: background .2s ease-in-out
+        -moz-transition: background .2s ease-in-out
+        -o-transition: background .2s ease-in-out
+        width: 25%
+        border-radius: 10px
+
+        &:hover
+            background-color: rgba(0, 0, 0, .2)
+
+    img
+        width: 50%
+        margin: 0 auto
+
+
+#announcements .col-lg-12 h2
+    border-color: white
+
+#about img
+    @media (max-width: 1180px)
+        margin: 50px auto
+
+#announcements
+    p
+        text-align: justify
+        padding: 0 10px
+        font-size: 18px
+        color: rgba(255, 255, 255, 0.8)
+
+    h3
+        margin-bottom: 20px
+        padding: 0 10px
+
+    a
+        padding: 0 10px
