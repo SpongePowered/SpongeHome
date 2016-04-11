@@ -215,7 +215,7 @@ hr.star-primary {
 
 header {
   background-attachment: fixed;
-  background-image: url(../css/backgrounds/sponsors-content.jpg);
+  background-image: url(../img/backgrounds/sponsors-content.jpg);
   background-repeat: no-repeat;
   background-size: 1920px 100%;
   background-position: center;
@@ -288,7 +288,7 @@ section {
   section.sponsors {
     position: relative;
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/sponsors.jpg);
+    background-image: url(../img/backgrounds/sponsors.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000;
@@ -298,7 +298,7 @@ section {
       z-index: 2; }
   section.about {
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/about.jpg);
+    background-image: url(../img/backgrounds/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000; }
@@ -357,25 +357,25 @@ section {
       z-index: 2; }
   section.irc {
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/irc.jpg);
+    background-image: url(../img/backgrounds/irc.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000; }
   section.sponsors-content {
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/sponsors-content.jpg);
+    background-image: url(../img/backgrounds/sponsors-content.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000; }
   section.sponsors-about {
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/sponsors-about.jpg);
+    background-image: url(../img/backgrounds/sponsors-about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff; }
   section.sponsors-why {
     background-attachment: fixed;
-    background-image: url(../css/backgrounds/sponsors-why.jpg);
+    background-image: url(../img/backgrounds/sponsors-why.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000; }
