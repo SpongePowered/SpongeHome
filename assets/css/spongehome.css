@@ -555,7 +555,7 @@ footer {
       outline: 0; }
 
 #sponsorsPage {
-  margin: 60px;
+  margin: 60px 60px 0;
   background-color: #fff; }
   #sponsorsPage .container {
     display: flex;
@@ -599,7 +599,8 @@ footer {
           margin-bottom: 10px;
           list-style: none; }
   #sponsorsPage #sponsorsRight {
-    width: 25%; }
+    width: 25%;
+    background-color: #aaa; }
     @media (max-width: 850px) {
       #sponsorsPage #sponsorsRight {
         width: 100%; } }
