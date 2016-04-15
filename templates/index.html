@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block links %}
+<li class="page-scroll"><a href="#announcements">Announcements</a></li>
+<li class="page-scroll"><a href="#downloads">Downloads</a></li>
+<li class="page-scroll"><a href="#sponsors">Sponsors</a></li>
+<li class="page-scroll"><a href="#about">About</a></li>
+<li class="page-scroll"><a href="#social">Social</a></li>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="/assets/img/icons/spongie-mark-dark.png" alt="">
+                <div class="intro-text">
+                    <span class="name">Sponge</span>
+                    <!-- <hr class="star-light"> -->
+                    <span class="skills">A community driven open source Minecraft modding platform.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Quicklinks Section -->
+<section class="offsite-links" id="offsite-links">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2 text-center"><a href="https://forums.spongepowered.org/"><i class=" fa fa-pencil"></i><p>Forums</p></a></div>
+            <div class="col-xs-2 text-center"><a href="https://github.com/SpongePowered"><i class="fa fa-code"></i><p>GitHub</p></a></div>
+            <div class="col-xs-2 text-center"><a href="https://docs.spongepowered.org/"><i class="fa fa-book"></i><p>Docs</p></a></div>
+            <div class="col-xs-2 text-center"><a href="https://jd.spongepowered.org/"><i class="fa fa-graduation-cap"></i><p>JavaDocs</p></a></div>
+            <div class="col-xs-2 text-center"><a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa fa-plug"></i><p>Plugins</p></a></div>
+            <div class="col-xs-2 text-center"><a href="/chat"><i class="fa fa-comment"></i><p>Chat</p></a></div>
+        </div>
+    </div>
+</section>
+
+<!-- Downloads Section -->
+<section class="downloads" id="downloads">
+    <div class="container">
+        <div class="row text-center"><h1>Get Sponge</h1></div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-primary styled-btn" href="http://files.minecraftforge.net/spongepowered/" style="font-family:Montserrat;font-size:2.5em">SpongeForge</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/" style="font-family:Montserrat;font-size:2.5em">SpongeAPI</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/" style="font-family:Montserrat;font-size:2.5em">SpongeVanilla</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="sponsors" id="sponsors">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Sponsors</h2>
+                <!-- <hr class="star-primary"> -->
+                <br>
+                <h3>Sponge is proudly sponsored by</h3>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                {% for sponsor in sponsors %}
+                <div class="col-md-6 portfolio-item">
+                    <a href="{{ sponsor.Link }}" target="_blank" class="nodeco sponsor">
+                        <img src="{{ sponsor.Image }}" width="{{ sponsor.Size }}" height="{{ sponsor.Size }}"
+                             class="gray" alt="{{ sponsor.Name }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <a href="/sponsors" class="btn btn-lg btn-outline">
+                Interested in sponsoring Sponge?
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Announcements Section -->
+<section class="announcements" id="announcements">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Announcements</h2>
+                <!-- <hr class="star-light"> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    {% verbatim %}
+                    <h3>{{ first.title }}</h3>
+                    <article class="announcement" v-html="first.content"></article>
+                    {% endverbatim %}
+                    <br>
+                    <h4><a :href="first.url">Continue Reading</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div>
+                    {% verbatim %}
+                    <h3>{{ second.title }}</h3>
+                    <article class="announcement" v-html="second.content"></article>
+                    {% endverbatim %}
+                    <br>
+                    <h4><a :href="second.url">Continue Reading</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>About</h2>
+                <!-- <hr class="star-light"> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <div>
+                    <p>The purpose of the Sponge project is to create a plugin development framework for Minecraft. Sponge is being created by a global community, and its open-source nature means anyone can participate.</p>
+                </div>
+                <div>
+                    <p>Sponge has been built from the ground up to enrich your Minecraft experience by allowing plugins to add functionality to Minecraft.</p>
+                </div>
+                <div>
+                    <p>Most plugins developed with the Sponge API should work across several different versions of Minecraft without needing to be updated.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="/assets/img/icons/spongie-mascot.png" class="img-responsive spongie-dance" alt="">
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <a href="https://www.patreon.com/Sponge" class="btn btn-lg btn-outline">
+                    <i class="fa fa-money"></i> Support Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Social Section -->
+<section class="social" id="social">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Social Media</h2>
+                <!-- <hr class="star-light"> -->
+            </div>
+        </div>
+        <div id="socialIcons" class="col-lg-12 text-center">
+            <a href="https://twitter.com/spongepowered" style="color:#55acee"><i class="fa fa-twitter fa-5x" alt="Twitter"></i></a>
+            <a href="https://www.facebook.com/SpongePoweredMC/" style="color:#3b5998"><i class="fa fa-facebook fa-5x" alt="Facebook"></i></a>
+            <a href="https://www.reddit.com/r/spongeproject" style="color:#333"><i class="fa fa-reddit fa-5x" alt="Reddit"></i></a>
+            <a href="https://www.twitch.tv/spongepowered" style="color:#6441a5"><i class="fa fa-twitch fa-5x" alt="Twitch"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block javascript %}
+<!-- Custom vue.js JavaScript -->
+<script type="text/javascript">
+    new Vue({
+        el: '#announcements',
+        data: {
+            first: {
+                title: 'Loading...',
+                content: 'Hello, World!',
+                url: 'https://forums.spongepowered.org'
+            },
+            second: {
+                title: 'Loading...',
+                content: 'Hello, World!',
+                url: 'https://forums.spongepowered.org'
+            }
+        },
+        created: function () {
+            this.fetchData()
+        },
+        methods: {
+            fetchData: function () {
+                var self = this;
+                $.get('/announcements.json', function (data) {
+                    self.first = {
+                        title: data.first.title,
+                        content: jQuery.truncate(data.first.content, 450),
+                        url: data.first.link
+                    };
+                    self.second = {
+                        title: data.second.title,
+                        content: jQuery.truncate(data.second.content, 450),
+                        url: data.second.link
+                    };
+                });
+            }
+        }
+    });
+</script>
+{% endblock %}
