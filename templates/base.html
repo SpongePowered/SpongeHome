@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sponge - Minecraft Modding API</title>
+    <link rel="icon" type="image/png" href="https://forums-cdn.spongepowered.org/uploads/default/original/2X/9/9ba706a80e45cf427617525ee2a19fad7bb6b109.png">
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: https://bootswatch.com/flatly/ -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/assets/css/spongehome.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- vue.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top" class="index">
+
+<!-- Navigation -->
+<div class="topbar">
+    <div role="navigation" aria-label="related navigation">
+        <div class="container">
+            <div class="menu-left">
+                <div class="sp-logo-bg"></div>
+                <a href="/#page-top">
+                    <img src="/assets/img/icons/spongelogo.png" height="40px" />
+                    <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown" id="ddleft">
+                    <a href="/"><li><i class="fa fa-home"></i> Homepage</li></a>
+                    <a href="https://forums.spongepowered.org"><li><i class="fa fa-pencil"></i> Forums</li></a>
+                    <a href="https://github.com/SpongePowered"><li><i class="fa fa-code"></i> Code</li></a>
+                    <a href="https://docs.spongepowered.org"><li><i class="fa fa-book"></i> SpongeDocs</li></a>
+                    <a href="https://jd.spongepowered.org"><li><i class="fa fa-graduation-cap"></i> JavaDocs</li></a>
+                    <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="fa fa-plug"></i> Plugins</li></a>
+                    <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="fa fa-download"></i> Get Sponge</li></a>
+                    <a href="/chat"><li><i class="fa fa-comment"></i> Chat</li></a>
+                </ul>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse"></button>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden"><a href="/#page-top"></a></li>
+                    {% block links %}{% endblock %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>Open Source</h3>
+                    <p>Sponge is an Open Source project, our source code is freely available on <a href="https://github.com/SpongePowered">GitHub</a></p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Experienced Staff</h3>
+                    <p><a href="https://docs.spongepowered.org/master/en/about/staff.html">Our Team</a> has decades of collective experience of working on Minecraft.</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Our Aim</h3>
+                    <p>Combining the strengths of the server and client modding communities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; SpongePowered 2014-2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/assets/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/assets/js/classie.js"></script>
+<script src="/assets/js/cbpAnimatedHeader.js"></script>
+<script src="/assets/js/jquery.truncate.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/assets/js/spongehome.js"></script>
+
+{% block javascript %}{% endblock %}
+
+</body>
+</html>

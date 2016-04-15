@@ -4,20 +4,20 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 
 gulp.task('watch', ['build'], function () {
-    gulp.watch('./assets/sass/**/*.sass', ['build']);
+    gulp.watch('./public/assets/sass/**/*.sass', ['build']);
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./assets/sass/spongehome.sass')
+    return gulp.src('./public/assets/sass/spongehome.sass')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./assets/css'));
+        .pipe(gulp.dest('./public/assets/css'));
 });
 
 gulp.task('build', ['sass'], function () {
-    return gulp.src('./assets/css/spongehome.css')
+    return gulp.src('./public/assets/css/spongehome.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./assets/css'));
+        .pipe(gulp.dest('./public/assets/css'));
 });
 
 gulp.task('default', ['build'], function () {
