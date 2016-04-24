@@ -8,16 +8,23 @@
 
 {% block content %}
 <!-- Header -->
-<header>
+<header id="header-display">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <img class="img-responsive" src="/assets/img/icons/spongie-mark-dark.png" alt="Sponge Logo">
-                <div class="intro-text">
-                    <span class="name">Sponge</span>
-                    <span class="skills">A community driven open source Minecraft modding platform.</span>
-                </div>
+        <div class="main-display">
+            <img class="img-responsive" src="/assets/img/icons/spongie-mark-dark.png" alt="Sponge Logo" />
+            <div class="intro-text">
+                <span class="name">Sponge</span>
+                <span class="skills">A community driven open source Minecraft modding platform.</span>
             </div>
+        </div>
+        <div class="sponsors-display">
+            <h1>Our Sponsors</h1>
+
+            {% for sponsor in sponsors %}
+            <a href="{{ sponsor.Link }}">
+                <img src="{{ sponsor.Image }}" alt="{{ sponsor.Name }}" />
+            </a>
+            {% endfor %}
         </div>
     </div>
 </header>
