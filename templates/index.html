@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 {% for sponsor in sponsors %}
-                <div class="col-md-6 portfolio-item">
+                <div class="{{ sponsor.ColumnSize }} portfolio-item">
                     <a href="{{ sponsor.Link }}" target="_blank" class="nodeco sponsor">
                         <img src="{{ sponsor.Image }}" width="{{ sponsor.Size }}" height="{{ sponsor.Size }}"
                              class="gray" alt="{{ sponsor.Name }}">
