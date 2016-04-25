@@ -3,6 +3,10 @@
  * Modified from: Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http: */
+.btn-primary {
+  background-color: #333333;
+  border-color: #333333; }
+
 html {
   background-color: #272626; }
 
@@ -231,6 +235,7 @@ header {
     margin: 0 auto 20px; }
   header .intro-text .name {
     display: block;
+    color: #2b2b2b;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
