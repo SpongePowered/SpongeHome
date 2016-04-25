@@ -715,9 +715,9 @@ footer {
     width: 75%; }
     @media (max-width: 850px) {
       #header-display .main-display {
+        display: block;
         width: 100%; } }
   #header-display .sponsors-display {
-    background-color: #aaaaaa;
     padding: 1em 1em 2em;
     width: 25%; }
     @media (max-width: 850px) {
