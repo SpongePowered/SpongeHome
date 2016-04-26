@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 
 gulp.task('watch', ['build'], function () {
     gulp.watch('./public/assets/sass/**/*.sass', ['build']);
+    gulp.watch('./public/assets/sass/**/*.scss', ['build']);
 });
 
 gulp.task('sass', function () {
