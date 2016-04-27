@@ -7,6 +7,11 @@
   background-color: #333333;
   border-color: #333333; }
 
+.btn-primary:hover {
+  background-color: #f8ce0f;
+  color: #2b2b2b;
+  border-color: #debd27; }
+
 html {
   background-color: #272626; }
 
@@ -414,6 +419,11 @@ section {
 #socialIcons {
   display: flex;
   -webkit-display: flex; }
+  #socialIcons i {
+    transition: color .2s ease-in-out;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out; }
   #socialIcons a {
     transition: background .2s ease-in-out;
     -webkit-transition: background .2s ease-in-out;
@@ -423,9 +433,12 @@ section {
     border-radius: 8px;
     margin: 8%;
     padding: 20px 2%;
-    color: rgba(0, 0, 0, 0.2); }
+    color: rgba(0, 0, 0, 0.2);
+    color: #333333; }
     #socialIcons a:hover {
       background-color: rgba(0, 0, 0, 0.2); }
+    #socialIcons a:hover i {
+      color: #f8ce0f; }
 
 #announcements .col-lg-12 h2 {
   border-color: white; }
@@ -467,7 +480,7 @@ section {
   border: solid 2px #fff;
   transition: all .3s ease-in-out; }
   .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-    color: #cc8800;
+    color: #f8ce0f;
     border: solid 2px #fff;
     background-color: white; }
 
