@@ -27,10 +27,10 @@ p {
     font-size: 16px; }
 
 a {
-  color: #F8CE0F;
+  color: #F7CF0D;
   outline: 0; }
   a:hover, a:focus, a:active, a.active {
-    color: #F8CE0F;
+    color: #F7CF0D;
     outline: 0; }
 
 .container {
@@ -137,7 +137,7 @@ hr.star-primary {
     background-color: #3a3a3a;
     float: right; }
     .topbar #main-navbar-collapse a {
-      color: #F8CE0F; }
+      color: #F7CF0D; }
   .topbar .navbar-collapse {
     padding: 0 40px; }
   .topbar .container {
@@ -210,11 +210,11 @@ hr.star-primary {
     float: right;
     padding: 6px 12px;
     background-color: #e6b800;
-    border: 1px solid #cda400;
+    border: 1px solid #917300;
     margin: 0 5px;
     color: #000; }
     .menu-right div:hover {
-      background-color: #b38f00;
+      background-color: #917300;
       border-color: #8f7300; }
   .menu-right div a {
     font-size: 13px;
@@ -244,7 +244,7 @@ hr.star-primary {
     background-color: #e9c209; }
 
 .active, .lights {
-  background-color: #f6cf17; }
+  background-color: #F7CF0D; }
 
 .dropdown li i {
   color: #474a54;
@@ -377,7 +377,7 @@ section {
   section.downloads {
     position: relative;
     color: #000;
-    background-color: #ffffff; }
+    background-color: #fff; }
     section.downloads::before {
       background-color: rgba(255, 255, 255, 0.2); }
     section.downloads .row {
@@ -480,7 +480,7 @@ section {
     #socialIcons a:hover {
       background-color: rgba(0, 0, 0, 0.2); }
     #socialIcons a:hover i {
-      color: #f8ce0f; }
+      color: #F7CF0D; }
 
 #announcements .col-lg-12 h2 {
   border-color: white; }
@@ -522,7 +522,7 @@ section {
   border: solid 2px #fff;
   transition: all .3s ease-in-out; }
   .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-    color: #f8ce0f;
+    color: #F7CF0D;
     border: solid 2px #fff;
     background-color: white; }
 
