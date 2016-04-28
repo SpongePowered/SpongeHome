@@ -29,13 +29,6 @@ var (
             ColumnSize: "col-md-6",
         },
         Sponsor{
-            Name: "Buycraft",
-            Image: "/assets/img/sponsors/buycraft.png",
-            Link: "https://www.buycraft.net",
-            Size: "70%",
-            ColumnSize: "col-md-6",
-        },
-        Sponsor{
             Name: "Nitrous Networks",
             Image: "/assets/img/sponsors/nitrous.png",
             Link: "https://www.nitrous-networks.com",
