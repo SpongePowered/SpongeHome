@@ -11,10 +11,23 @@ type Topic struct {
     ID int `json:"id"`
     Title string `json:"title"`
     Slug string `json:"slug"`
+    Archetype string `json:"archetype"`
 }
 
 type TopicList struct {
     Topics []Topic `json:"topics"`
+}
+
+func (t *TopicList) GetRegularTopics() []Topic {
+    var topics []Topic = []Topic{}
+
+    for _, topic := range t.Topics {
+        if topic.Archetype == "regular" {
+            topics = append(topics, topic)
+        }
+    }
+
+    return topics
 }
 
 type Category struct {
@@ -59,13 +72,15 @@ func GetAnnouncements(ctx *macaron.Context) {
         return
     }
 
-    first, err := getAnnouncement(res.TopicList.Topics[0])
+    var topics []Topic = res.TopicList.GetRegularTopics()
+
+    first, err := getAnnouncement(topics[0])
     if err != nil {
         ctx.Error(http.StatusInternalServerError, "Can't access the first topic!")
         return
     }
 
-    second, err := getAnnouncement(res.TopicList.Topics[1])
+    second, err := getAnnouncement(topics[1])
     if err != nil {
         ctx.Error(http.StatusInternalServerError, "Can't access the second topic!")
         return
