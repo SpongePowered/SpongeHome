@@ -4,34 +4,9 @@ import (
     "strconv"
     "net/http"
     "encoding/json"
+    "github.com/jamierocks/go-discourse/discourse"
     "gopkg.in/macaron.v1"
 )
-
-type Topic struct {
-    ID int `json:"id"`
-    Title string `json:"title"`
-    Slug string `json:"slug"`
-}
-
-type TopicList struct {
-    Topics []Topic `json:"topics"`
-}
-
-type Category struct {
-    TopicList TopicList `json:"topic_list"`
-}
-
-type Post struct {
-    Cooked string `json:"cooked"`
-}
-
-type PostStream struct {
-    Posts []Post `json:"posts"`
-}
-
-type TopicResponse struct {
-    PostStream PostStream `json:"post_stream"`
-}
 
 type AnnouncementView struct {
     First Announcement `json:"first"`
@@ -45,7 +20,7 @@ type Announcement struct {
 }
 
 func GetAnnouncements(ctx *macaron.Context) {
-    var res Category
+    var res discourse.Category
 
     r, err := http.Get("https://forums.spongepowered.org/c/announcements.json?order=created")
     if err != nil {
@@ -77,8 +52,8 @@ func GetAnnouncements(ctx *macaron.Context) {
     })
 }
 
-func getAnnouncement(topic Topic) (Announcement, error) {
-    var res TopicResponse
+func getAnnouncement(topic discourse.CategoryTopic) (Announcement, error) {
+    var res discourse.Topic
 
     r, err := http.Get("https://forums.spongepowered.org/t/" + strconv.Itoa(topic.ID) + ".json")
     if err != nil {
