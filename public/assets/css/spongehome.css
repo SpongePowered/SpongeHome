@@ -337,15 +337,15 @@ section {
   section h2 {
     font-size: 3em;
     margin: 0; }
-  section.sponsors {
+  section.contribute {
     position: relative;
     background-attachment: fixed;
-    background-image: url(../img/backgrounds/sponsors.jpg);
+    background-image: url(../img/backgrounds/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #000;
+    color: white;
     z-index: 1; }
-    section.sponsors .container {
+    section.contribute .container {
       position: relative;
       z-index: 2; }
   section.about {
@@ -365,7 +365,7 @@ section {
       left: 0;
       width: 100%;
       height: 100%; }
-  section.sponsors::before, section.downloads::before {
+  section.contribute::before, section.downloads::before {
     content: '';
     display: block;
     position: absolute;
