@@ -25,6 +25,10 @@
                 <img src="{{ sponsor.Image }}" alt="{{ sponsor.Name }}" />
             </a>
             {% endfor %}
+
+            <a href="/sponsors" class="btn btn-outline" style="font-size: 1em">
+                Interested in sponsoring Sponge?
+            </a>
         </div>
     </div>
 </header>
@@ -70,34 +74,75 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section class="sponsors" id="sponsors">
+<!-- Contribute Section -->
+<section class="contribute" id="contribute">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1>Sponsors</h1>
+                <h1>Contribute</h1>
                 <br>
-                <h3>Sponge is proudly sponsored by</h3>
+                <h3>There are a number of ways you can contribute to Sponge:</h3>
                 <br>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
-                {% for sponsor in sponsors %}
-                <div class="{{ sponsor.ColumnSize }} portfolio-item">
-                    <a href="{{ sponsor.Link }}" target="_blank" class="nodeco sponsor">
-                        <img src="{{ sponsor.Image }}" width="{{ sponsor.Size }}" height="{{ sponsor.Size }}"
-                             class="gray" alt="{{ sponsor.Name }}">
-                    </a>
-                </div>
-                {% endfor %}
+            <div class="col-lg-4 text-center">
+                <h1>Code</h1>
+                <br>
+                <p>
+                    Are you a Java programmer? Want to contribute to the most ground-breaking project the Minecraft
+                    community has ever seen, or just love testing stuff to destruction and then writing long and
+                    detailed bug reports about it? Come get involved on GitHub!
+                </p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h1>Docs</h1>
+                <br>
+                <p>
+                    Coding isn't your thing but you love helping others, get a thrill from hammering out the perfect
+                    prose, or just love nit-picking other peoples' grammar? Our fearsome and frankly unstoppable
+                    documentation team will be delighted to induct you into their team of infamous brigands and
+                    cunning wordsmiths.
+                </p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h1>Fora</h1>
+                <br>
+                <p>
+                    Looking for something more casual? Somewhere you can hang out with fellow Spongeoneers?
+                    Critique new plugin ideas and help people out with Sponge? Look no further than the
+                    <a href="https://forums.spongepowered.org/">Sponge Forums</a>.
+                    Powered by Discourse to ensure just the right balance between awesome ease of use and terrifying
+                    addictiveness.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <a class="btn btn-outline" href="https://docs.spongepowered.org/master/en/contributing/index.html"
+                   style="font-family:Montserrat; font-size: 1em">Getting Started Documentation</a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a class="btn btn-outline" href="https://docs.spongepowered.org/"
+                   style="font-family:Montserrat; font-size: 1em">SpongeDocs</a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a class="btn btn-outline" href="https://forums.spongepowered.org/"
+                   style="font-family:Montserrat; font-size: 1em">Sponge Forums</a>
             </div>
         </div>
         <br>
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-            <a href="/sponsors" class="btn btn-lg btn-outline">
-                Interested in sponsoring Sponge?
-            </a>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>Not enough?</h3>
+                <br>
+                <p style="color: white">
+                    Want to give us more than your time? You can also give us your money!
+                    We promise not to just buy jaffa cakes with it.
+                </p>
+                <a class="btn btn-outline" href="https://www.patreon.com/Sponge"
+                   style="font-family:Montserrat; font-size: 1em"><i class="fa fa-money"></i> Support Us</a>
+            </div>
         </div>
     </div>
 </section>
