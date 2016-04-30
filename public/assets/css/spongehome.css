@@ -343,7 +343,7 @@ section {
     background-image: url(../img/backgrounds/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #000;
+    color: white;
     z-index: 1; }
     section.contribute .container {
       position: relative;
