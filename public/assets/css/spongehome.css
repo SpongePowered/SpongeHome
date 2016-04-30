@@ -387,21 +387,6 @@ section {
       @media (max-width: 1180px) {
         section.downloads .col-md-4 {
           margin-bottom: 20px; } }
-      section.downloads .col-md-4 img {
-        cursor: pointer;
-        opacity: .7;
-        transition: opacity .2s ease-in-out;
-        -webkit-transition: opacity .2s ease-in-out;
-        -moz-transition: opacity .2s ease-in-out;
-        -o-transition: opacity .2s ease-in-out; }
-        @media (max-width: 1180px) {
-          section.downloads .col-md-4 img {
-            width: 70%; } }
-        @media (max-width: 400px) {
-          section.downloads .col-md-4 img {
-            width: 100%; } }
-        section.downloads .col-md-4 img:hover {
-          opacity: 1; }
   section.offsite-links {
     background-color: #f2f2f2; }
     section.offsite-links .container {
