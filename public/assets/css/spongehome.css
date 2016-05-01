@@ -39,6 +39,80 @@
     #header-display .sponsors-display img {
       width: 95%; }
 
+#sponsors-page {
+  margin: 60px 60px 0;
+  background-color: #fff; }
+  #sponsors-page .container {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-display: flex;
+    -webkit-flex-wrap: wrap;
+    padding: 0; }
+  #sponsors-page .sponsors-left, #sponsors-page .sponsors-right {
+    padding: 20px 0px; }
+  #sponsors-page .sponsors-left {
+    width: 70%;
+    margin-right: 5%; }
+    @media (max-width: 850px) {
+      #sponsors-page .sponsors-left {
+        width: 100%; } }
+    #sponsors-page .sponsors-left section {
+      padding: 10px 0;
+      margin-bottom: 10px;
+      border-bottom: 0; }
+    #sponsors-page .sponsors-left .sponsors-block {
+      text-align: justify; }
+      #sponsors-page .sponsors-left .sponsors-block h1 {
+        font-size: 28px;
+        margin-bottom: 20px; }
+      #sponsors-page .sponsors-left .sponsors-block h4 {
+        font-weight: 100;
+        font-size: 18px; }
+      #sponsors-page .sponsors-left .sponsors-block p {
+        font-size: 16px; }
+    #sponsors-page .sponsors-left #sponsors-why {
+      text-align: left; }
+      #sponsors-page .sponsors-left #sponsors-why ul {
+        margin: 0;
+        padding: 0; }
+        #sponsors-page .sponsors-left #sponsors-why ul li {
+          display: block;
+          padding: 5px 0;
+          margin-bottom: 10px;
+          list-style: none; }
+          #sponsors-page .sponsors-left #sponsors-why ul li:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0; }
+  #sponsors-page .sponsors-right {
+    width: 25%;
+    background-color: #aaa; }
+    @media (max-width: 850px) {
+      #sponsors-page .sponsors-right {
+        width: 100%; } }
+    #sponsors-page .sponsors-right h1 {
+      margin-bottom: 30px; }
+    @media (max-width: 850px) {
+      #sponsors-page .sponsors-right .sponsors-logos {
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-display: flex;
+        -webkit-flex-wrap: wrap; } }
+    #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+      display: block;
+      width: 100%;
+      margin-bottom: 50px; }
+      @media (max-width: 850px) {
+        #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+          width: 50%; } }
+      @media (max-width: 560px) {
+        #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+          width: 100%; } }
+      #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo img {
+        width: 80%; }
+        @media (max-width: 560px) {
+          #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo img {
+            width: 100%; } }
+
 html {
   background-color: #272626; }
 
@@ -627,80 +701,6 @@ footer {
     height: 50px; }
     .scroll-top .btn:focus {
       outline: 0; }
-
-#sponsorsPage {
-  margin: 60px 60px 0;
-  background-color: #fff; }
-  #sponsorsPage .container {
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-display: flex;
-    -webkit-flex-wrap: wrap;
-    padding: 0; }
-  #sponsorsPage #sponsorsLeft, #sponsorsPage #sponsorsRight {
-    padding: 20px 0px; }
-  #sponsorsPage #sponsorsLeft {
-    width: 70%;
-    margin-right: 5%; }
-    @media (max-width: 850px) {
-      #sponsorsPage #sponsorsLeft {
-        width: 100%; } }
-    #sponsorsPage #sponsorsLeft section {
-      padding: 10px 0;
-      margin-bottom: 10px;
-      border-bottom: 0; }
-    #sponsorsPage #sponsorsLeft .sponsors-block {
-      text-align: justify; }
-      #sponsorsPage #sponsorsLeft .sponsors-block h1 {
-        font-size: 28px;
-        margin-bottom: 20px; }
-      #sponsorsPage #sponsorsLeft .sponsors-block h4 {
-        font-weight: 100;
-        font-size: 18px; }
-      #sponsorsPage #sponsorsLeft .sponsors-block p {
-        font-size: 16px; }
-    #sponsorsPage #sponsorsLeft #sponsors-why {
-      text-align: left; }
-      #sponsorsPage #sponsorsLeft #sponsors-why ul {
-        margin: 0;
-        padding: 0; }
-        #sponsorsPage #sponsorsLeft #sponsors-why ul li:last-child {
-          padding-bottom: 0;
-          margin-bottom: 0; }
-        #sponsorsPage #sponsorsLeft #sponsors-why ul li {
-          display: block;
-          padding: 5px 0;
-          margin-bottom: 10px;
-          list-style: none; }
-  #sponsorsPage #sponsorsRight {
-    width: 25%;
-    background-color: #aaa; }
-    @media (max-width: 850px) {
-      #sponsorsPage #sponsorsRight {
-        width: 100%; } }
-    #sponsorsPage #sponsorsRight h1 {
-      margin-bottom: 30px; }
-    @media (max-width: 850px) {
-      #sponsorsPage #sponsorsRight #sponsorsLogos {
-        display: flex;
-        flex-wrap: wrap;
-        -webkit-display: flex;
-        -webkit-flex-wrap: wrap; } }
-    #sponsorsPage #sponsorsRight #sponsorsLogos .sponsorsLogo {
-      display: block;
-      width: 100%;
-      margin-bottom: 50px; }
-      @media (max-width: 850px) {
-        #sponsorsPage #sponsorsRight #sponsorsLogos .sponsorsLogo {
-          width: 50%; } }
-      @media (max-width: 560px) {
-        #sponsorsPage #sponsorsRight #sponsorsLogos .sponsorsLogo {
-          width: 100%; } }
-      #sponsorsPage #sponsorsRight #sponsorsLogos .sponsorsLogo img {
-        width: 80%; }
-        @media (max-width: 560px) {
-          #sponsorsPage #sponsorsRight #sponsorsLogos .sponsorsLogo img {
-            width: 100%; } }
 
 .announcement h1 {
   font-size: 1.4em; }
