@@ -587,67 +587,67 @@ footer {
     -webkit-display: flex;
     -webkit-flex-wrap: wrap;
     padding: 0; }
-  #sponsors-page .sponsors-left, #sponsors-page .sponsors-right {
+  #sponsors-page #sponsors-left, #sponsors-page #sponsors-right {
     padding: 20px 0px; }
-  #sponsors-page .sponsors-left {
+  #sponsors-page #sponsors-left {
     width: 70%;
     margin-right: 5%; }
     @media (max-width: 850px) {
-      #sponsors-page .sponsors-left {
+      #sponsors-page #sponsors-left {
         width: 100%; } }
-    #sponsors-page .sponsors-left section {
+    #sponsors-page #sponsors-left section {
       padding: 10px 0;
       margin-bottom: 10px;
       border-bottom: 0; }
-    #sponsors-page .sponsors-left .sponsors-block {
+    #sponsors-page #sponsors-left .sponsors-block {
       text-align: justify; }
-      #sponsors-page .sponsors-left .sponsors-block h1 {
+      #sponsors-page #sponsors-left .sponsors-block h1 {
         font-size: 28px;
         margin-bottom: 20px; }
-      #sponsors-page .sponsors-left .sponsors-block h4 {
+      #sponsors-page #sponsors-left .sponsors-block h4 {
         font-weight: 100;
         font-size: 18px; }
-      #sponsors-page .sponsors-left .sponsors-block p {
+      #sponsors-page #sponsors-left .sponsors-block p {
         font-size: 16px; }
-    #sponsors-page .sponsors-left #sponsors-why {
+    #sponsors-page #sponsors-left #sponsors-why {
       text-align: left; }
-      #sponsors-page .sponsors-left #sponsors-why ul {
+      #sponsors-page #sponsors-left #sponsors-why ul {
         margin: 0;
         padding: 0; }
-        #sponsors-page .sponsors-left #sponsors-why ul li {
+        #sponsors-page #sponsors-left #sponsors-why ul li {
           display: block;
           padding: 5px 0;
           margin-bottom: 10px;
           list-style: none; }
-          #sponsors-page .sponsors-left #sponsors-why ul li:last-child {
+          #sponsors-page #sponsors-left #sponsors-why ul li:last-child {
             padding-bottom: 0;
             margin-bottom: 0; }
-  #sponsors-page .sponsors-right {
+  #sponsors-page #sponsors-right {
     width: 25%;
     background-color: #aaa; }
     @media (max-width: 850px) {
-      #sponsors-page .sponsors-right {
+      #sponsors-page #sponsors-right {
         width: 100%; } }
-    #sponsors-page .sponsors-right h1 {
+    #sponsors-page #sponsors-right h1 {
       margin-bottom: 30px; }
     @media (max-width: 850px) {
-      #sponsors-page .sponsors-right .sponsors-logos {
+      #sponsors-page #sponsors-right #sponsors-logos {
         display: flex;
         flex-wrap: wrap;
         -webkit-display: flex;
         -webkit-flex-wrap: wrap; } }
-    #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+    #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo {
       display: block;
       width: 100%;
       margin-bottom: 50px; }
       @media (max-width: 850px) {
-        #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+        #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo {
           width: 50%; } }
       @media (max-width: 560px) {
-        #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo {
+        #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo {
           width: 100%; } }
-      #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo img {
+      #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo img {
         width: 80%; }
         @media (max-width: 560px) {
-          #sponsors-page .sponsors-right .sponsors-logos .sponsor-logo img {
+          #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo img {
             width: 100%; } }

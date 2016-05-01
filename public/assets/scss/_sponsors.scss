@@ -10,11 +10,11 @@
     padding: 0;
   }
 
-  .sponsors-left, .sponsors-right {
+  #sponsors-left, #sponsors-right {
     padding: 20px 0px;
   }
 
-  .sponsors-left {
+  #sponsors-left {
     width: 70%;
     margin-right: 5%;
 
@@ -69,7 +69,7 @@
     }
   }
 
-  .sponsors-right {
+  #sponsors-right {
     width: 25%;
     background-color: #aaa;
 
@@ -81,7 +81,7 @@
       margin-bottom: 30px;
     }
 
-    .sponsors-logos {
+    #sponsors-logos {
       @media (max-width: 850px) {
         display: flex;
         flex-wrap: wrap;
@@ -89,7 +89,7 @@
         -webkit-flex-wrap: wrap;
       }
 
-      .sponsor-logo {
+      .sponsors-logo {
         display: block;
         width: 100%;
         margin-bottom: 50px;
