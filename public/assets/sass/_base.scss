@@ -33,7 +33,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -79,4 +79,62 @@ hr {
 
 .img-centered {
   margin: 0 auto;
+}
+
+.col-lg-12 h2 {
+  display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+  &:focus, &:active, &.active {
+    outline: 0;
+  }
+}
+
+.btn-social {
+  display: inline-block;
+  font-size: 55px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  line-height: 80px;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+}
+
+.btn-outline {
+  font-size: 20px;
+  background: 0 0;
+  color: #fff;
+  margin-top: 15px;
+  border: solid 2px #fff;
+  transition: all .3s ease-in-out;
+
+  &:hover, &:focus, &:active, &.active {
+    color: #F7CF0D;
+    border: solid 2px #fff;
+    background-color: white;
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  width: 50px;
+  height: 50px;
+  z-index: 1049;
+
+  .btn {
+    font-size: 20px;
+    border-radius: 100%;
+    line-height: 28px;
+    width: 50px;
+    height: 50px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
 }

@@ -7,6 +7,9 @@
 @import "spongebootstrap"
 
 @import "base"
+@import "header"
+@import "section"
+@import "footer"
 
 @import "homepage"
 @import "sponsors"
@@ -230,39 +233,6 @@
         li
             padding: 10px 5px
 
-header
-    background-attachment: fixed
-    background-image: url(../img/backgrounds/sponsors-content.jpg)
-    background-repeat: no-repeat
-    background-size: 1920px 100%
-    background-position: center
-    color: #000
-    text-align: center
-    padding: 50px 0
-    border-bottom: 1px solid rgba(0, 0, 0, .2)
-
-    .container
-        padding-top: 100px
-        padding-bottom: 50px
-
-    img
-        display: block
-        margin: 0 auto 20px
-
-    .intro-text
-        .name
-            display: block
-            color: #2b2b2b
-            font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
-            font-size: 2em
-            font-weight: 700
-            text-transform: uppercase
-
-        .skills
-            font-size: 1.25em
-            font-weight: 300
-            color: rgba(0, 0, 0, 0.8)
-
 #offsite-links
     display: flex
     padding: 20px 0
@@ -314,123 +284,6 @@ header
             .skills
                 font-size: 1.75em
 
-section
-    padding: 40px 0
-    border-bottom: 1px solid rgba(0, 0, 0, .2)
-
-    h2
-        font-size: 3em
-        margin: 0
-
-    &.contribute
-        position: relative
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/about.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: white
-        z-index: 1
-
-        .container
-            position: relative
-            z-index: 2
-
-    &.about
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/about.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #000
-
-    &.announcements
-        position: relative
-        background-color: #fff
-
-        &::before
-            content: ''
-            display: block
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-
-    &.contribute::before, &.downloads::before
-        content: ''
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        background-color: rgba(0, 0, 0, 0.3)
-        width: 100%
-        height: 100%
-
-    &.downloads
-        position: relative
-        color: #000
-        background-color: #fff
-
-        &::before
-            background-color: rgba(255, 255, 255, .2)
-
-        .row
-            padding: 10px 0 40px
-
-        .col-md-4
-            padding-bottom: 20px
-
-            @media (max-width: 1180px)
-                margin-bottom: 20px
-
-    &.offsite-links
-        background-color: #f2f2f2
-
-        .container
-            position: relative
-            z-index: 2
-
-    &.irc
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/irc.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #000
-
-    &.sponsors-content
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/sponsors-content.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #000
-
-    &.sponsors-about
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/sponsors-about.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #fff
-
-    &.sponsors-why
-        background-attachment: fixed
-        background-image: url(../img/backgrounds/sponsors-why.jpg)
-        background-repeat: no-repeat
-        background-size: cover
-        color: #000
-
-    &.social
-        background-attachment: fixed
-        background-color: #f2f2f2
-        color: #000
-        padding: 20px 0
-
-    &.success a
-        color: #2c3e50
-        outline: 0
-
-        &:hover, &:focus, &:active, &.active
-            color: #2c3e50
-            outline: 0
-
 #about
     color: white
 
@@ -477,32 +330,9 @@ section
         &:hover i
             color: #F7CF0D
 
-#announcements .col-lg-12 h2
-    border-color: white
-
 #about img
     @media (max-width: 1180px)
         margin: 50px auto
-
-#announcements
-    p
-        text-align: justify
-        padding: 0 10px
-        font-size: 18px
-
-    h1
-        padding: 0 10px
-
-    h3
-        margin-bottom: 20px
-        padding: 0 10px
-
-    a
-        padding: 0 10px
-
-.col-lg-12 h2
-    display: inline-block
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8)
 
 @media (max-width: 767px)
     section
@@ -510,19 +340,6 @@ section
 
         &.first
             padding-top: 75px
-
-.btn-outline
-    font-size: 20px
-    background: 0 0
-    color: #fff
-    margin-top: 15px
-    border: solid 2px #fff
-    transition: all .3s ease-in-out
-
-    &:hover, &:focus, &:active, &.active
-        color: #F7CF0D
-        border: solid 2px #fff
-        background-color: white
 
 .floating-label-form-group
     position: relative
@@ -573,54 +390,3 @@ section
 form .row:first-child .floating-label-form-group
     border-top: 1px solid #eee
 
-footer
-    color: #fff
-
-    h3
-        margin-bottom: 30px
-
-    .footer-above
-        background-color: #333333
-        padding-top: 50px
-
-    .footer-col
-        margin-bottom: 50px
-
-        p
-            font-weight: 100
-
-    .footer-below
-        background-color: #262626
-        padding: 25px 0
-
-.btn-social
-    display: inline-block
-    font-size: 55px
-    border: 2px solid #fff
-    border-radius: 100%
-    line-height: 80px
-    text-align: center
-    width: 80px
-    height: 80px
-
-.btn
-    &:focus, &:active, &.active
-        outline: 0
-
-.scroll-top
-    position: fixed
-    bottom: 2%
-    right: 2%
-    width: 50px
-    height: 50px
-    z-index: 1049
-
-    .btn
-        font-size: 20px
-        border-radius: 100%
-        line-height: 28px
-        width: 50px
-        height: 50px
-
-        &:focus
-            outline: 0

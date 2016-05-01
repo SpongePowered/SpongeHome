@@ -1,0 +1,138 @@
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+  h2 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+  &.contribute {
+    position: relative;
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    z-index: 1;
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &.about {
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+  }
+
+  &.announcements {
+    position: relative;
+    background-color: #fff;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.contribute::before, &.downloads::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+
+  &.downloads {
+    position: relative;
+    color: #000;
+    background-color: #fff;
+
+    &::before {
+      background-color: rgba(255, 255, 255, .2);
+    }
+
+    .row {
+      padding: 10px 0 40px;
+    }
+
+    .col-md-4 {
+      padding-bottom: 20px;
+
+      @media (max-width: 1180px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &.offsite-links {
+    background-color: #f2f2f2;
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &.irc {
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/irc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+  }
+
+  &.sponsors-content {
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/sponsors-content.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+  }
+
+  &.sponsors-about {
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/sponsors-about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+
+  &.sponsors-why {
+    background-attachment: fixed;
+    background-image: url(../img/backgrounds/sponsors-why.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+  }
+
+  &.social {
+    background-attachment: fixed;
+    background-color: #f2f2f2;
+    color: #000;
+    padding: 20px 0;
+  }
+
+  &.success a {
+    color: #2c3e50;
+    outline: 0;
+
+    &:hover, &:focus, &:active, &.active {
+      color: #2c3e50;
+      outline: 0;
+    }
+  }
+}
