@@ -135,4 +135,12 @@ section {
       outline: 0;
     }
   }
+
+  @media (max-width: 767px) {
+    padding: 75px 0;
+
+    &.first {
+      padding-top: 75px;
+    }
+  }
 }

@@ -35,4 +35,20 @@ header {
       color: rgba(0, 0, 0, 0.8);
     }
   }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 40px 0;
+    }
+
+    .intro-text {
+      .name {
+        font-size: 4.75em;
+      }
+
+      .skills {
+        font-size: 1.75em;
+      }
+    }
+  }
 }
