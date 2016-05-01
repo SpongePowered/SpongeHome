@@ -18,7 +18,12 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src('./public/assets/js/**/*.js')
+    gulp.src('./public/assets/js/jquery.truncate.js')
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./public/assets/js'));
+
+    return gulp.src('./public/assets/js/spongehome.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./public/assets/js'));

@@ -6,76 +6,10 @@
 
 @import "spongebootstrap"
 
+@import "base"
+
 @import "homepage"
 @import "sponsors"
-
-// fix for 4k
-html
-    background-color: #272626
-
-body
-    position: relative
-    overflow-x: hidden
-    max-width: 1920px
-    margin: 0 auto
-
-p
-    font-size: 20px
-
-    &.small
-        font-size: 16px
-
-a
-    color: #F7CF0D
-    outline: 0
-
-    &:hover, &:focus, &:active, &.active
-        color: #F7CF0D
-        outline: 0
-
-.container
-    position: relative
-    max-width: 1110px
-
-h1, h2, h3, h4, h5, h6
-    font-family: Montserrat,Helvetica,Arial,sans-serif
-    font-weight: 700
-    text-transform: uppercase
-
-hr
-    &.star-light, &.star-primary
-        padding: 0
-        margin: 25px auto 30px
-        border: 0
-        border-top: solid 5px
-        text-align: center
-        max-width: 250px
-
-    &.star-light:after, &.star-primary:after
-        content: "\f005"
-        display: inline-block
-        position: relative
-        top: -.8em
-        font-family: FontAwesome
-        font-size: 2em
-        padding: 0 .25em
-
-    &.star-light
-        border-color: #000
-
-        &:after
-            background-color: transparent
-            color: #000
-
-    &.star-primary
-        border-color: #2c3e50
-
-        &:after
-            background-color: #fff
-            color: #2c3e50
-
-.img-centered
-    margin: 0 auto
 
 @media (min-width: 768px)
     .navbar-fixed-top
@@ -690,13 +624,3 @@ footer
 
         &:focus
             outline: 0
-
-.announcement
-    h1
-        font-size: 1.4em
-
-    h3
-        font-size: 1.3em
-
-    .emoji
-        height: 1.1em
