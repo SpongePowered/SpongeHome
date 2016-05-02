@@ -1,7 +1,7 @@
 SpongeHome
 ==========
 
-The Sponge Project website.
+The Sponge Project [website](https://www-staging.spongepowered.org/).
 
 ## Running locally
 
