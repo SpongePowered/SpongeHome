@@ -10,7 +10,7 @@
     padding: 0;
   }
 
-  .main-display {
+  #main-display {
     display: flex;
     align-items: center;
 
@@ -24,7 +24,7 @@
     }
   }
 
-  .sponsors-display {
+  #sponsors-display {
     padding: 1em 1em 2em;
     width: 25%;
 
@@ -68,8 +68,12 @@
     font-size: 1.4em;
   }
 
-  h3 {
+  h2 {
     font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.2em;
   }
 
   .emoji {
