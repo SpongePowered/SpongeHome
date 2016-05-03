@@ -1,0 +1,266 @@
+@media (min-width: 768px) {
+  .navbar-fixed-top {
+    padding: 25px 0;
+    transition: padding .3s;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+  }
+
+  .navbar-brand {
+    font-size: 2em;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+  }
+
+  &.navbar-shrink {
+    padding: 10px 0;
+
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+}
+
+.navbar {
+  font-family: Montserrat, "Helvetica Neue" ,Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  a:focus {
+    outline: 0;
+  }
+
+  .navbar-nav {
+    letter-spacing: 1px;
+    margin: 0 !important;
+
+    li a:focus {
+      outline: 0;
+    }
+  }
+}
+
+.navbar-default, .navbar-inverse {
+  border: 0;
+}
+
+.nav > li {
+  a:focus {
+    background-color: transparent;
+  }
+
+  a:hover {
+    background: #2a2a2a;
+  }
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  background-color: #333333;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 1920px;
+  height: 63px;
+  z-index: 9999;
+  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+
+  .navbar-toggle {
+    background-image: url('../img/icons/menu.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    padding: 18px 20px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  #main-navbar-collapse {
+    background-color: #333333;
+    float: right;
+
+    a {
+      color: #F7CF0D;
+    }
+  }
+
+  .navbar-collapse {
+    padding: 0 40px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  \:first-child {
+    max-width: 1110px;
+    margin: 0 auto;
+    position: center;
+
+    h3 {
+      display: none;
+    }
+  }
+}
+
+.menu-left:hover ul, .menu-right:hover ul {
+  display: block;
+}
+
+// taken from forums to keep the site consistent
+.sp-logo-bg {
+  display: none;
+  width: 174px;
+  height: 63px;
+  position: absolute;
+  top: -1px;
+  background-color: #2a2a2a;
+  z-index: -1;
+  left: -20px;
+}
+
+.sp-logo-chevron {
+  color: gray;
+  display: inline-block;
+}
+
+.sp-logo-container.sp-mobileview {
+  display: table-row;
+
+  .sp-logo-chevron {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 10;
+    left: -20px;
+    padding-left: 20px;
+    color: gray;
+  }
+}
+
+.menu-left:hover .sp-logo-bg {
+  display: block;
+}
+
+.menu-left {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-top: 11px;
+  height: 63px;
+  width: 174px;
+
+  @media (max-width: 790px) {
+    margin-left: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  i {
+    vertical-align: middle;
+    color: gray;
+    display: inline-block;
+    margin-left: -2px;
+  }
+}
+
+.menu-right {
+  float: right;
+  padding: 16px 0 0;
+  cursor: pointer;
+  height: 47px;
+  margin: 0 5px;
+
+  &:hover ul {
+    display: block;
+  }
+
+  div {
+    float: right;
+    padding: 6px 12px;
+    background-color: #e6b800;
+    border: 1px solid #917300;
+    margin: 0 5px;
+    color: #000;
+
+    a {
+      font-size: 13px;
+      color: #2b2b2b;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #917300;
+      border-color: #8f7300;
+    }
+  }
+}
+
+.dropdown {
+  display: none;
+  position: relative;
+  left: -20px;
+  background-color: #fff;
+  margin-top: 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 0 0 4px 4px;
+  width: 174px;
+  z-index: 10000;
+  -webkit-border-radius: 0 0 4px 4px;
+
+  a {
+    color: #474a54;
+    text-decoration: none;
+
+    li {
+      display: block;
+      color: #474a54;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+
+    li.active:hover {
+      background-color: #e9c209;
+    }
+  }
+
+  li i {
+    color: #474a54;
+    margin-right: 10px;
+  }
+
+  &#ddleft {
+    padding: 10px 0 4px;
+    margin-top: 12px;
+
+    li {
+      padding: 10px 20px 10px 10px;
+    }
+
+    i {
+      padding: 0 10px 0 5px;
+    }
+  }
+
+  &#ddvers {
+    padding: 10px 0;
+    margin-top: 47px;
+  }
+
+  li {
+    padding: 10px 5px;
+  }
+}
+
+.active, .lights {
+  background-color: #F7CF0D;
+}

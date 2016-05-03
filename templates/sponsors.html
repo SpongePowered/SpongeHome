@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block content %}
-<div id="sponsorsPage">
+<div id="sponsors-page">
     <div class="container">
 
-        <div id="sponsorsLeft">
+        <div id="sponsors-left">
 
             <section class="sponsors-block" id="sponsors-content">
                 <h1>Make Minecraft Awesome</h1>
@@ -67,11 +67,11 @@
             </section>
 
         </div>
-        <div id="sponsorsRight" class="text-center">
+        <div id="sponsors-right" class="text-center">
             <h1>Our Sponsors</h1>
-            <div id="sponsorsLogos">
+            <div id="sponsors-logos">
                 {% for sponsor in sponsors %}
-                <a href="{{ sponsor.Link }}" class="sponsorsLogo">
+                <a href="{{ sponsor.Link }}" class="sponsors-logo">
                     <div class="logo">
                         <img src="{{ sponsor.Image }}" alt="{{ sponsor.Name }}" />
                     </div>
