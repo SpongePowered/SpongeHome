@@ -670,7 +670,7 @@ footer {
             margin-bottom: 0; }
   #sponsors-page #sponsors-right {
     width: 25%;
-    background-color: #aaa; }
+    background-color: #ddd; }
     @media (max-width: 850px) {
       #sponsors-page #sponsors-right {
         width: 100%; } }
