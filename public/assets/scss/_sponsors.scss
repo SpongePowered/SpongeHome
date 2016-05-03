@@ -1,0 +1,114 @@
+#sponsors-page {
+  margin: 60px 60px 0;
+  background-color: #fff;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-display: flex;
+    -webkit-flex-wrap: wrap;
+    padding: 0;
+  }
+
+  #sponsors-left, #sponsors-right {
+    padding: 20px 0px;
+  }
+
+  #sponsors-left {
+    width: 70%;
+    margin-right: 5%;
+
+    @media (max-width: 850px) {
+      width: 100%;
+    }
+
+    section {
+      padding: 10px 0;
+      margin-bottom: 10px;
+
+      border-bottom: 0;
+    }
+
+    .sponsors-block {
+      text-align: justify;
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 100;
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    #sponsors-why {
+      text-align: left;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: block;
+          padding: 5px 0;
+          margin-bottom: 10px;
+          list-style: none;
+
+          &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #sponsors-right {
+    width: 25%;
+    background-color: #aaa;
+
+    @media (max-width: 850px) {
+      width: 100%
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    #sponsors-logos {
+      @media (max-width: 850px) {
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-display: flex;
+        -webkit-flex-wrap: wrap;
+      }
+
+      .sponsors-logo {
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+
+        @media (max-width: 850px) {
+          width: 50%;
+        }
+
+        @media (max-width: 560px) {
+          width: 100%;
+        }
+
+        img {
+          width: 80%;
+          @media (max-width: 560px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

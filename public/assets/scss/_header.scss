@@ -1,0 +1,54 @@
+header {
+  background-attachment: fixed;
+  background-image: url(../img/backgrounds/sponsors-content.jpg);
+  background-repeat: no-repeat;
+  background-size: 1920px 100%;
+  background-position: center;
+  color: #000;
+  text-align: center;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+  .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .intro-text {
+    .name {
+      display: block;
+      color: #2b2b2b;
+      font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 2em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .skills {
+      font-size: 1.25em;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 40px 0;
+    }
+
+    .intro-text {
+      .name {
+        font-size: 4.75em;
+      }
+
+      .skills {
+        font-size: 1.75em;
+      }
+    }
+  }
+}
