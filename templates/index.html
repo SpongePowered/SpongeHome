@@ -2,22 +2,22 @@
 
 {% block links %}
 <li class="page-scroll"><a href="#about">About</a></li>
-<li class="page-scroll"><a href="#announcements">Announcements</a></li>
 <li class="page-scroll"><a href="#downloads">Downloads</a></li>
+<li class="page-scroll"><a href="#announcements">Announcements</a></li>
 {% endblock %}
 
 {% block content %}
 <!-- Header -->
 <header id="header-display">
     <div class="container">
-        <div class="main-display">
+        <div id="main-display">
             <img src="/assets/img/icons/spongie-mark-dark.png" alt="Sponge Logo" width="256px" height="256px" />
             <div class="intro-text">
                 <span class="name">Sponge</span>
                 <span class="skills">A community driven open source Minecraft modding platform.</span>
             </div>
         </div>
-        <div class="sponsors-display">
+        <div id="sponsors-display">
             <h1>Our Sponsors</h1>
 
             {% for sponsor in sponsors %}
@@ -47,28 +47,34 @@
     </div>
 </section>
 
-<!-- Downloads Section -->
-<section class="downloads" id="downloads">
+<!-- Announcements Section -->
+<section class="announcements" id="announcements">
     <div class="container">
-        <h1 class="row text-center">Get Sponge</h1>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-forge.png" alt="SpongeForge" style="width: 100%" />
-                <p>SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.</p>
-                <a class="btn btn-primary styled-btn" href="http://files.minecraftforge.net/spongepowered/"
-                   style="font-family:Montserrat">Download SpongeForge</a>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Announcements</h1>
             </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-api.png" alt="SpongeAPI" style="width: 100%" />
-                <p>SpongeAPI is the tool developers use to create plugins for the Sponge platform.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/"
-                   style="font-family:Montserrat">Download SpongeAPI</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    {% verbatim %}
+                    <h3>{{ first.title }}</h3>
+                    <article class="announcement" v-html="first.content"></article>
+                    {% endverbatim %}
+                    <br>
+                    <h4><a :href="first.url">Continue Reading</a></h4>
+                </div>
             </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-vanilla.png" alt="SpongeVanilla" style="width: 100%" />
-                <p>SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/"
-                   style="font-family:Montserrat">Download SpongeVanilla</a>
+            <div class="col-lg-6">
+                <div>
+                    {% verbatim %}
+                    <h3>{{ second.title }}</h3>
+                    <article class="announcement" v-html="second.content"></article>
+                    {% endverbatim %}
+                    <br>
+                    <h4><a :href="second.url">Continue Reading</a></h4>
+                </div>
             </div>
         </div>
     </div>
@@ -135,45 +141,39 @@
             </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 text-center col-lg-offset-2 ">
-            <a class="btn btn-outline" href="https://www.patreon.com/Sponge"
-                 style="font-family:Montserrat; font-size: 1em"><i class="fa fa-money"></i> Become a Patron</a>
-          </div>
-          <div class="col-lg-4 text-center">
-            <a class="btn btn-outline" href="/sponsors" style="font-family:Montserrat; font-size: 1em">Become a Sponsor</a>
-          </div>
+            <div class="col-lg-4 text-center col-lg-offset-2 ">
+                <a class="btn btn-outline" href="https://www.patreon.com/Sponge"
+                   style="font-family:Montserrat; font-size: 1em"><i class="fa fa-money"></i> Become a Patron</a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a class="btn btn-outline" href="/sponsors" style="font-family:Montserrat; font-size: 1em">Become a Sponsor</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Announcements Section -->
-<section class="announcements" id="announcements">
+<!-- Downloads Section -->
+<section class="downloads" id="downloads">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>Announcements</h1>
+        <h1 class="row text-center">Get Sponge</h1>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="/assets/img/icons/sponge-forge.png" alt="SpongeForge" style="width: 100%" />
+                <p>SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.</p>
+                <a class="btn btn-primary styled-btn" href="http://files.minecraftforge.net/spongepowered/"
+                   style="font-family:Montserrat">Download SpongeForge</a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ first.title }}</h3>
-                    <article class="announcement" v-html="first.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="first.url">Continue Reading</a></h4>
-                </div>
+            <div class="col-md-4">
+                <img src="/assets/img/icons/sponge-api.png" alt="SpongeAPI" style="width: 100%" />
+                <p>SpongeAPI is the tool developers use to create plugins for the Sponge platform.</p>
+                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/"
+                   style="font-family:Montserrat">Download SpongeAPI</a>
             </div>
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ second.title }}</h3>
-                    <article class="announcement" v-html="second.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="second.url">Continue Reading</a></h4>
-                </div>
+            <div class="col-md-4">
+                <img src="/assets/img/icons/sponge-vanilla.png" alt="SpongeVanilla" style="width: 100%" />
+                <p>SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.</p>
+                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/"
+                   style="font-family:Montserrat">Download SpongeVanilla</a>
             </div>
         </div>
     </div>
