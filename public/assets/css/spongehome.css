@@ -418,7 +418,6 @@ section {
     height: 100%; }
   section.downloads {
     position: relative;
-    color: #000;
     background-color: #fff; }
     section.downloads::before {
       background-color: rgba(255, 255, 255, 0.2); }
