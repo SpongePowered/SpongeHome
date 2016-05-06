@@ -11,18 +11,21 @@
   }
 
   #main-display {
-    display: flex;
-    align-items: center;
+    display: table;
+    width: 74%;
 
-    padding: 1em 1em 2em;
-    width: 75%;
+    padding: 15% 1em 2em;
 
-    @media (max-width: 850px) {
-      display: block;
+    img {
+      float: left;
+    }
 
-      width: 100%;
+    img, .intro-text {
+      display: table-cell;
+      vertical-align: middle;
     }
   }
+
 
   #sponsors-display {
     padding: 1em 1em 2em;
