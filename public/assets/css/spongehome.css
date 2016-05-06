@@ -499,14 +499,16 @@ footer {
     -webkit-flex-wrap: wrap;
     padding: 0; }
   #header-display #main-display {
-    display: flex;
-    align-items: center;
-    padding: 1em 1em 2em;
-    width: 75%; }
+    display: table;
+    width: 74%;
+    padding: 15% 1em 2em; }
     @media (max-width: 850px) {
       #header-display #main-display {
         display: block;
         width: 100%; } }
+    #header-display #main-display img, #header-display #main-display .intro-text {
+      display: table-cell;
+      vertical-align: middle; }
   #header-display #sponsors-display {
     padding: 1em 1em 2em;
     width: 25%; }
