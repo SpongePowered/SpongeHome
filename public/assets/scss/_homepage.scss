@@ -16,8 +16,9 @@
 
     padding: 15% 1em 2em;
 
-    img {
-      float: left;
+    @media (max-width: 850px) {
+      display: block;
+      width: 100%;
     }
 
     img, .intro-text {
@@ -25,7 +26,6 @@
       vertical-align: middle;
     }
   }
-
 
   #sponsors-display {
     padding: 1em 1em 2em;

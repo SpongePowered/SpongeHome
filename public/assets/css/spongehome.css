@@ -502,8 +502,10 @@ footer {
     display: table;
     width: 74%;
     padding: 15% 1em 2em; }
-    #header-display #main-display img {
-      float: left; }
+    @media (max-width: 850px) {
+      #header-display #main-display {
+        display: block;
+        width: 100%; } }
     #header-display #main-display img, #header-display #main-display .intro-text {
       display: table-cell;
       vertical-align: middle; }
