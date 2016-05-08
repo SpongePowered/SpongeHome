@@ -124,9 +124,6 @@ header {
   text-align: center;
   padding: 50px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-  header .container {
-    padding-top: 100px;
-    padding-bottom: 50px; }
   header img {
     display: block;
     margin: 0 auto 20px; }
@@ -134,11 +131,11 @@ header {
     display: block;
     color: #2b2b2b;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 700;
     text-transform: uppercase; }
   header .intro-text .skills {
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.8); }
   @media (min-width: 768px) {
@@ -500,19 +497,9 @@ footer {
     padding: 0; }
   #header-display #main-display {
     display: flex;
-    align-items: center;
-    padding: 1em 1em 2em;
-    width: 75%; }
-    @media (max-width: 850px) {
-      #header-display #main-display {
-        display: block;
-        width: 100%; } }
+    align-items: center; }
   #header-display #sponsors-display {
-    padding: 1em 1em 2em;
-    width: 25%; }
-    @media (max-width: 850px) {
-      #header-display #sponsors-display {
-        width: 100%; } }
+    padding: 1.5em 0; }
     #header-display #sponsors-display img {
       width: 95%; }
 
@@ -632,47 +619,35 @@ footer {
     -webkit-display: flex;
     -webkit-flex-wrap: wrap;
     padding: 0; }
-  #sponsors-page #sponsors-left, #sponsors-page #sponsors-right {
-    padding: 20px 0px; }
-  #sponsors-page #sponsors-left {
-    width: 70%;
-    margin-right: 5%; }
-    @media (max-width: 850px) {
-      #sponsors-page #sponsors-left {
-        width: 100%; } }
-    #sponsors-page #sponsors-left section {
-      padding: 10px 0;
-      margin-bottom: 10px;
-      border-bottom: 0; }
-    #sponsors-page #sponsors-left .sponsors-block {
-      text-align: justify; }
-      #sponsors-page #sponsors-left .sponsors-block h1 {
-        font-size: 28px;
-        margin-bottom: 20px; }
-      #sponsors-page #sponsors-left .sponsors-block h4 {
-        font-weight: 100;
-        font-size: 18px; }
-      #sponsors-page #sponsors-left .sponsors-block p {
-        font-size: 16px; }
-    #sponsors-page #sponsors-left #sponsors-why {
-      text-align: left; }
-      #sponsors-page #sponsors-left #sponsors-why ul {
-        margin: 0;
-        padding: 0; }
-        #sponsors-page #sponsors-left #sponsors-why ul li {
-          display: block;
-          padding: 5px 0;
-          margin-bottom: 10px;
-          list-style: none; }
-          #sponsors-page #sponsors-left #sponsors-why ul li:last-child {
-            padding-bottom: 0;
-            margin-bottom: 0; }
+  #sponsors-page #sponsors-left section {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 0; }
+  #sponsors-page #sponsors-left .sponsors-block {
+    text-align: justify; }
+    #sponsors-page #sponsors-left .sponsors-block h1 {
+      font-size: 28px;
+      margin-bottom: 20px; }
+    #sponsors-page #sponsors-left .sponsors-block h4 {
+      font-weight: 100;
+      font-size: 18px; }
+    #sponsors-page #sponsors-left .sponsors-block p {
+      font-size: 16px; }
+  #sponsors-page #sponsors-left #sponsors-why {
+    text-align: left; }
+    #sponsors-page #sponsors-left #sponsors-why ul {
+      margin: 0;
+      padding: 0; }
+      #sponsors-page #sponsors-left #sponsors-why ul li {
+        display: block;
+        padding: 5px 0;
+        margin-bottom: 10px;
+        list-style: none; }
+        #sponsors-page #sponsors-left #sponsors-why ul li:last-child {
+          padding-bottom: 0;
+          margin-bottom: 0; }
   #sponsors-page #sponsors-right {
-    width: 25%;
     background-color: #ddd; }
-    @media (max-width: 850px) {
-      #sponsors-page #sponsors-right {
-        width: 100%; } }
     #sponsors-page #sponsors-right h1 {
       margin-bottom: 30px; }
     @media (max-width: 850px) {
@@ -685,14 +660,8 @@ footer {
       display: block;
       width: 100%;
       margin-bottom: 50px; }
-      @media (max-width: 850px) {
-        #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo {
-          width: 50%; } }
-      @media (max-width: 560px) {
-        #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo {
-          width: 100%; } }
       #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo img {
-        width: 80%; }
+        width: 85%; }
         @media (max-width: 560px) {
           #sponsors-page #sponsors-right #sponsors-logos .sponsors-logo img {
             width: 100%; } }
