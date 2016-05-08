@@ -10,17 +10,7 @@
     padding: 0;
   }
 
-  #sponsors-left, #sponsors-right {
-    padding: 20px 0px;
-  }
-
   #sponsors-left {
-    width: 70%;
-    margin-right: 5%;
-
-    @media (max-width: 850px) {
-      width: 100%;
-    }
 
     section {
       padding: 10px 0;
@@ -70,12 +60,7 @@
   }
 
   #sponsors-right {
-    width: 25%;
     background-color: #ddd;
-
-    @media (max-width: 850px) {
-      width: 100%
-    }
 
     h1 {
       margin-bottom: 30px;
@@ -94,16 +79,8 @@
         width: 100%;
         margin-bottom: 50px;
 
-        @media (max-width: 850px) {
-          width: 50%;
-        }
-
-        @media (max-width: 560px) {
-          width: 100%;
-        }
-
         img {
-          width: 80%;
+          width: 85%;
           @media (max-width: 560px) {
             width: 100%;
           }
