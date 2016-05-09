@@ -500,6 +500,7 @@ footer {
     padding: 0; }
   #header-display #main-display {
     display: flex;
+    -webkit-display: flex;
     align-items: center;
     padding: 1em 1em 2em;
     width: 75%; }
@@ -514,7 +515,14 @@ footer {
       #header-display #sponsors-display {
         width: 100%; } }
     #header-display #sponsors-display img {
-      width: 95%; }
+      width: 95%;
+      opacity: .8;
+      transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -o-transition: opacity .2s ease-in-out; }
+      #header-display #sponsors-display img:hover {
+        opacity: 1.2; }
 
 #announcements p {
   text-align: justify;
