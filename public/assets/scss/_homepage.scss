@@ -12,6 +12,7 @@
 
   #main-display {
     display: flex;
+    -webkit-display: flex;
     align-items: center;
 
     padding: 1em 1em 2em;
@@ -33,7 +34,17 @@
     }
 
     img {
-      width: 95%
+      width: 95%;
+
+      opacity: .8;
+      transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -o-transition: opacity .2s ease-in-out;
+
+      &:hover {
+        opacity: 1.2;
+      }
     }
   }
 }
