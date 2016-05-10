@@ -436,6 +436,19 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     color: #000; }
+    section.irc .intro-text {
+      justify-content: center;
+      align-items: center;
+      padding: 2em 0; }
+    @media (min-width: 1200px) {
+      section.irc .intro-text {
+        display: flex; } }
+    section.irc span {
+      color: #2b2b2b;
+      font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      text-transform: uppercase; }
   section.sponsors-content {
     background-attachment: fixed;
     background-image: url(../img/backgrounds/sponsors-content.jpg);
