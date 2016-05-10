@@ -1,7 +1,8 @@
 SpongeHome
 ==========
 
-The Sponge Project [website](https://www-staging.spongepowered.org/).
+The Sponge Project [website](https://www-staging.spongepowered.org/), licensed
+under the MIT license. See LICENSE.md for details.
 
 ## Running locally
 
@@ -32,10 +33,13 @@ Now you are ready to use Gulp.
 ### 4. Using Gulp
 
 For just building the sass files use `gulp build`.
-For watching the sass files use `gulp watch` - This will keep building the sass files as you edit them.
+For watching the sass files use `gulp watch` - This will keep building the sass
+files as you edit them.
 
 ### 5. Running the application
 
-To run SpongeHome, you can run `go run spongehome.go` in terminal, or the command line.
+To run SpongeHome, you can run `go run spongehome.go` in terminal, or the
+command line.
 
-**NOTE:** You will need to rerun this when you make a change to the Golang source.
+**NOTE:** You will need to rerun this when you make a change to the Golang
+source.
