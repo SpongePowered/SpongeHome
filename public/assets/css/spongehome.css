@@ -484,7 +484,10 @@ footer {
       font-weight: 100; }
   footer .footer-below {
     background-color: #262626;
-    padding: 25px 0; }
+    padding: 15px 0; }
+    footer .footer-below .row div {
+      font-size: 0.8em;
+      text-align: left; }
 
 #header-display {
   padding-top: 4em;
