@@ -20,6 +20,11 @@ footer {
 
   .footer-below {
     background-color: #262626;
-    padding: 25px 0;
+    padding: 15px 0;
+
+    .row div {
+      font-size: 0.8em;
+      text-align: left;
+    }
   }
 }
