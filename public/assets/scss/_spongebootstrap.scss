@@ -1,11 +1,11 @@
 .btn-primary {
-  background-color: #333333;
-  border: 1px solid #333333;
+  background-color: $grey;
+  border: 1px solid $grey;
   transition: all .3s ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color: #f7cf0d;
-  color: #333333;
-  border: 1px solid #917300;
+  background-color: $yellow;
+  color: $grey;
+  border: 1px solid $darkyellow;
 }
