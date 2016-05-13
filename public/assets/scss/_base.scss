@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   max-width: 1920px;
   margin: 0 auto;
+  color: $grey;
 }
 
 p {
@@ -18,11 +19,11 @@ p {
 }
 
 a {
-  color: #F7CF0D;
+  color: $yellow;
   outline: 0;
 
   &:hover, &:focus, &:active, &.active {
-    color: #F7CF0D;
+    color: $yellow;
     outline: 0;
   }
 }
@@ -59,20 +60,20 @@ hr {
   }
 
   &.star-light {
-    border-color: #000;
+    border-color: $darkgrey;
 
     &:after {
       background-color: transparent;
-      color: #000;
+      color: $darkgrey;
     }
   }
 
   &.star-primary {
-    border-color: #2c3e50;
+    border-color: $grey;
 
     &:after {
       background-color: #fff;
-      color: #2c3e50;
+      color: $grey;
     }
   }
 }
@@ -112,7 +113,7 @@ hr {
   transition: all .3s ease-in-out;
 
   &:hover, &:focus, &:active, &.active {
-    color: #F7CF0D;
+    color: $yellow;
     border: solid 2px #fff;
     background-color: white;
   }

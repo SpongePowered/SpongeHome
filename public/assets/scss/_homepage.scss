@@ -114,14 +114,14 @@
     margin: 8%;
     padding: 20px 2%;
     color: rgba(0, 0, 0, .2);
-    color: #333333;
+    color: $grey;
 
     &:hover {
       background-color: rgba(0, 0, 0, .2);
     }
 
     &:hover i {
-      color: #F7CF0D;
+      color: $yellow;
     }
   }
 }
