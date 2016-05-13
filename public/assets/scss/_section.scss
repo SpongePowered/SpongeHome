@@ -27,7 +27,7 @@ section {
     background-image: url(../img/backgrounds/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: $darkgrey;
+    color: $sponge_dark_grey;
   }
 
   &.announcements {
@@ -91,7 +91,7 @@ section {
     background-image: url(../img/backgrounds/irc.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: $darkgrey;
+    color: $sponge_dark_grey;
 
     .intro-text {
       justify-content: center;
@@ -106,7 +106,7 @@ section {
     }
 
     span {
-      color: $darkgrey;
+      color: $sponge_dark_grey;
       font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 3em;
       font-weight: 700;
@@ -119,7 +119,7 @@ section {
     background-image: url(../img/backgrounds/sponsors-content.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: $darkgrey;
+    color: $sponge_dark_grey;
   }
 
   &.sponsors-about {
@@ -135,22 +135,22 @@ section {
     background-image: url(../img/backgrounds/sponsors-why.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: $darkgrey;
+    color: $sponge_dark_grey;
   }
 
   &.social {
     background-attachment: fixed;
     background-color: #f2f2f2;
-    color: $darkgrey;
+    color: $sponge_dark_grey;
     padding: 20px 0;
   }
 
   &.success a {
-    color: $grey;
+    color: $sponge_grey;
     outline: 0;
 
     &:hover, &:focus, &:active, &.active {
-      color: $grey;
+      color: $sponge_grey;
       outline: 0;
     }
   }

@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
   max-width: 1920px;
   margin: 0 auto;
-  color: $grey;
+  color: $sponge_grey;
 }
 
 p {
@@ -19,11 +19,11 @@ p {
 }
 
 a {
-  color: $yellow;
+  color: $sponge_yellow;
   outline: 0;
 
   &:hover, &:focus, &:active, &.active {
-    color: $yellow;
+    color: $sponge_yellow;
     outline: 0;
   }
 }
@@ -60,20 +60,20 @@ hr {
   }
 
   &.star-light {
-    border-color: $darkgrey;
+    border-color: $sponge_dark_grey;
 
     &:after {
       background-color: transparent;
-      color: $darkgrey;
+      color: $sponge_dark_grey;
     }
   }
 
   &.star-primary {
-    border-color: $grey;
+    border-color: $sponge_grey;
 
     &:after {
       background-color: #fff;
-      color: $grey;
+      color: $sponge_grey;
     }
   }
 }
@@ -113,7 +113,7 @@ hr {
   transition: all .3s ease-in-out;
 
   &:hover, &:focus, &:active, &.active {
-    color: $yellow;
+    color: $sponge_yellow;
     border: solid 2px #fff;
     background-color: white;
   }
