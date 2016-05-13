@@ -114,14 +114,14 @@
     margin: 8%;
     padding: 20px 2%;
     color: rgba(0, 0, 0, .2);
-    color: $grey;
+    color: $sponge_grey;
 
     &:hover {
       background-color: rgba(0, 0, 0, .2);
     }
 
     &:hover i {
-      color: $yellow;
+      color: $sponge_yellow;
     }
   }
 }

@@ -1,11 +1,11 @@
 .btn-primary {
-  background-color: $grey;
-  border: 1px solid $grey;
+  background-color: $sponge_grey;
+  border: 1px solid $sponge_grey;
   transition: all .3s ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color: $yellow;
-  color: $grey;
-  border: 1px solid $darkyellow;
+  background-color: $sponge_yellow;
+  color: $sponge_grey;
+  border: 1px solid $sponge_dark_yellow;
 }

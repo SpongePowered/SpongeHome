@@ -10,7 +10,7 @@ gulp.task('watch', ['build'], function () {
     gulp.watch('./public/assets/js/**/*.js', ['build']);
 });
 
-gulp.task('sass', function () {
+gulp.task('scss', function () {
     return gulp.src('./public/assets/scss/spongehome.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./public/assets/css'));
@@ -28,7 +28,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./public/assets/js'));
 });
 
-gulp.task('build', ['sass', 'js'], function () {
+gulp.task('build', ['scss', 'js'], function () {
     return gulp.src('./public/assets/css/spongehome.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
