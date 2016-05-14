@@ -2,7 +2,7 @@ SpongeHome
 ==========
 
 The Sponge Project [website](https://www-staging.spongepowered.org/), licensed
-under the MIT license. See LICENSE.md for details.
+under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
 ## Running locally
 
