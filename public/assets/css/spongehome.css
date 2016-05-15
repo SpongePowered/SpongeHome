@@ -147,11 +147,11 @@ header {
     header .intro-text .skills {
       font-size: 1.75em; } }
 
-@media (max-width: 393px) {
+@media (max-width: 312px) {
   #main-navbar-collapse {
     margin-top: 0; } }
 
-@media (min-width: 394px) and (max-width: 767px) {
+@media (min-width: 313px) and (max-width: 767px) {
   #main-navbar-collapse {
     margin-top: 63px; } }
 
@@ -182,7 +182,7 @@ header {
     padding: 6px 12px; }
   #main-navbar-collapse ul {
     height: 40px;
-    margin-top: 14px; }
+    margin: 14px 0 0; }
   #main-navbar-collapse li {
     background-color: #e6b800;
     border: 1px solid #917300;

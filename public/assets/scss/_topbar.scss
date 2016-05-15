@@ -21,12 +21,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@media (max-width: 393px) {
+@media (max-width: 312px) {
   #main-navbar-collapse {
     margin-top: 0; }
 }
 
-@media (min-width: 394px) and (max-width: 767px){
+@media (min-width: 313px) and (max-width: 767px){
   #main-navbar-collapse {
     margin-top: 63px; }
 }
@@ -73,7 +73,7 @@
 
     ul {
       height: 40px;
-      margin-top: 14px;
+      margin: 14px 0 0;
     }
 
     li {
