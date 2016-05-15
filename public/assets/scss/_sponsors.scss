@@ -104,6 +104,15 @@
 
         img {
           width: 85%;
+          transition: all 0.2s ease-in-out;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition:all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
           @media (max-width: 560px) {
             width: 100%;
           }
