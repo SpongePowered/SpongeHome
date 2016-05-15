@@ -500,8 +500,9 @@ footer {
     background-color: #262626;
     padding: 15px 0; }
     footer .footer-below .row div {
-      font-size: 0.8em;
-      text-align: left; }
+      font-size: 0.8em; }
+      footer .footer-below .row div p {
+        font-size: 1em; }
 
 #header-display {
   padding-top: 4em;
