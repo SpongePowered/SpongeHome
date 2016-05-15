@@ -44,15 +44,13 @@
 
     img {
       width: 95%;
-
-      opacity: .8;
-      transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -o-transition: opacity .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition:all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
 
       &:hover {
-        opacity: 1.2;
+        transform: scale(1.1);
       }
     }
   }
