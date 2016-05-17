@@ -33,9 +33,9 @@ import (
 var (
     Sponsors []Sponsor = []Sponsor{
         Sponsor{
-            Name: "BeastNode",
-            Image: "/assets/img/sponsors/beastnode.png",
-            Link: "https://www.beastnode.com/",
+            Name: "Enjin",
+            Image: "/assets/img/sponsors/enjin.png",
+            Link: "https://www.enjin.com/",
         },
         Sponsor{
             Name: "Multiplay Game Servers",
@@ -43,9 +43,9 @@ var (
             Link: "http://www.multiplaygameservers.com",
         },
         Sponsor{
-            Name: "Enjin",
-            Image: "/assets/img/sponsors/enjin.png",
-            Link: "https://www.enjin.com/",
+            Name: "BeastNode",
+            Image: "/assets/img/sponsors/beastnode.png",
+            Link: "https://www.beastnode.com/",
         },
         Sponsor{
             Name: "Nitrous Networks",
