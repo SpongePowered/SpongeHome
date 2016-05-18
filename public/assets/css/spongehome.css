@@ -576,29 +576,28 @@ footer {
   margin: 0px;
   text-align: center; }
 
-#socialIcons {
-  display: flex;
-  -webkit-display: flex; }
-  #socialIcons i {
-    transition: color .2s ease-in-out;
-    -webkit-transition: color .2s ease-in-out;
-    -moz-transition: color .2s ease-in-out;
-    -o-transition: color .2s ease-in-out; }
-  #socialIcons a {
-    transition: background .2s ease-in-out;
-    -webkit-transition: background .2s ease-in-out;
-    -moz-transition: background .2s ease-in-out;
-    -o-transition: background .2s ease-in-out;
-    width: 10%;
-    border-radius: 8px;
-    margin: 8%;
-    padding: 20px 2%;
-    color: rgba(0, 0, 0, 0.2);
-    color: #333333; }
-    #socialIcons a:hover {
-      background-color: rgba(0, 0, 0, 0.2); }
-    #socialIcons a:hover i {
-      color: #f7cf0d; }
+#socialIcons div {
+  margin: 20px 0; }
+
+#socialIcons i {
+  transition: color .2s ease-in-out;
+  -webkit-transition: color .2s ease-in-out;
+  -moz-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out; }
+
+#socialIcons a {
+  transition: background .2s ease-in-out;
+  -webkit-transition: background .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out;
+  -o-transition: background .2s ease-in-out;
+  border-radius: 8px;
+  padding: 40px 20px 20px;
+  color: rgba(0, 0, 0, 0.2);
+  color: #333333; }
+  #socialIcons a:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
+  #socialIcons a:hover i {
+    color: #f7cf0d; }
 
 @media (max-width: 1180px) {
   #about img {
