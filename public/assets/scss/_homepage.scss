@@ -126,9 +126,10 @@
 }
 
 #socialIcons {
-  display: flex;
-  -webkit-display: flex;
 
+  div {
+    margin: 20px 0;
+  }
   i {
     transition: color .2s ease-in-out;
     -webkit-transition: color .2s ease-in-out;
@@ -141,10 +142,8 @@
     -webkit-transition: background .2s ease-in-out;
     -moz-transition: background .2s ease-in-out;
     -o-transition: background .2s ease-in-out;
-    width: 10%;
     border-radius: 8px;
-    margin: 8%;
-    padding: 20px 2%;
+    padding: 40px 20px 20px;
     color: rgba(0, 0, 0, .2);
     color: $sponge_grey;
 
