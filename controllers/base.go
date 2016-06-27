@@ -48,6 +48,11 @@ var (
             Link: "https://www.beastnode.com/",
         },
         Sponsor{
+            Name: "ServerMiner",
+            Image: "/assets/img/sponsors/serverminer.png",
+            Link: "https://serverminer.com/",
+        },
+        Sponsor{
             Name: "Nitrous Networks",
             Image: "/assets/img/sponsors/nitrous.png",
             Link: "https://www.nitrous-networks.com",
