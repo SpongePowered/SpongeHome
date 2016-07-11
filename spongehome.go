@@ -26,23 +26,50 @@
 package main
 
 import (
-    "github.com/SpongePowered/SpongeHome/controllers"
-    "github.com/go-macaron/pongo2"
-    "gopkg.in/macaron.v1"
+	"fmt"
+	"github.com/SpongePowered/SpongeHome/controllers"
+	"github.com/go-macaron/pongo2"
+	"github.com/sethvargo/go-fastly"
+	"gopkg.in/macaron.v1"
+	"os"
 )
 
 func main() {
-    // Initialise Macaron
-    m := macaron.Classic()
-    m.Use(pongo2.Pongoer())
+	// Initialise Macaron
+	m := macaron.Classic()
+	m.Use(pongo2.Pongoer())
 
-    // Routes
-    m.Get("/", controllers.GetHomepage)
-    m.Get("/sponsors", controllers.GetSponsors)
-    m.Get("/chat", controllers.GetChat)
+	// Routes
+	m.Get("/", controllers.GetHomepage)
+	m.Get("/sponsors", controllers.GetSponsors)
+	m.Get("/chat", controllers.GetChat)
+	//m.Get("/health", controllers.GetHealth)
+	m.Get("/announcements.json", controllers.GetAnnouncements)
 
-    m.Get("/announcements.json", controllers.GetAnnouncements)
+	//clear fastly
+	if os.Getenv("FASTLY_KEY") != "" {
+		fmt.Println("starting fastly client")
+		client, err := fastly.NewClient(os.Getenv("FASTLY_KEY"))
+		if err != nil {
+			fmt.Println(err)
+		}
+		services, err := client.ListServices(&fastly.ListServicesInput{})
+		for _, svc := range services {
+			if svc.Name == os.Getenv("FASTLY_SERVICE_NAME") {
+				_, err := client.PurgeAll(&fastly.PurgeAllInput{
+					Service: svc.ID,
+					Soft:    false})
+				if err != nil {
+					fmt.Println("fastly cache purge failed")
+					fmt.Println(err)
+				}
 
-    // Run SpongeHome
-    m.Run()
+			}
+			//fmt.Printf("%+v\n", svc)
+		}
+		fmt.Println("fastly done")
+	}
+	// Run SpongeHome
+	m.Run()
+
 }
