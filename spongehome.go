@@ -32,22 +32,13 @@ import (
 	"github.com/sethvargo/go-fastly"
 	"gopkg.in/macaron.v1"
 	"os"
+	"time"
 )
 
-func main() {
-	// Initialise Macaron
-	m := macaron.Classic()
-	m.Use(pongo2.Pongoer())
-
-	// Routes
-	m.Get("/", controllers.GetHomepage)
-	m.Get("/sponsors", controllers.GetSponsors)
-	m.Get("/chat", controllers.GetChat)
-	//m.Get("/health", controllers.GetHealth)
-	m.Get("/announcements.json", controllers.GetAnnouncements)
-
+func clearfastly() {
 	//clear fastly
 	if os.Getenv("FASTLY_KEY") != "" {
+		time.Sleep(10 * time.Second) //let the http server startup
 		fmt.Println("starting fastly client")
 		client, err := fastly.NewClient(os.Getenv("FASTLY_KEY"))
 		if err != nil {
@@ -69,6 +60,21 @@ func main() {
 		}
 		fmt.Println("fastly done")
 	}
+
+}
+
+func main() {
+	// Initialise Macaron
+	m := macaron.Classic()
+	m.Use(pongo2.Pongoer())
+
+	// Routes
+	m.Get("/", controllers.GetHomepage)
+	m.Get("/sponsors", controllers.GetSponsors)
+	m.Get("/chat", controllers.GetChat)
+	//m.Get("/health", controllers.GetHealth)
+	m.Get("/announcements.json", controllers.GetAnnouncements)
+	go clearfastly()
 	// Run SpongeHome
 	m.Run()
 
