@@ -37,9 +37,10 @@
     display: flex;
     -webkit-display: flex;
     align-items: center;
-
-    &.col-lg-8 {
-      width: 66% !important;
+    @media (min-width: 991px) {
+      &.col-lg-8 {
+        width: 66% !important;
+      }
     }
 
   }
