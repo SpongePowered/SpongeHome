@@ -26,7 +26,6 @@
 package controllers
 
 import (
-    "net/http"
     "gopkg.in/macaron.v1"
 )
 
@@ -78,14 +77,14 @@ type Sponsor struct {
 
 func GetHomepage(ctx *macaron.Context) {
     ctx.Data["sponsors"] = Sponsors
-    ctx.HTML(http.StatusOK, "index")
+    html(ctx, "index", "homepage", "Sponge - Minecraft Modding API")
 }
 
 func GetSponsors(ctx *macaron.Context) {
     ctx.Data["sponsors"] = Sponsors
-    ctx.HTML(http.StatusOK, "sponsors")
+    html(ctx, "sponsors", "homepage", "Sponge - Sponsoring")
 }
 
 func GetChat(ctx *macaron.Context) {
-    ctx.HTML(http.StatusOK, "chat")
+    html(ctx, "chat", "chat", "Sponge - Chat")
 }
