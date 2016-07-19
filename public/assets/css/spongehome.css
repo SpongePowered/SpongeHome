@@ -517,7 +517,7 @@ footer {
     display: flex;
     -webkit-display: flex;
     align-items: center; }
-    @media (min-width: 991px) {
+    @media (min-width: 992px) {
       #header-display #main-display.col-lg-8 {
         width: 66% !important; } }
   #header-display #sponsors-display {
