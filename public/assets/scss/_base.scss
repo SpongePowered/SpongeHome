@@ -60,6 +60,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 39px;
 }
 
 hr {
@@ -103,11 +108,6 @@ hr {
 
 .img-centered {
   margin: 0 auto;
-}
-
-.col-lg-12 h2 {
-  display: inline-block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .btn {
