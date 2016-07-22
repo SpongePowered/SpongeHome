@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func GetHealth(ctx *macaron.Context) {
+func GetStatusz(ctx *macaron.Context) {
 	paramMap := map[string]string{
 		"BUILD_NUMBER": os.Getenv("BUILD_NUMBER"),
 		"GIT_BRANCH":   os.Getenv("GIT_BRANCH"),
