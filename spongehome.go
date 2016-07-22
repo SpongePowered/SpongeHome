@@ -35,27 +35,31 @@ import (
 	"time"
 )
 
-func clearfastly() {
-	//Clear Fastly cache
+func clearFastly() {
+	// Clear Fastly cache
 	if os.Getenv("FASTLY_KEY") != "" {
-		time.Sleep(10 * time.Second) //let the http server startup
+		time.Sleep(10 * time.Second) // Let the http server startup
 		fmt.Println("starting fastly client")
 		client, err := fastly.NewClient(os.Getenv("FASTLY_KEY"))
 		if err != nil {
 			fmt.Println(err)
 		}
 		services, err := client.ListServices(&fastly.ListServicesInput{})
-		FASTLY_NAME := ""
+		fastlyName := ""
 		if os.Getenv("SPONGE_ENV") == "prod" {
-			FASTLY_NAME = "www.spongepowered.org"
+			fastlyName = "www.spongepowered.org"
 		} else if os.Getenv("SPONGE_ENV") == "staging" {
-			FASTLY_NAME = "www-staging.spongepowered.org"
+			fastlyName = "www-staging.spongepowered.org"
+		}
+		if os.Getenv("SPONGE_ENV") == "" {
+			fmt.Println("SPONGE_ENV is not set")
 		}
 		for _, svc := range services {
-			if svc.Name == FASTLY_NAME {
+			if svc.Name == fastlyName {
 				_, err := client.PurgeAll(&fastly.PurgeAllInput{
 					Service: svc.ID,
-					Soft:    false})
+					Soft:    false}
+				)
 				if err != nil {
 					fmt.Println("fastly cache purge failed")
 					fmt.Println(err)
@@ -64,7 +68,6 @@ func clearfastly() {
 				}
 
 			}
-			//fmt.Printf("%+v\n", svc)
 		}
 		fmt.Println("fastly done")
 	}
@@ -82,7 +85,7 @@ func main() {
 	m.Get("/chat", controllers.GetChat)
 	m.Get("/statusz", controllers.GetStatusz)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
-	go clearfastly()
+	go clearFastly()
 
 	// Run SpongeHome
 	m.Run()
