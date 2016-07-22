@@ -80,7 +80,7 @@ func main() {
 	m.Get("/", controllers.GetHomepage)
 	m.Get("/sponsors", controllers.GetSponsors)
 	m.Get("/chat", controllers.GetChat)
-	//m.Get("/health", controllers.GetHealth)
+	m.Get("/health", controllers.GetHealth)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
 	go clearfastly()
 	// Run SpongeHome
