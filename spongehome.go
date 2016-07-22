@@ -36,7 +36,7 @@ import (
 )
 
 func clearfastly() {
-	//clear fastly
+	//Clear Fastly cache
 	if os.Getenv("FASTLY_KEY") != "" {
 		time.Sleep(10 * time.Second) //let the http server startup
 		fmt.Println("starting fastly client")
@@ -83,6 +83,7 @@ func main() {
 	m.Get("/statusz", controllers.GetStatusz)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
 	go clearfastly()
+
 	// Run SpongeHome
 	m.Run()
 
