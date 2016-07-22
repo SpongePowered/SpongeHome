@@ -8,7 +8,7 @@ import (
 )
 
 func GetStatusz(ctx *macaron.Context) {
-	paramMap := map[string]string{
+	ctx.JSON(http.StatusOK, map[string]string{
 		"BUILD_NUMBER": os.Getenv("BUILD_NUMBER"),
 		"GIT_BRANCH":   os.Getenv("GIT_BRANCH"),
 		"GIT_COMMIT":   os.Getenv("GIT_COMMIT"),
@@ -16,6 +16,5 @@ func GetStatusz(ctx *macaron.Context) {
 		"BUILD_TAG":    os.Getenv("BUILD_TAG"),
 		"SPONGE_ENV":   os.Getenv("SPONGE_ENV"),
 		"SERVICE":      "SpongeHome",
-	}
-	ctx.JSON(http.StatusOK, &paramMap)
+	})
 }
