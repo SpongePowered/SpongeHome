@@ -103,6 +103,38 @@ func GetAnnouncements(ctx *macaron.Context) {
     ctx.JSON(http.StatusOK, announcements)
 }
 
+func GetAnnouncement(ctx *macaron.Context) {
+    var res Category
+
+    r, err := http.Get("https://forums.spongepowered.org/c/announcements.json?order=created")
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
+        return
+    }
+
+    err = json.NewDecoder(r.Body).Decode(&res)
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
+        return
+    }
+
+    var topics []Topic = res.TopicList.GetRegularTopics()
+
+    topicId, err := strconv.ParseInt(ctx.Params(":topic"), 2, 64)
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Failed to get announcement id!")
+        return
+    }
+
+    announcement, err := getAnnouncement(topics[topicId])
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Failed to get announcement!")
+        return
+    }
+
+    ctx.JSON(http.StatusOK, announcement)
+}
+
 func getAnnouncements(topics []Topic) ([]Announcement, error) {
     var announcements []Announcement = []Announcement{}
 

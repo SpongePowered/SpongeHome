@@ -263,16 +263,18 @@ THE SOFTWARE.
         methods: {
             fetchData: function () {
                 var self = this;
-                $.get('/api/v1/announcements', function (data) {
+                $.get('/api/v1/announcement/0', function (data) {
                     self.first = {
-                        title: data[0].title,
-                        content: jQuery.truncate(data[0].content, 450),
-                        url: data[0].link
+                        title: data.title,
+                        content: jQuery.truncate(data.content, 450),
+                        url: data.link
                     };
+                });
+                $.get('/api/v1/announcement/1', function (data) {
                     self.second = {
-                        title: data[1].title,
-                        content: jQuery.truncate(data[1].content, 450),
-                        url: data[1].link
+                        title: data.title,
+                        content: jQuery.truncate(data.content, 450),
+                        url: data.link
                     };
                 });
             }

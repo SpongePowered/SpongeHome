@@ -91,6 +91,7 @@ func main() {
 		// V1
 		m.Group("/v1", func() {
 			m.Get("/announcements", apiv1.GetAnnouncements)
+			m.Get("/announcement/:topic", apiv1.GetAnnouncement)
 		})
 	})
 
