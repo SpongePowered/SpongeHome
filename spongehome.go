@@ -28,6 +28,7 @@ package main
 import (
 	"fmt"
 	"github.com/SpongePowered/SpongeHome/controllers"
+	"github.com/SpongePowered/SpongeHome/controllers/apiv1"
 	"github.com/go-macaron/pongo2"
 	"github.com/sethvargo/go-fastly"
 	"gopkg.in/macaron.v1"
@@ -84,7 +85,14 @@ func main() {
 	m.Get("/sponsors", controllers.GetSponsors)
 	m.Get("/chat", controllers.GetChat)
 	m.Get("/statusz", controllers.GetStatusz)
-	m.Get("/announcements.json", controllers.GetAnnouncements)
+
+	// API
+	m.Group("/api", func() {
+		// V1
+		m.Group("/v1", func() {
+			m.Get("/announcements", apiv1.GetAnnouncements)
+		})
+	})
 
 	go clearFastly()
 
