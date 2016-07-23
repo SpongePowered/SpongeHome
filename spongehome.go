@@ -43,22 +43,23 @@ func clearFastly() {
 		client, err := fastly.NewClient(os.Getenv("FASTLY_KEY"))
 		if err != nil {
 			fmt.Println(err)
+			return
 		}
 		services, err := client.ListServices(&fastly.ListServicesInput{})
-		fastlyName := ""
+		fastlyService := ""
 		if os.Getenv("SPONGE_ENV") == "prod" {
-			fastlyName = "www.spongepowered.org"
+			fastlyService = "www.spongepowered.org"
 		} else if os.Getenv("SPONGE_ENV") == "staging" {
-			fastlyName = "www-staging.spongepowered.org"
-		}
-		if os.Getenv("SPONGE_ENV") == "" {
+			fastlyService = "www-staging.spongepowered.org"
+		} else if os.Getenv("SPONGE_ENV") == "" {
 			fmt.Println("SPONGE_ENV is not set")
+			return
 		}
 		for _, svc := range services {
-			if svc.Name == fastlyName {
+			if svc.Name == fastlyService {
 				_, err := client.PurgeAll(&fastly.PurgeAllInput{
 					Service: svc.ID,
-					Soft:    false}
+					Soft:    false},
 				)
 				if err != nil {
 					fmt.Println("fastly cache purge failed")
@@ -69,9 +70,8 @@ func clearFastly() {
 
 			}
 		}
-		fmt.Println("fastly done")
+		fmt.Println("Finished clearing Fastly cache")
 	}
-
 }
 
 func main() {
