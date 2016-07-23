@@ -59,15 +59,15 @@ func clearFastly() {
 			if svc.Name == fastlyService {
 				_, err := client.PurgeAll(&fastly.PurgeAllInput{
 					Service: svc.ID,
-					Soft:    false},
-				)
+					Soft:    false,
+				})
 				if err != nil {
 					fmt.Println("fastly cache purge failed")
 					fmt.Println(err)
+					return
 				} else {
 					fmt.Println("found match and purged")
 				}
-
 			}
 		}
 		fmt.Println("Finished clearing Fastly cache")
@@ -85,6 +85,7 @@ func main() {
 	m.Get("/chat", controllers.GetChat)
 	m.Get("/statusz", controllers.GetStatusz)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
+
 	go clearFastly()
 
 	// Run SpongeHome
