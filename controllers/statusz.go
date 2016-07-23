@@ -26,7 +26,6 @@
 package controllers
 
 import (
-	"encoding/json"
 	"gopkg.in/macaron.v1"
 	"net/http"
 	"os"
