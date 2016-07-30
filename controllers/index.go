@@ -32,6 +32,11 @@ import (
 var (
     Sponsors []Sponsor = []Sponsor{
         Sponsor{
+            Name: "CreeperHost",
+            Image: "/assets/img/sponsors/creeperhost.svg",
+            Link: "https://billing.creeperhost.net/link.php?id=8",
+        },
+        Sponsor{
             Name: "Enjin",
             Image: "/assets/img/sponsors/enjin.png",
             Link: "https://www.enjin.com/",
@@ -50,16 +55,6 @@ var (
             Name: "ServerMiner",
             Image: "/assets/img/sponsors/serverminer.png",
             Link: "https://serverminer.com/",
-        },
-        Sponsor{
-            Name: "Nitrous Networks",
-            Image: "/assets/img/sponsors/nitrous.png",
-            Link: "https://www.nitrous-networks.com",
-        },
-        Sponsor{
-            Name: "CreeperHost",
-            Image: "/assets/img/sponsors/creeperhost.svg",
-            Link: "https://billing.creeperhost.net/link.php?id=8",
         },
         Sponsor{
             Name: "MC Pro Hosting",
