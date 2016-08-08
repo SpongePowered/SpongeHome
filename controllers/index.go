@@ -45,12 +45,7 @@ var (
             Name: "Multiplay Game Servers",
             Image: "/assets/img/sponsors/multiplay.png",
             Link: "http://www.multiplaygameservers.com",
-        },
-        Sponsor{
-            Name: "BeastNode",
-            Image: "/assets/img/sponsors/beastnode.png",
-            Link: "https://www.beastnode.com/",
-        },
+        },       
         Sponsor{
             Name: "ServerMiner",
             Image: "/assets/img/sponsors/serverminer.png",
