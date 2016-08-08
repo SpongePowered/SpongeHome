@@ -26,12 +26,16 @@
 package controllers
 
 import (
-    "net/http"
     "gopkg.in/macaron.v1"
 )
 
 var (
     Sponsors []Sponsor = []Sponsor{
+        Sponsor{
+            Name: "CreeperHost",
+            Image: "/assets/img/sponsors/creeperhost.svg",
+            Link: "https://billing.creeperhost.net/link.php?id=8",
+        },
         Sponsor{
             Name: "Enjin",
             Image: "/assets/img/sponsors/enjin.png",
@@ -48,14 +52,9 @@ var (
             Link: "https://www.beastnode.com/",
         },
         Sponsor{
-            Name: "Nitrous Networks",
-            Image: "/assets/img/sponsors/nitrous.png",
-            Link: "https://www.nitrous-networks.com",
-        },
-        Sponsor{
-            Name: "CreeperHost",
-            Image: "/assets/img/sponsors/creeperhost.svg",
-            Link: "https://billing.creeperhost.net/link.php?id=8",
+            Name: "ServerMiner",
+            Image: "/assets/img/sponsors/serverminer.png",
+            Link: "https://serverminer.com/",
         },
         Sponsor{
             Name: "MC Pro Hosting",
@@ -73,14 +72,14 @@ type Sponsor struct {
 
 func GetHomepage(ctx *macaron.Context) {
     ctx.Data["sponsors"] = Sponsors
-    ctx.HTML(http.StatusOK, "index")
+    html(ctx, "index", "homepage", "Sponge - Minecraft Modding API")
 }
 
 func GetSponsors(ctx *macaron.Context) {
     ctx.Data["sponsors"] = Sponsors
-    ctx.HTML(http.StatusOK, "sponsors")
+    html(ctx, "sponsors", "homepage", "Sponge - Sponsoring")
 }
 
 func GetChat(ctx *macaron.Context) {
-    ctx.HTML(http.StatusOK, "chat")
+    html(ctx, "chat", "chat", "Sponge - Chat")
 }
