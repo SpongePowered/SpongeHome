@@ -23,22 +23,22 @@
  * THE SOFTWARE.
  */
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('body').on('click', '.page-scroll a', function(event) {
-        var target = $(this).attr('href');
-        if (target.startsWith(document.location.pathname)) {
-            target = target.substring(document.location.pathname.length)
-        }
+package controllers
 
-        $('html, body').stop().animate({
-            scrollTop: $(target).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
+import (
+	"gopkg.in/macaron.v1"
+	"net/http"
+	"os"
+)
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+func GetStatusz(ctx *macaron.Context) {
+	ctx.JSON(http.StatusOK, map[string]string{
+		"BUILD_NUMBER": os.Getenv("BUILD_NUMBER"),
+		"GIT_BRANCH":   os.Getenv("GIT_BRANCH"),
+		"GIT_COMMIT":   os.Getenv("GIT_COMMIT"),
+		"JOB_NAME":     os.Getenv("JOB_NAME"),
+		"BUILD_TAG":    os.Getenv("BUILD_TAG"),
+		"SPONGE_ENV":   os.Getenv("SPONGE_ENV"),
+		"SERVICE":      "SpongeHome",
+	})
+}
