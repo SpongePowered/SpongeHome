@@ -29,6 +29,7 @@ import (
 	"fmt"
 	"github.com/SpongePowered/SpongeHome/controllers"
 	"github.com/go-macaron/pongo2"
+	"github.com/go-macaron/gzip"
 	"github.com/sethvargo/go-fastly"
 	"gopkg.in/macaron.v1"
 	"os"
@@ -76,8 +77,12 @@ func clearFastly() {
 
 func main() {
 	// Initialise Macaron
-	m := macaron.Classic()
+	m := macaron.New()
 	m.Use(pongo2.Pongoer())
+	m.Use(macaron.Logger())
+	m.Use(macaron.Recovery())
+	m.Use(gzip.Gziper())
+	m.Use(macaron.Static("public"))
 
 	// Routes
 	m.Get("/", controllers.GetHomepage)
