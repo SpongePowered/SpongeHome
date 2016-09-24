@@ -32,6 +32,11 @@ import (
 var (
     Sponsors []Sponsor = []Sponsor{
         Sponsor{
+            Name: "MC Pro Hosting",
+            Image: "/assets/img/sponsors/mcprohosting.png",
+            Link: "https://mcprohosting.com/?promo=Sponge",
+        },        
+        Sponsor{
             Name: "CreeperHost",
             Image: "/assets/img/sponsors/creeperhost.svg",
             Link: "https://billing.creeperhost.net/link.php?id=8",
@@ -55,11 +60,6 @@ var (
             Name: "ServerMiner",
             Image: "/assets/img/sponsors/serverminer.png",
             Link: "https://serverminer.com/",
-        },
-        Sponsor{
-            Name: "MC Pro Hosting",
-            Image: "/assets/img/sponsors/mcprohosting.png",
-            Link: "https://mcprohosting.com/?promo=Sponge",
         },
     }
 )
