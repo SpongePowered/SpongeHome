@@ -55,11 +55,6 @@ var (
             Name: "BeastNode",
             Image: "/assets/img/sponsors/beastnode.png",
             Link: "https://www.beastnode.com/",
-        },       
-        Sponsor{
-            Name: "ServerMiner",
-            Image: "/assets/img/sponsors/serverminer.png",
-            Link: "https://serverminer.com/",
         },
     }
 )
