@@ -27,7 +27,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/SpongePowered/SpongeHome/controllers"
+	/*"github.com/SpongePowered/SpongeHome/controllers" */
+	"./controllers" /* for local testing only. REMOVE BEFORE PULL */
 	"github.com/go-macaron/pongo2"
 	"github.com/go-macaron/gzip"
 	"github.com/sethvargo/go-fastly"
@@ -75,6 +76,7 @@ func clearFastly() {
 	}
 }
 
+
 func main() {
 	// Initialise Macaron
 	m := macaron.New()
@@ -88,7 +90,10 @@ func main() {
 	m.Get("/", controllers.GetHomepage)
 	m.Get("/sponsors", controllers.GetSponsors)
 	m.Get("/chat", controllers.GetChat)
-	m.Get("/statusz", controllers.GetStatusz)
+	m.Get("/about", controllers.GetAbout)
+	m.Get("/downloads", controllers.GetDownloads)
+	m.Get("/quickstart", controllers.GetQuickStart)
+
 	m.Get("/announcements.json", controllers.GetAnnouncements)
 
 	go clearFastly()

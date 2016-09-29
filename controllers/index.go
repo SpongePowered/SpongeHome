@@ -35,7 +35,7 @@ var (
             Name: "MC Pro Hosting",
             Image: "/assets/img/sponsors/mcprohosting.png",
             Link: "https://mcprohosting.com/?promo=Sponge",
-        },        
+        },
         Sponsor{
             Name: "CreeperHost",
             Image: "/assets/img/sponsors/creeperhost.svg",
@@ -76,5 +76,21 @@ func GetSponsors(ctx *macaron.Context) {
 }
 
 func GetChat(ctx *macaron.Context) {
+    ctx.Data["sponsors"] = Sponsors
     html(ctx, "chat", "chat", "Sponge - Chat")
+}
+
+func GetDownloads(ctx *macaron.Context) {
+    ctx.Data["sponsors"] = Sponsors
+    html(ctx, "downloads", "downloads", "Sponge - Downloads")
+}
+
+func GetAbout(ctx *macaron.Context) {
+    ctx.Data["sponsors"] = Sponsors
+    html(ctx, "about", "about", "Sponge - About")
+}
+
+func GetQuickStart(ctx *macaron.Context) {
+    ctx.Data["sponsors"] = Sponsors
+    html(ctx, "quickstart", "quickstart", "Sponge - Quickstart")
 }

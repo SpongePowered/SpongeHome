@@ -35,8 +35,8 @@ THE SOFTWARE.
     <title>{{ title }}</title>
     <link rel="icon" type="image/png" href="https://forums-cdn.spongepowered.org/uploads/default/original/2X/9/9ba706a80e45cf427617525ee2a19fad7bb6b109.png">
 
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: https://bootswatch.com/flatly/ -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS - Uses Bootswatch Cosmo Theme: https://bootswatch.com/cosmo/ -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="/assets/css/spongehome.min.css" rel="stylesheet">
@@ -47,100 +47,106 @@ THE SOFTWARE.
 </head>
 <body id="page-top">
 
-<nav id="topbar">
-    <div class="container">
-        <div id="sp-logo-container" class="page-scroll">
-            <a href="/#page-top">
-                <img src="/assets/img/icons/spongelogo.png" alt="Sponge" style="height: 40px">
-            </a>
-            <div id="sp-logo-chevron">
-                <i class="fa fa-fw fa-chevron-down"></i>
-            </div>
-            <div id="sp-logo-menu">
-                <ul class="sp-dropdown" id="sp-logo-dropdown">
-                    <li class="{{ menu.homepage }}"><a href="/"><i class="fa-fw fa fa-home"></i>Homepage</a></li>
-                    <li><a href="https://forums.spongepowered.org"><i class="fa-fw fa fa-comment"></i>Forums</a></li>
-                    <li><a href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i>Code</a></li>
-                    <li><a href="https://docs.spongepowered.org"><i class="fa-fw fa fa-book"></i>SpongeDocs</a></li>
-                    <li><a href="https://jd.spongepowered.org"><i class="fa-fw fa fa-graduation-cap"></i>Javadocs</a></li>
-                    <li><a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa-fw fa fa-plug"></i>Plugins</a></li>
-                    <li class="{{ menu.downloads }}"><a href="/#downloads"><i class="fa-fw fa fa-download"></i>Get Sponge</a></li>
-                    <li class="{{ menu.chat }}"><a href="/chat"><i class="fa-fw fa fa-comment"></i>Chat</a></li>
-                </ul>
-            </div>
-        </div>
+    <!-- Navigation -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid col-lg-8 col-lg-offset-2">
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
-                <i class="fa fa-bars"></i>
-                <span class="sr-only">Toggle navigation</span>
-            </button>
-        </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Sponge</a>
+      </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                {% block links %}{% endblock %}
-            </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li class="active"><a href="/index">Home <span class="sr-only">(current)</span></a></li> -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/downloads">Downloads</a></li>
+          <li><a href="https://ore-staging.spongepowered.org">Plugins</a></li>
+          <li><a href="https://forums.spongepowered.org">Community</a></li>
+          <li><a href="https://github.com/Spongepowered/">Code</a></li>
+          <li><a href="https://docs.spongepowered.org">Documentation</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-{% block content %}{% endblock %}
+  <!-- Landing page top -->
+  <div class="jumbotron col-lg-12">
+    <div class="row col-lg-2 col-lg-offset-3">
+      <img src="assets/img/icons/spongie-mark-dark.png"/>
+    </div>
+    <div class="row col-lg-6">
+      <h1>SpongePowered</h1>
+      <p>A community-driven open source Minecraft modding platform.</p>
+      <p>
+        <a class="btn btn-default btn-lg">Learn more</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-8">
+
+      <!-- Navigation Tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="/">News</a></li>
+        <li><a href="/downloads">Get Sponge</a></li>
+        <li><a href="/quickstart">Quick Start</a></li>
+        <li><a href="/chat">Chat</a></li>
+        <li><a href="/sponsors"><i class="fa fa-fw fa-heart"></i> Sponsor Us</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <!-- actual page content -->
+      {% block content %}{% endblock %}
+    </div>
+
+  <!-- Sidebar -->
+  <div class="col-lg-3 col-lg-offset-1">
+
+    <!-- Sponsor List -->
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active">
+        <a href="#">Our Sponsors</a>
+      </li>
+      {% for sponsor in sponsors %}
+      <li>
+        <a href="{{ sponsor.Link }}">
+          <img src="{{ sponsor.Image }}" alt="{{ sponsor.Name }}"  width="80%" class="center-block"/>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active">
+        <a href="mailto:donations@spongefoundation.com" class="btn btn-primary" target="_top">
+            Your name here? Contact us!
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  </div>
 
 <!-- Footer -->
-<footer class="text-center">
-    <div class="footer-above">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col col-md-4">
-                    <h3>Open Source</h3>
-                    <p>
-                        Sponge is an Open Source project, our source code is freely available on<a href="https://github.com/SpongePowered">GitHub</a>.
-                    </p>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>Experienced Staff</h3>
-                    <p>
-                        <a href="https://docs.spongepowered.org/master/en/about/staff.html">Our Team</a> is drawn from
-                        diverse parts of the Minecraft modding community, and has broad and extensive experience
-                        working with Minecraft and modding.
-                    </p>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>Our Aim</h3>
-                    <p>
-                        Combining the strengths of the server and client modding communities.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; SpongePowered 2014-2016</p>
-                </div>
-                <div class="col-lg-12">
-                    Accelerated by
-                </div>
-                <div class="col-lg-12">
-                    <a href="https://www.fastly.com">
-                        <img src="/assets/img/fastly.png" alt="Fastly" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+  <footer class="col-lg-12">
+    <p class="small text-center">Copyright © SpongePowered 2014-2016</p>
+    <p class="small text-center">Accelerated by</p>
+    <img src="assets/img/sponsors/fastly.png" class="img-responsive center-block" alt="Responsive image">
+  </footer>
 
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

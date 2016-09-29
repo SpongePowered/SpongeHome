@@ -25,247 +25,27 @@ THE SOFTWARE.
 
 {% extends "base.html" %}
 
-{% block links %}
-<li class="page-scroll"><a href="#announcements">News</a></li>
-<li class="page-scroll"><a href="#downloads">Downloads</a></li>
-<li class="page-scroll"><a href="#about">About</a></li>
-{% endblock %}
-
 {% block content %}
-<!-- Header -->
-<header id="header-index">
-    <div class="container">
-        <div id="main-display" class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 text-center">
-            <div class="row">
-                <div class="col-lg-4 col-md-3">
-                    <img src="/assets/img/icons/spongie-mark-dark.png" alt="Sponge Logo" style="width: 256px; height:256px" />
-                </div>
-                <div class="intro-text col-lg-8 col-lg-offset-0 col-md-6 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                    <h1 class="name">Sponge</h1>
-                    <span class="skills">A community-driven open source Minecraft modding platform.</span>
-                </div>
-            </div>
-        </div>
-        <div id="sponsors-display" class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-0 col-sm-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center"><h2>Our Sponsors</h2></div>
 
-            {% for sponsor in sponsors %}
-            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                <a href="{{ sponsor.Link }}">
-                    <img src="{{ sponsor.Image }}" alt="{{ sponsor.Name }}" />
-                </a>
-            </div>
-            {% endfor %}
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                <a href="/sponsors" class="btn btn-primary">
-                    Interested in sponsoring Sponge?
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
+<!-- Content -->
+<div id="announcements">
+  <h1 class="row">News</h1>
+  <div class="row">
+    {% verbatim %}
+       <h3>{{ first.title }}</h3>
+       <article class="announcement" v-html="first.content"></article>
+    {% endverbatim %}
+    <a :href="first.url" class="btn btn-default">Read more</a>
+  </div>
 
-<!-- Quicklinks Section -->
-<section id="offsite-links">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="https://forums.spongepowered.org/"><i class="fa-fw fa fa-comment"></i><p>Forums</p></a>
-            </div>
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i><p>Code</p></a>
-            </div>
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="#downloads"><i class="fa-fw fa fa-download"></i><p>Get Sponge</p></a>
-            </div>
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="https://docs.spongepowered.org/"><i class="fa-fw fa fa-book"></i><p>SpongeDocs</p></a>
-            </div>
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa fa-plug"></i><p>Plugins</p></a>
-            </div>
-            <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="/chat"><i class="fa fa-comment"></i><p>Chat</p></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Announcements Section -->
-<section id="announcements">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>News</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ first.title }}</h3>
-                    <article class="announcement" v-html="first.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="first.url">Continue Reading</a></h4>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ second.title }}</h3>
-                    <article class="announcement" v-html="second.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="second.url">Continue Reading</a></h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contribute Section -->
-<section id="contribute">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Contribute</h2>
-                <br>
-                <h3>There are a number of ways you can contribute to Sponge:</h3>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 text-center">
-                <h4>Code</h4>
-                <br>
-                <p>
-                    Are you a Java programmer? Want to contribute to the most ground-breaking project the Minecraft
-                    community has ever seen, or just love testing stuff to destruction and then writing long and
-                    detailed bug reports about it? Come get involved on GitHub!
-                </p>
-                <a class="btn btn-outline" href="https://docs.spongepowered.org/en/contributing/index.html">
-                    Getting Started Documentation</a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <h4>Docs</h4>
-                <br>
-                <p>
-                    Coding isn't your thing but you love helping others, get a thrill from hammering out the perfect
-                    prose, or just love nit-picking other peoples' grammar? Our fearsome and frankly unstoppable
-                    documentation team will be delighted to induct you into their ranks of infamous brigands and
-                    cunning wordsmiths.
-                </p>
-                <a class="btn btn-outline" href="https://github.com/SpongePowered/SpongeDocs">SpongeDocs</a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <h4>Forums</h4>
-                <br>
-                <p>
-                    Looking for something more casual? Somewhere you can hang out with fellow Spongeoneers?
-                    Critique new plugin ideas and help people out with Sponge? Look no further than the
-                    <a href="https://forums.spongepowered.org/">Sponge Forums</a>.
-                    Powered by Discourse to ensure just the right balance between awesome ease of use and terrifying
-                    addictiveness.
-                </p>
-                <a class="btn btn-outline" href="https://forums.spongepowered.org/">Sponge Forums</a>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>Not enough?</h3>
-                <br>
-                <p>
-                    Want to give us more than your time? You can also give us your money!
-                    We promise not to just buy jaffa cakes with it.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 text-center col-lg-offset-2">
-                <a class="btn btn-outline" href="https://www.patreon.com/Sponge"><i class="fa fa-money"></i> Become a Patron</a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <a class="btn btn-outline" href="/sponsors">Become a Sponsor</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Downloads Section -->
-<section id="downloads">
-    <div class="container">
-        <h2 class="row text-center">Get Sponge</h2>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-forge.png" alt="SpongeForge" style="width: 100%" />
-                <p>SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.</p>
-                <a class="btn btn-primary styled-btn" href="http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/">
-                    Download SpongeForge</a>
-            </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-api.png" alt="SpongeAPI" style="width: 100%" />
-                <p>SpongeAPI is the tool developers use to create plugins for the Sponge platform.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/?buildTypeId=4">
-                    Download SpongeAPI</a>
-            </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-vanilla.png" alt="SpongeVanilla" style="width: 100%" />
-                <p>SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/">
-                    Download SpongeVanilla</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about">
-    <div class="container">
-        <div class="row col-lg-12 text-center">
-            <h2>About</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                <p>
-                    The purpose of the Sponge project is to create a plugin development framework for Minecraft. Sponge is being created by a global
-                    community, and its open-source nature means anyone can participate.
-                </p>
-                <p>
-                    Sponge has been built from the ground up to enrich your Minecraft experience by allowing plugins to add functionality to
-                    Minecraft.
-                </p>
-                <p>
-                    Most plugins developed with the Sponge API should work across several different versions of Minecraft without needing to be
-                    updated.
-                </p>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <img src="/assets/img/icons/spongie-mascot.png" class="img-responsive" alt="Sponge Mascot">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Social Section -->
-<section id="social">
-    <div id="socialIcons" class="text-center container">
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
-            <a href="https://twitter.com/spongepowered" title="Twitter"><i class="fa fa-fw fa-twitter fa-3x" aria-hidden="true"></i></a>
-        </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
-            <a href="https://www.facebook.com/SpongePoweredMC/" title="Facebook"><i class="fa fa-fw fa-facebook fa-3x" aria-hidden="true"></i></a>
-        </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
-            <a href="https://www.reddit.com/r/spongeproject" title="Reddit"><i class="fa fa-fw fa-reddit fa-3x" aria-hidden="true"></i></a>
-        </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
-            <a href="https://www.twitch.tv/spongepowered" title="Twitch"><i class="fa fa-fw fa-twitch fa-3x" aria-hidden="true"></i></a>
-        </div>
-    </div>
-</section>
+  <div class="row">
+    {% verbatim %}
+       <h3>{{ second.title }}</h3>
+       <article class="announcement" v-html="second.content"></article>
+    {% endverbatim %}
+    <a :href="second.url" class="btn btn-default">Read more</a>
+  </div>
+</div>
 {% endblock %}
 
 {% block javascript %}

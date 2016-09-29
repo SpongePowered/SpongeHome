@@ -22,35 +22,7 @@
 // THE SOFTWARE.
 
 footer {
-  color: #fff;
-
-  h3 {
-    margin-bottom: 30px;
-  }
-
-  .footer-above {
-    background-color: $sponge_grey;
-    padding-top: 50px;
-  }
-
-  .footer-col {
-    margin-bottom: 50px;
-
-    p {
-      font-weight: 100;
-    }
-  }
-
-  .footer-below {
-    background-color: #262626;
-    padding: 15px 0;
-
-    .row div {
-      font-size: 0.8em;
-
-      p {
-        font-size: 1em;
-      }
-    }
-  }
+  margin-top:3em;
+  padding:1em 0;
+  background-color:#E6E6E6;
 }
