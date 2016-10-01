@@ -8,6 +8,9 @@
 .jumbotron {
   background-image: url(../../assets/img/backgrounds/index-background.jpg); }
 
+html {
+  font-family: "Lato",sans-serif !important; }
+
 footer {
   margin-top: 3em;
   padding: 1em 0;
