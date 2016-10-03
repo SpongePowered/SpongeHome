@@ -12,7 +12,9 @@
   color: $sponge_dark_yellow !important;
 } */
 .jumbotron {
-  background-image: url(../../assets/img/backgrounds/index-background.jpg); }
+  background-image: url(../../assets/img/backgrounds/index-background.jpg);
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 html {
   font-family: "Lato",sans-serif !important; }
