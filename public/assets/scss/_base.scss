@@ -1,5 +1,5 @@
 .nav-pills {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #ddd;
   margin-bottom: 1em;
 }
 
@@ -10,6 +10,10 @@
 .nav-tabs {
   border-bottom: none !important;
 }
+
+/* .nav-tabs a {
+  color: $sponge_dark_yellow !important;
+} */
 
 .jumbotron {
     background-image: url(../../assets/img/backgrounds/index-background.jpg);

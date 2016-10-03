@@ -1,0 +1,8 @@
+.nav-pills li.active a, .nav-pills li.active a:focus {
+  background-color: $sponge_yellow;
+  color: $sponge_dark_grey;
+}
+
+ .nav-pills li.active a:hover {
+  background-color: $sponge_dark_yellow;
+ }
