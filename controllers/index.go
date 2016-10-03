@@ -45,12 +45,7 @@ var (
             Name: "Enjin",
             Image: "/assets/img/sponsors/enjin.png",
             Link: "https://www.enjin.com/",
-        },
-        Sponsor{
-            Name: "Multiplay Game Servers",
-            Image: "/assets/img/sponsors/multiplay.png",
-            Link: "http://www.multiplaygameservers.com",
-        },
+        },       
         Sponsor{
             Name: "BeastNode",
             Image: "/assets/img/sponsors/beastnode.png",
