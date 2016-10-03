@@ -49,7 +49,7 @@ THE SOFTWARE.
 
     <!-- Navigation -->
   <nav class="navbar navbar-default">
-    <div class="container col-lg-8 col-lg-offset-2">
+    <div class="container ">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -60,11 +60,11 @@ THE SOFTWARE.
         <a class="navbar-brand" href="#">Sponge</a>
       </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" aria-expanded="true" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <!-- <li class="active"><a href="/index">Home <span class="sr-only">(current)</span></a></li> -->
           <li><a href="/">Home</a></li>
-          <li><a href="/downloads">Downloads</a></li>
+          <li><a href="/downloads">Download</a></li>
           <li><a href="https://ore-staging.spongepowered.org">Plugins</a></li>
           <li><a href="https://forums.spongepowered.org">Community</a></li>
           <li class="dropdown">
@@ -72,10 +72,11 @@ THE SOFTWARE.
               Code <span class="caret"></span>
             </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Javadocs</a></li>
-                <!-- <li class="divider"></li> -->
-                <li><a href="#">Bugtracker</a></li>
+                <li><a href="https://github.com/SpongePowered/">GitHub</a></li>
+                <li><a href="https://jd.spongepowered.org/">Javadocs</a></li>
+                <li class="divider"></li>
+                <li><a href="https://github.com/SpongePowered/SpongeForge/issues">SpongeForge Bugtracker</a></li>
+                <li><a href="https://github.com/SpongePowered/SpongeVanilla/issues">SpongeVanilla Bugtracker</a></li>
               </ul>
           </li>
           <li><a href="https://docs.spongepowered.org">Documentation</a></li>
@@ -85,16 +86,13 @@ THE SOFTWARE.
   </nav>
 
   <!-- Landing page top -->
-  <div class="jumbotron col-lg-12">
-    <div class="row col-lg-2 col-lg-offset-3">
+  <div class="jumbotron row text-center">
+    <div class="col-md-12 col-lg-2 col-lg-offset-3">
       <img src="assets/img/icons/spongie-mark-dark.png"/>
     </div>
-    <div class="row col-lg-6">
+    <div class="col-md-12 col-lg-4">
       <h1>SpongePowered</h1>
       <p>A community-driven open source Minecraft modding platform.</p>
-      <p>
-        <a class="btn btn-default btn-lg">Learn more</a>
-      </p>
     </div>
   </div>
 
@@ -148,15 +146,13 @@ THE SOFTWARE.
 
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/assets/js/spongehome.min.js"></script>
 
 <!-- Google Analytics -->
 <script>
