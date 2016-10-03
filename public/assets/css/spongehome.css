@@ -1,15 +1,26 @@
 .nav-pills {
   border: 1px solid #e6e6e6;
-  margin: 1em 0; }
+  margin-bottom: 1em; }
 
 .navbar {
   margin: 0 !important; }
+
+.nav-tabs {
+  border-bottom: none !important; }
 
 .jumbotron {
   background-image: url(../../assets/img/backgrounds/index-background.jpg); }
 
 html {
   font-family: "Lato",sans-serif !important; }
+
+.content {
+  border: 1px #ddd solid;
+  margin-left: 0;
+  margin-right: 0; }
+
+.content div:last-child {
+  margin-bottom: 2em; }
 
 footer {
   margin-top: 3em;

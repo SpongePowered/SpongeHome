@@ -37,19 +37,19 @@ THE SOFTWARE.
 {% block content %}
 
 <!-- Content -->
-<div id="announcements">
-  <h1 class="row">News</h1>
-  <div class="row">
+<div id="announcements" class="content row">
+  <h1 class="col-lg-12">News</h1>
+  <div class="col-lg-12">
     {% verbatim %}
-       <h3>{{ first.title }}</h3>
+       <h1>{{ first.title }}</h1>
        <article class="announcement" v-html="first.content"></article>
     {% endverbatim %}
     <a :href="first.url" class="btn btn-default">Read more</a>
   </div>
 
-  <div class="row">
+  <div class="col-lg-12">
     {% verbatim %}
-       <h3>{{ second.title }}</h3>
+       <h1>{{ second.title }}</h1>
        <article class="announcement" v-html="second.content"></article>
     {% endverbatim %}
     <a :href="second.url" class="btn btn-default">Read more</a>
