@@ -27,8 +27,7 @@ package main
 
 import (
 	"fmt"
-	/*"github.com/SpongePowered/SpongeHome/controllers" */
-	"./controllers" /* for local testing only. REMOVE BEFORE PULL */
+  "github.com/SpongePowered/SpongeHome/controllers"
 	"github.com/go-macaron/pongo2"
 	"github.com/go-macaron/gzip"
 	"github.com/sethvargo/go-fastly"
