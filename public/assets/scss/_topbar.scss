@@ -24,7 +24,7 @@
 $sp_logo_offset_x: 0;
 $sp_logo_offset_y: -20px;
 $sp_topbar_height: 63px;
-$sp_logo_width: 176px;
+$sp_logo_width: 200px;
 
 #topbar {
   position: fixed;
@@ -49,26 +49,41 @@ $sp_logo_width: 176px;
   }
 }
 
-#sp-logo-chevron {
-  display: inline-block;
-  color: gray;
-
-  i {
-    vertical-align: middle;
-  }
-}
-
 #sp-logo-container {
   display: inline-block;
-
-  width: $sp_logo_width;
-  height: $sp_topbar_height;
-
   margin-left: $sp_logo_offset_y;
-  padding-left: 20px;
-  padding-top: 11px;
 
   cursor: pointer;
+
+  .logo {
+    display: block;
+
+    width: $sp_logo_width;
+    height: $sp_topbar_height;
+
+    padding-left: 20px;
+    padding-top: 11px;
+
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    span {
+      margin-left: 3px;
+      font-size: 1.5em;
+      letter-spacing: -1px;
+    }
+
+    i {
+      color: gray;
+    }
+  }
 
   &:hover {
     background-color: #2a2a2a;
