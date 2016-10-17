@@ -140,20 +140,29 @@ header {
   #topbar .container {
     padding: 0; }
 
-#sp-logo-chevron {
-  display: inline-block;
-  color: gray; }
-  #sp-logo-chevron i {
-    vertical-align: middle; }
-
 #sp-logo-container {
   display: inline-block;
-  width: 176px;
-  height: 63px;
   margin-left: -20px;
-  padding-left: 20px;
-  padding-top: 11px;
   cursor: pointer; }
+  #sp-logo-container .logo {
+    display: block;
+    width: 200px;
+    height: 63px;
+    padding-left: 20px;
+    padding-top: 11px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #sp-logo-container .logo * {
+      display: inline-block;
+      vertical-align: middle; }
+    #sp-logo-container .logo span {
+      margin-left: 3px;
+      font-size: 1.5em;
+      letter-spacing: -1px; }
+    #sp-logo-container .logo i {
+      color: gray; }
   #sp-logo-container:hover {
     background-color: #2a2a2a; }
     #sp-logo-container:hover #sp-logo-menu {
@@ -164,7 +173,7 @@ header {
   position: absolute;
   top: 63px;
   left: -20px;
-  width: 176px; }
+  width: 200px; }
 
 .sp-dropdown {
   margin: 0;
@@ -181,7 +190,7 @@ header {
     .sp-dropdown li.active {
       position: relative;
       left: -1px;
-      width: 176px;
+      width: 200px;
       background-color: #f7cf0d; }
   .sp-dropdown a {
     padding: 10px 20px 10px 10px;
@@ -342,6 +351,11 @@ footer {
       font-size: 0.8em; }
       footer .footer-below .row div p {
         font-size: 1em; }
+
+.intro-text .logo {
+  height: 256px;
+  width: 256px;
+  padding: 28px; }
 
 #header-index {
   padding-top: 4em;
