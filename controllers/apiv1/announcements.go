@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  */
 
-package controllers
+package apiv1
 
 import (
     "strconv"
@@ -71,11 +71,6 @@ type TopicResponse struct {
     PostStream PostStream `json:"post_stream"`
 }
 
-type AnnouncementView struct {
-    First Announcement `json:"first"`
-    Second Announcement `json:"second"`
-}
-
 type Announcement struct {
     Title string `json:"title"`
     Content string `json:"content"`
@@ -99,22 +94,60 @@ func GetAnnouncements(ctx *macaron.Context) {
 
     var topics []Topic = res.TopicList.GetRegularTopics()
 
-    first, err := getAnnouncement(topics[0])
+    announcements, err := getAnnouncements(topics)
     if err != nil {
-        ctx.Error(http.StatusInternalServerError, "Can't access the first topic!")
+        ctx.Error(http.StatusInternalServerError, "Failed to get announcements!")
         return
     }
 
-    second, err := getAnnouncement(topics[1])
+    ctx.JSON(http.StatusOK, announcements)
+}
+
+func GetAnnouncement(ctx *macaron.Context) {
+    var res Category
+
+    r, err := http.Get("https://forums.spongepowered.org/c/announcements.json?order=created")
     if err != nil {
-        ctx.Error(http.StatusInternalServerError, "Can't access the second topic!")
+        ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
         return
     }
 
-    ctx.JSON(http.StatusOK, &AnnouncementView{
-        First: first,
-        Second: second,
-    })
+    err = json.NewDecoder(r.Body).Decode(&res)
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
+        return
+    }
+
+    var topics []Topic = res.TopicList.GetRegularTopics()
+
+    topicId, err := strconv.ParseInt(ctx.Params(":topic"), 2, 64)
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Failed to get announcement id!")
+        return
+    }
+
+    announcement, err := getAnnouncement(topics[topicId])
+    if err != nil {
+        ctx.Error(http.StatusInternalServerError, "Failed to get announcement!")
+        return
+    }
+
+    ctx.JSON(http.StatusOK, announcement)
+}
+
+func getAnnouncements(topics []Topic) ([]Announcement, error) {
+    var announcements []Announcement = []Announcement{}
+
+    for _, topic := range topics {
+        announcement, err := getAnnouncement(topic)
+        if err != nil {
+            return nil, err
+        } else {
+            announcements = append(announcements, announcement)
+        }
+    }
+
+    return announcements, nil
 }
 
 func getAnnouncement(topic Topic) (Announcement, error) {
