@@ -4,6 +4,9 @@ SpongeHome
 The Sponge Project [website](https://www-staging.spongepowered.org/), licensed
 under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
+### Branches:
+* `master` is hooked up to [www staging](https://www-staging.spongepowered.org/)
+* `production` is hooked up to [www prod](https://www.spongepowered.org/)
 ## Running locally
 
 ### 1. Prerequisites

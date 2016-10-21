@@ -28,8 +28,8 @@ package main
 import (
 	"fmt"
 	"github.com/SpongePowered/SpongeHome/controllers"
-	"github.com/go-macaron/pongo2"
 	"github.com/go-macaron/gzip"
+	"github.com/go-macaron/pongo2"
 	"github.com/sethvargo/go-fastly"
 	"gopkg.in/macaron.v1"
 	"os"

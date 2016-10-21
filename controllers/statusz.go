@@ -29,15 +29,21 @@ import (
 	"gopkg.in/macaron.v1"
 	"net/http"
 	"os"
+	"regexp"
 )
 
 func GetStatusz(ctx *macaron.Context) {
+	r, _  := regexp.Compile("-[0-9][0-9]*$")
+	s, _  := regexp.Compile("[0-9][0-9]*$")
+	buildnum := s.FindString(os.Getenv("OPENSHIFT_BUILD_NAME"))
+	jobname := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + r.ReplaceAllString(os.Getenv("OPENSHIFT_BUILD_NAME"),"")
+	buildtag := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + os.Getenv("OPENSHIFT_BUILD_NAME")
 	ctx.JSON(http.StatusOK, map[string]string{
-		"BUILD_NUMBER": os.Getenv("BUILD_NUMBER"),
-		"GIT_BRANCH":   os.Getenv("GIT_BRANCH"),
-		"GIT_COMMIT":   os.Getenv("GIT_COMMIT"),
-		"JOB_NAME":     os.Getenv("JOB_NAME"),
-		"BUILD_TAG":    os.Getenv("BUILD_TAG"),
+		"BUILD_NUMBER": buildnum,
+		"GIT_BRANCH":   os.Getenv("OPENSHIFT_BUILD_REFERENCE"),
+		"GIT_COMMIT":   os.Getenv("OPENSHIFT_BUILD_COMMIT"),
+		"JOB_NAME":     jobname,
+		"BUILD_TAG":    buildtag,
 		"SPONGE_ENV":   os.Getenv("SPONGE_ENV"),
 		"SERVICE":      "SpongeHome",
 	})
