@@ -4,9 +4,11 @@ SpongeHome
 The Sponge Project [website](https://www-staging.spongepowered.org/), licensed
 under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
-### Branches:
-* `master` is hooked up to [www staging](https://www-staging.spongepowered.org/)
-* `production` is hooked up to [www prod](https://www.spongepowered.org/)
+### Branches
+
+- `master` is hooked up to [www staging](https://www-staging.spongepowered.org/)
+- `production` is hooked up to [www prod](https://www.spongepowered.org/)
+
 ## Running locally
 
 ### 1. Prerequisites
@@ -42,7 +44,7 @@ files as you edit them.
 ### 5. Running the application
 
 To run SpongeHome, you can run `go run spongehome.go` in terminal, or the
-command line.
+command line. SpongeHome will now be running locally on port 4000.
 
 **NOTE:** You will need to rerun this when you make a change to the Golang
 source.
