@@ -21,12 +21,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-.intro-text .logo {
-  height: 256px;
-  width: 256px;
-  padding: 28px;
-}
-
 #header-index {
   padding-top: 4em;
   padding-bottom: 0;
@@ -36,6 +30,12 @@
   img {
     display: block;
     margin: 0 auto 20px;
+  }
+
+  .logo {
+    height: 256px;
+    width: 256px;
+    padding: 28px;
   }
 
   .intro-text {

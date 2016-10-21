@@ -107,31 +107,6 @@ section {
     }
   }
 
-  &#irc {
-    background-attachment: fixed;
-    background-image: url(../img/backgrounds/irc.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: $sponge_dark_grey;
-
-    .intro-text {
-      justify-content: center;
-      align-items: center;
-      padding: 2em 0;
-    }
-
-    @media (min-width: 1200px) {
-      .intro-text {
-        display: flex;
-      }
-    }
-
-    h1 {
-      color: $sponge_dark_grey;
-      font-size: 3em;
-    }
-  }
-
   &#social {
     background-attachment: fixed;
     background-color: #f2f2f2;

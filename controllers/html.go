@@ -32,6 +32,7 @@ import (
 
 func html(ctx *macaron.Context, file string, page string, title string) {
 	ctx.Data["title"] = title
+	ctx.Data["page"] = page
 	ctx.Data["menu"] = map[string]interface{}{page: "active"}
 	ctx.HTML(http.StatusOK, file)
 }
