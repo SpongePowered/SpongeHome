@@ -36,7 +36,7 @@ func GetStatusz(ctx *macaron.Context) {
 	r, _  := regexp.Compile("-[0-9][0-9]*$")
 	s, _  := regexp.Compile("[0-9][0-9]*$")
 	buildnum := s.FindString(os.Getenv("OPENSHIFT_BUILD_NAME"))
-	jobname := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + r.ReplaceAllString(os.Getenv("OPENSHIFT_BUILD_NAME"),"")
+	jobname := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + r.ReplaceAllString(os.Getenv("OPENSHIFT_BUILD_NAME"),"")
 	buildtag := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + os.Getenv("OPENSHIFT_BUILD_NAME")
 	ctx.JSON(http.StatusOK, map[string]string{
 		"BUILD_NUMBER": buildnum,
