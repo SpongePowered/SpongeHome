@@ -32,18 +32,21 @@ import (
 	"regexp"
 )
 
+var (
+	buildNameRe = regexp.MustCompile(`^(.+)-([0-9]+)$`)
+)
+
 func GetStatusz(ctx *macaron.Context) {
-	r, _  := regexp.Compile("-[0-9][0-9]*$")
-	s, _  := regexp.Compile("[0-9][0-9]*$")
-	buildnum := s.FindString(os.Getenv("OPENSHIFT_BUILD_NAME"))
-	jobname := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + r.ReplaceAllString(os.Getenv("OPENSHIFT_BUILD_NAME"),"")
-	buildtag := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + os.Getenv("OPENSHIFT_BUILD_NAME")
+	buildNamePieces := buildNameRe.FindStringSubmatch(os.Getenv("OPENSHIFT_BUILD_NAME"))
+	jobName := buildNamePieces[1]
+	buildNum := buildNamePieces[2]
+	buildTag := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + os.Getenv("OPENSHIFT_BUILD_NAME")
 	ctx.JSON(http.StatusOK, map[string]string{
-		"BUILD_NUMBER": buildnum,
+		"BUILD_NUMBER": buildNum,
 		"GIT_BRANCH":   os.Getenv("OPENSHIFT_BUILD_REFERENCE"),
 		"GIT_COMMIT":   os.Getenv("OPENSHIFT_BUILD_COMMIT"),
-		"JOB_NAME":     jobname,
-		"BUILD_TAG":    buildtag,
+		"JOB_NAME":     jobName,
+		"BUILD_TAG":    buildTag,
 		"SPONGE_ENV":   os.Getenv("SPONGE_ENV"),
 		"SERVICE":      "SpongeHome",
 	})
