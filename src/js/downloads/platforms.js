@@ -23,38 +23,29 @@
  * THE SOFTWARE.
  */
 
-import Announcement from 'Announcement.vue'
-import Platforms from 'downloads/Platforms.vue'
-import {Platforms as PlatformData} from 'downloads/platforms'
-
-// Dummy router-link for index page, uses vue-router on downloads page
-Vue.component('router-link', {
-    props: {
-        to: [String, Object],
-        tag: {
-            type: String,
-            default: 'a'
-        }
+export const Platforms = {
+    spongevanilla: {
+        id: 'spongevanilla',
+        name: "SpongeVanilla",
+        suffix: "Vanilla",
+        description: "SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.",
+        recommendation: "Recommended for running plugins without Forge mods.",
+        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/"
     },
-    render(create) {
-        return create(this.tag, {attrs:{href: PlatformData[this.to.params.project].url}}, this.$slots.default)
+    spongeforge: {
+        id: 'spongeforge',
+        name: "SpongeForge",
+        suffix: "Forge",
+        description: "SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.",
+        recommendation: "Recommended for running plugins together with Forge mods.",
+        url: "http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/"
+    },
+    spongeapi: {
+        id: 'spongeapi',
+        name: "SpongeAPI",
+        suffix: "API",
+        description: "SpongeAPI is the tool developers use to create plugins for the Sponge platform.",
+        recommendation: "Recommended for plugin developers.",
+        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/"
     }
-});
-
-new Vue({
-    el: '#content',
-    data: {
-        announcements: null
-    },
-    created() {
-        this.$http.get('/announcements.json').then(response => {
-            this.announcements = response.body
-        }, () => {
-            console.log("Failed to load announcements"); // TODO
-        });
-    },
-    components: {
-        announcement: Announcement,
-        platforms: Platforms
-    }
-});
+};

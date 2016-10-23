@@ -23,38 +23,62 @@
  * THE SOFTWARE.
  */
 
-import Announcement from 'Announcement.vue'
-import Platforms from 'downloads/Platforms.vue'
-import {Platforms as PlatformData} from 'downloads/platforms'
+// Hide all unprocessed router links (e.g. when Vue is still loading)
+router-link {
+  display: none;
+}
 
-// Dummy router-link for index page, uses vue-router on downloads page
-Vue.component('router-link', {
-    props: {
-        to: [String, Object],
-        tag: {
-            type: String,
-            default: 'a'
-        }
-    },
-    render(create) {
-        return create(this.tag, {attrs:{href: PlatformData[this.to.params.project].url}}, this.$slots.default)
-    }
-});
+#downloads {
+  i {
+    margin-right: 5px;
+  }
 
-new Vue({
-    el: '#content',
-    data: {
-        announcements: null
-    },
-    created() {
-        this.$http.get('/announcements.json').then(response => {
-            this.announcements = response.body
-        }, () => {
-            console.log("Failed to load announcements"); // TODO
-        });
-    },
-    components: {
-        announcement: Announcement,
-        platforms: Platforms
+  h3 {
+    font-size: 3em;
+
+    &> span {
+      display: inline-block;
     }
-});
+  }
+
+  .description {
+    @media (min-width: 768px) {
+      height: 100px;
+    }
+  }
+
+  .platform-badge {
+    margin: auto;
+  }
+
+  .recommendation {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.platform-badge {
+  display: block;
+  width: 6em;
+  padding: 5px;
+
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+
+  color: white;
+  font-size: 0.5em;
+  font-weight: normal;
+  text-align: center;
+
+  &.spongevanilla {
+    background-color: #917300;
+  }
+
+  &.spongeforge {
+    background-color: #910020;
+  }
+
+  &.spongeapi {
+    background-color: #009172;
+  }
+}

@@ -76,7 +76,7 @@ THE SOFTWARE.
                 <a href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i><p>Code</p></a>
             </div>
             <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="/downloads"><i class="fa-fw fa fa-download"></i><p>Get Sponge</p></a>
+                <a href="#downloads"><i class="fa-fw fa fa-download"></i><p>Downloads</p></a>
             </div>
             <div class="col-xs-6 col-md-2 col-sm-4">
                 <a href="https://docs.spongepowered.org/"><i class="fa-fw fa fa-book"></i><p>SpongeDocs</p></a>
@@ -180,29 +180,15 @@ THE SOFTWARE.
     </div>
 </section>
 
-<!-- Downloads Section -->
+<!-- Download Section -->
 <section id="downloads">
     <div class="container">
-        <h2 class="row text-center">Get Sponge</h2>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-forge.png" alt="SpongeForge" style="width: 100%" />
-                <p>SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.</p>
-                <a class="btn btn-primary styled-btn" href="http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/">
-                    Download SpongeForge</a>
-            </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-api.png" alt="SpongeAPI" style="width: 100%" />
-                <p>SpongeAPI is the tool developers use to create plugins for the Sponge platform.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/?buildTypeId=4">
-                    Download SpongeAPI</a>
-            </div>
-            <div class="col-md-4">
-                <img src="/assets/img/icons/sponge-vanilla.png" alt="SpongeVanilla" style="width: 100%" />
-                <p>SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.</p>
-                <a class="btn btn-primary styled-btn" href="https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/">
-                    Download SpongeVanilla</a>
-            </div>
+        <h2 class="row">Downloads</h2>
+        <platforms></platforms>
+
+        <div v-if="false" v-once>
+            <h4>Loading...</h4>
+            <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
         </div>
     </div>
 </section>
