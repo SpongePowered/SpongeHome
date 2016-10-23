@@ -31,10 +31,10 @@ specifically the ones provided in the ``/public/assets/img`` folder and its
 subfolders. The sponsor logos are used with permission and according to their license.
 
 The non-original code in this project includes
-``src/js/jquery.truncate.js`` and ``src/js/jquery.truncate.min.js``,
-which are part of the truncate library, licensed under the following terms:
+``src/js/trunk8.js`` which are part of the trunk8 library,
+licensed under the following terms:
 
->Copyright (c) 2010-2012 Pathable
+>Copyright (c) 2012 Rick Viscomi (rviscomi@gmail.com)
 >
 >Permission is hereby granted, free of charge, to any person
 >obtaining a copy of this software and associated documentation

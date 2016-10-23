@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 {% endcomment %}
 
-{% extends "base.html" %}
+{% extends "vue.html" %}
 
 {% block links %}
 <li class="page-scroll"><a href="#news">News</a></li>
@@ -99,26 +99,16 @@ THE SOFTWARE.
                 <h2>News</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ first.title }}</h3>
-                    <article class="announcement" v-html="first.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="first.url">Continue Reading</a></h4>
-                </div>
+
+        <div class="row" id="announcements">
+            <div v-if="announcements">
+                <announcement :a="announcements.first"></announcement>
+                <announcement :a="announcements.second"></announcement>
             </div>
-            <div class="col-lg-6">
-                <div>
-                    {% verbatim %}
-                    <h3>{{ second.title }}</h3>
-                    <article class="announcement" v-html="second.content"></article>
-                    {% endverbatim %}
-                    <br>
-                    <h4><a :href="second.url">Continue Reading</a></h4>
-                </div>
+
+            <div v-else>
+                <h3>Loading...</h3>
+                <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
             </div>
         </div>
     </div>
@@ -263,46 +253,4 @@ THE SOFTWARE.
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
-<script src="/assets/js/jquery.truncate.min.js"></script>
-<script>
-    new Vue({
-        el: '#news',
-        data: {
-            first: {
-                title: 'Loading...',
-                content: 'Hello, World!',
-                url: 'https://forums.spongepowered.org'
-            },
-            second: {
-                title: 'Loading...',
-                content: 'Hello, World!',
-                url: 'https://forums.spongepowered.org'
-            }
-        },
-        created: function () {
-            this.fetchData()
-        },
-        methods: {
-            fetchData: function () {
-                var self = this;
-                $.get('/announcements.json', function (data) {
-                    self.first = {
-                        title: data.first.title,
-                        content: jQuery.truncate(data.first.content, 450),
-                        url: data.first.link
-                    };
-                    self.second = {
-                        title: data.second.title,
-                        content: jQuery.truncate(data.second.content, 450),
-                        url: data.second.link
-                    };
-                });
-            }
-        }
-    });
-</script>
 {% endblock %}

@@ -36,7 +36,7 @@ gulp.task('js', ()  =>
 );
 
 const runWebpack = (env) =>
-    gulp.src([])
+    gulp.src(['./src/js/index.js'])
         .pipe(named())
         .pipe(gulpWebpack(require('./webpack.config.js')(env), webpack))
         .pipe(gulp.dest('./public/assets/js'));

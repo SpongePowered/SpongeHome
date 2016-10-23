@@ -79,7 +79,7 @@ type AnnouncementView struct {
 type Announcement struct {
 	Title   string `json:"title"`
 	Content string `json:"content"`
-	Link    string `json:"link"`
+	URL     string `json:"url"`
 }
 
 func GetAnnouncements(ctx *macaron.Context) {
@@ -133,6 +133,6 @@ func getAnnouncement(topic Topic) (Announcement, error) {
 	return Announcement{
 		Title:   topic.Title,
 		Content: res.PostStream.Posts[0].Cooked,
-		Link:    "https://forums.spongepowered.org/t/" + topic.Slug,
+		URL:     "https://forums.spongepowered.org/t/" + topic.Slug,
 	}, nil
 }
