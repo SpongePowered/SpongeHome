@@ -26,28 +26,28 @@ THE SOFTWARE.
 {% extends "base.html" %}
 
 {% block links %}
-<li class="page-scroll"><a href="#announcements">News</a></li>
+<li class="page-scroll"><a href="#news">News</a></li>
 <li class="page-scroll"><a href="#downloads">Downloads</a></li>
 <li class="page-scroll"><a href="#about">About</a></li>
 {% endblock %}
 
 {% block content %}
 <!-- Header -->
-<header id="header-index">
+<header v-pre>
     <div class="container">
-        <div id="main-display" class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 text-center">
+        <div id="main-display" class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12">
             <div class="row">
                 <div class="col-lg-4 col-md-3">
                     <img src="/assets/img/icons/spongie-mark-dark.svg" alt="Sponge Logo" class="logo" />
                 </div>
                 <div class="intro-text col-lg-8 col-lg-offset-0 col-md-6 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <h1 class="name">Sponge</h1>
-                    <span class="skills">A community-driven open source Minecraft modding platform.</span>
+                    <p class="skills">A community-driven open source Minecraft modding platform.</p>
                 </div>
             </div>
         </div>
         <div id="sponsors-display" class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-0 col-sm-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center"><h2>Our Sponsors</h2></div>
+            <div class="col-lg-12 col-md-12 col-sm-12"><h2>Our Sponsors</h2></div>
 
             {% for sponsor in sponsors %}
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
@@ -56,7 +56,7 @@ THE SOFTWARE.
                 </a>
             </div>
             {% endfor %}
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <a href="/sponsors" class="btn btn-primary">
                     Interested in sponsoring Sponge?
                 </a>
@@ -66,9 +66,9 @@ THE SOFTWARE.
 </header>
 
 <!-- Quicklinks Section -->
-<section id="offsite-links">
+<section id="offsite-links" v-pre>
     <div class="container">
-        <div class="row text-center">
+        <div class="row">
             <div class="col-xs-6 col-md-2 col-sm-4">
                 <a href="https://forums.spongepowered.org/"><i class="fa-fw fa fa-comment"></i><p>Forums</p></a>
             </div>
@@ -76,7 +76,7 @@ THE SOFTWARE.
                 <a href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i><p>Code</p></a>
             </div>
             <div class="col-xs-6 col-md-2 col-sm-4">
-                <a href="#downloads"><i class="fa-fw fa fa-download"></i><p>Get Sponge</p></a>
+                <a href="/downloads"><i class="fa-fw fa fa-download"></i><p>Get Sponge</p></a>
             </div>
             <div class="col-xs-6 col-md-2 col-sm-4">
                 <a href="https://docs.spongepowered.org/"><i class="fa-fw fa fa-book"></i><p>SpongeDocs</p></a>
@@ -91,11 +91,11 @@ THE SOFTWARE.
     </div>
 </section>
 
-<!-- Announcements Section -->
-<section id="announcements">
+<!-- News Section -->
+<section id="news">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12">
                 <h2>News</h2>
             </div>
         </div>
@@ -125,20 +125,19 @@ THE SOFTWARE.
 </section>
 
 <!-- Contribute Section -->
-<section id="contribute">
+<section id="contribute" v-pre>
+    <div class="dark"></div>
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12">
                 <h2>Contribute</h2>
-                <br>
                 <h3>There are a number of ways you can contribute to Sponge:</h3>
-                <br>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4">
                 <h4>Code</h4>
-                <br>
                 <p>
                     Are you a Java programmer? Want to contribute to the most ground-breaking project the Minecraft
                     community has ever seen, or just love testing stuff to destruction and then writing long and
@@ -147,9 +146,8 @@ THE SOFTWARE.
                 <a class="btn btn-outline" href="https://docs.spongepowered.org/en/contributing/index.html">
                     Getting Started Documentation</a>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4">
                 <h4>Docs</h4>
-                <br>
                 <p>
                     Coding isn't your thing but you love helping others, get a thrill from hammering out the perfect
                     prose, or just love nit-picking other peoples' grammar? Our fearsome and frankly unstoppable
@@ -158,9 +156,8 @@ THE SOFTWARE.
                 </p>
                 <a class="btn btn-outline" href="https://github.com/SpongePowered/SpongeDocs">SpongeDocs</a>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4">
                 <h4>Forums</h4>
-                <br>
                 <p>
                     Looking for something more casual? Somewhere you can hang out with fellow Spongeoneers?
                     Critique new plugin ideas and help people out with Sponge? Look no further than the
@@ -171,22 +168,22 @@ THE SOFTWARE.
                 <a class="btn btn-outline" href="https://forums.spongepowered.org/">Sponge Forums</a>
             </div>
         </div>
-        <br>
+
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12">
                 <h3>Not enough?</h3>
-                <br>
                 <p>
                     Want to give us more than your time? You can also give us your money!
                     We promise not to just buy jaffa cakes with it.
                 </p>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-lg-4 text-center col-lg-offset-2">
+            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2">
                 <a class="btn btn-outline" href="https://www.patreon.com/Sponge"><i class="fa fa-money"></i> Become a Patron</a>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 col-md-4">
                 <a class="btn btn-outline" href="/sponsors">Become a Sponsor</a>
             </div>
         </div>
@@ -221,9 +218,9 @@ THE SOFTWARE.
 </section>
 
 <!-- About Section -->
-<section id="about">
+<section id="about" v-pre>
     <div class="container">
-        <div class="row col-lg-12 text-center">
+        <div class="row col-lg-12">
             <h2>About</h2>
         </div>
         <div class="row">
@@ -250,18 +247,18 @@ THE SOFTWARE.
 
 
 <!-- Social Section -->
-<section id="social">
-    <div id="socialIcons" class="text-center container">
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
+<section id="social" v-pre>
+    <div id="social-icons" class="container">
+        <div class="col-lg-3 col-xs-6 col-sm-3">
             <a href="https://twitter.com/spongepowered" title="Twitter"><i class="fa fa-fw fa-twitter fa-3x" aria-hidden="true"></i></a>
         </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
+        <div class="col-lg-3 col-xs-6 col-sm-3">
             <a href="https://www.facebook.com/SpongePoweredMC/" title="Facebook"><i class="fa fa-fw fa-facebook fa-3x" aria-hidden="true"></i></a>
         </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
+        <div class="col-lg-3 col-xs-6 col-sm-3">
             <a href="https://www.reddit.com/r/spongeproject" title="Reddit"><i class="fa fa-fw fa-reddit fa-3x" aria-hidden="true"></i></a>
         </div>
-        <div class="col-lg-3 col-xs-6 col-sm-3 text-center">
+        <div class="col-lg-3 col-xs-6 col-sm-3">
             <a href="https://www.twitch.tv/spongepowered" title="Twitch"><i class="fa fa-fw fa-twitch fa-3x" aria-hidden="true"></i></a>
         </div>
     </div>
@@ -273,7 +270,7 @@ THE SOFTWARE.
 <script src="/assets/js/jquery.truncate.min.js"></script>
 <script>
     new Vue({
-        el: '#announcements',
+        el: '#news',
         data: {
             first: {
                 title: 'Loading...',

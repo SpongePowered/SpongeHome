@@ -23,66 +23,90 @@
  * THE SOFTWARE.
  */
 
-html, body {
-  height: 100%;
-}
+#index-page {
+  header {
+    padding-top: 4em;
+    padding-bottom: 0;
 
-#top {
-  position: absolute;
-  top: 0;
-  visibility: hidden;
-}
+    text-align: center;
 
-body {
-  color: $sponge_grey;
+    img {
+      display: block;
+      margin: 0 auto 20px;
+    }
 
-  position: relative;
-  overflow-x: hidden;
-  max-width: 1920px;
-  margin: 0 auto;
-}
+    .logo {
+      height: 256px;
+      width: 256px;
+      padding: 28px;
+    }
 
-p {
-  font-size: 20px;
+    .intro-text {
+      .name {
+        color: $sponge_dark_grey;
+        font-size: 3em;
+        padding-top: 0.4em;
+      }
 
-  &.small {
-    font-size: 16px;
+      .skills {
+        font-size: 1.5em;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 40px 0;
+      }
+
+      .intro-text {
+        .name {
+          font-size: 4.75em;
+        }
+
+        .skills {
+          font-size: 1.75em;
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    #main-display {
+      display: flex;
+      align-items: center;
+
+      @media (min-width: 992px) {
+        &.col-lg-8 {
+          width: 66% !important;
+        }
+      }
+    }
+
+    #sponsors-display {
+      padding: 1.5em 0;
+
+      img {
+        width: 95%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
-}
 
-a {
-  color: $sponge_yellow;
-  outline: 0;
-
-  &:hover, &:focus, &:active, &.active {
-    color: $sponge_yellow;
-    outline: 0;
+  h2 {
+    // Larger section titles
+    font-size: 39px;
   }
-}
 
-.container {
-  max-width: 1110px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @extend .sponge-headline;
-}
-
-.btn {
-  &:focus, &:active, &.active {
-    outline: 0;
-  }
-}
-
-.btn-outline {
-  background: none;
-  color: #fff;
-  margin-top: 15px;
-  border: solid 2px #fff;
-  transition: all .3s ease-in-out;
-
-  &:hover, &:focus, &:active, &.active {
-    color: $sponge_yellow;
-    background-color: white;
+  #main-content {
+    text-align: center;
   }
 }

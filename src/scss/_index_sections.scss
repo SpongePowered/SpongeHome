@@ -1,0 +1,189 @@
+/*
+ * This file is part of SpongeHome, licensed under the MIT License (MIT).
+ *
+ * Copyright (c) SpongePowered <https://www.spongepowered.org>
+ * Copyright (c) contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+#index-page section {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+  @media (max-width: 767px) {
+    padding: 75px 0;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
+}
+
+#offsite-links, #social {
+  // Override 40px global padding
+  padding: 20px 0 !important;
+}
+
+#offsite-links {
+  background-color: #f2f2f2;
+
+  i {
+    font-size: 3em;
+  }
+  
+  a {
+    color: rgba(17, 17, 17, 0.6);
+    text-decoration: none;
+
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: #111;
+    }
+  }
+}
+
+#news {
+  text-align: left;
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .continue-reading {
+    margin-top: 30px;
+  }
+
+  article {
+    text-align: justify;
+
+    p {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 1.4em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    .emoji {
+      height: 1.1em;
+    }
+  }
+}
+
+#contribute, #about {
+  background-attachment: fixed;
+  background-image: url(../img/backgrounds/about.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: white;
+}
+
+#contribute {
+  // Slightly darker background for contribute section
+  position: relative;
+
+  .dark {
+    content: '';
+
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    // Add space before main headlines
+    margin-top: 40px;
+  }
+
+  h4 {
+    // Make Code/Docs/Forums larger
+    font-size: 39px;
+  }
+
+  p, h4 {
+    // Add space after the headlines
+    margin-top: 33px;
+  }
+
+  .btn {
+    font-family: $sponge_headline_font;
+  }
+}
+
+#about {
+  p {
+    padding: 0 10px;
+    text-align: justify;
+  }
+
+  img {
+    @media (max-width: 1180px) {
+      margin: 50px auto;
+    }
+  }
+}
+
+#social {
+  background-color: #f2f2f2;
+  color: $sponge_dark_grey;
+}
+
+#social-icons {
+  div {
+    margin: 20px 0;
+  }
+
+  i {
+    transition: color .2s ease-in-out;
+  }
+
+  a {
+    transition: background .2s ease-in-out;
+
+    border-radius: 8px;
+    padding: 40px 20px 20px;
+
+    color: $sponge_grey;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .2);
+    }
+
+    &:hover i {
+      color: $sponge_yellow;
+    }
+  }
+}
