@@ -31,7 +31,7 @@ specifically the ones provided in the ``/public/assets/img`` folder and its
 subfolders. The sponsor logos are used with permission and according to their license.
 
 The non-original code in this project includes
-``public/assets/js/jquery.truncate.js`` and ``public/assets/js/jquery.truncate.min.js``,
+``src/js/jquery.truncate.js`` and ``src/js/jquery.truncate.min.js``,
 which are part of the truncate library, licensed under the following terms:
 
 >Copyright (c) 2010-2012 Pathable

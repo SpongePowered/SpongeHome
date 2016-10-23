@@ -133,3 +133,5 @@ fabric.properties
 
 ### SpongeHome ###
 spongehome
+public/assets/css/
+public/assets/js/

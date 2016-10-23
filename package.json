@@ -11,13 +11,23 @@
     "url": "https://github.com/SpongePowered/SpongeHome/issues"
   },
   "homepage": "https://github.com/SpongePowered/SpongeHome",
-  "dependencies": {},
+  "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
     "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.1.7",
+    "gulp-clean-css": "^2.0.13",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^2.0.0",
+    "vinyl-named": "^1.1.0",
+    "vue-loader": "^9.7.0",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-stream": "^3.2.0"
   },
-  "license": "MIT"
+  "scripts": {
+    "gulp": "gulp"
+  }
 }

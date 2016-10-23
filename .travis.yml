@@ -1,0 +1,22 @@
+language: node_js
+node_js: 'node'
+
+env:
+  global:
+    - GIMME_GO_VERSION=1.7.3
+    - GOPATH=$HOME/go
+    - GO_PROJECT=github.com/SpongePowered/SpongeHome
+    - GO_PROJECT_DIR=$GOPATH/src/$GO_PROJECT
+
+before_install:
+  - eval "$(gimme)"
+  - mkdir -p `dirname $GO_PROJECT_DIR`
+  - ln -s $TRAVIS_BUILD_DIR $GO_PROJECT_DIR
+
+install:
+  - go get -d -t -v $GO_PROJECT
+  - npm install
+
+script:
+  - go install $GO_PROJECT
+  - npm run gulp
