@@ -23,51 +23,16 @@
  * THE SOFTWARE.
  */
 
-package controllers
+@import "sponge_variables";
+@import "spongebootstrap";
 
-import "gopkg.in/macaron.v1"
+@import "base";
+@import "header";
+@import "topbar";
+@import "footer";
 
-var (
-	Sponsors = []Sponsor{
-		{
-			Name:  "MC Pro Hosting",
-			Image: "/assets/img/sponsors/mcprohosting.png",
-			Link:  "https://mcprohosting.com/?promo=Sponge",
-		},
-		{
-			Name:  "CreeperHost",
-			Image: "/assets/img/sponsors/creeperhost.svg",
-			Link:  "https://billing.creeperhost.net/link.php?id=8",
-		},
-		{
-			Name:  "Enjin",
-			Image: "/assets/img/sponsors/enjin.png",
-			Link:  "https://www.enjin.com/",
-		},
-		{
-			Name:  "BeastNode",
-			Image: "/assets/img/sponsors/beastnode.png",
-			Link:  "https://www.beastnode.com/",
-		},
-	}
-)
-
-type Sponsor struct {
-	Name  string
-	Image string
-	Link  string
-}
-
-func GetHomepage(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "index", "index", "Sponge - Minecraft Modding API")
-}
-
-func GetSponsors(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "sponsors", "sponsors", "Sponge - Sponsoring")
-}
-
-func GetChat(ctx *macaron.Context) {
-	html(ctx, "chat", "chat", "Sponge - Chat")
-}
+@import "index";
+@import "index_sections";
+@import "sponsors";
+@import "chat";
+@import "downloads";

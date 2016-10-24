@@ -26,11 +26,16 @@
 package controllers
 
 import (
-	"net/http"
 	"gopkg.in/macaron.v1"
+	"net/http"
 )
 
 func html(ctx *macaron.Context, file string, page string, title string) {
+	ctx.Data["min"] = ""
+	if macaron.Env == macaron.PROD {
+		ctx.Data["min"] = ".min"
+	}
+
 	ctx.Data["title"] = title
 	ctx.Data["page"] = page
 	ctx.Data["menu"] = map[string]interface{}{page: "active"}

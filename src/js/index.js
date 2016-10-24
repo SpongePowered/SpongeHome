@@ -23,51 +23,38 @@
  * THE SOFTWARE.
  */
 
-package controllers
+import Announcement from 'Announcement.vue'
+import Platforms from 'downloads/Platforms.vue'
+import {Platforms as PlatformData} from 'downloads/platforms'
 
-import "gopkg.in/macaron.v1"
+// Dummy router-link for index page, uses vue-router on downloads page
+Vue.component('router-link', {
+    props: {
+        to: [String, Object],
+        tag: {
+            type: String,
+            default: 'a'
+        }
+    },
+    render(create) {
+        return create(this.tag, {attrs:{href: PlatformData[this.to.params.project].url}}, this.$slots.default)
+    }
+});
 
-var (
-	Sponsors = []Sponsor{
-		{
-			Name:  "MC Pro Hosting",
-			Image: "/assets/img/sponsors/mcprohosting.png",
-			Link:  "https://mcprohosting.com/?promo=Sponge",
-		},
-		{
-			Name:  "CreeperHost",
-			Image: "/assets/img/sponsors/creeperhost.svg",
-			Link:  "https://billing.creeperhost.net/link.php?id=8",
-		},
-		{
-			Name:  "Enjin",
-			Image: "/assets/img/sponsors/enjin.png",
-			Link:  "https://www.enjin.com/",
-		},
-		{
-			Name:  "BeastNode",
-			Image: "/assets/img/sponsors/beastnode.png",
-			Link:  "https://www.beastnode.com/",
-		},
-	}
-)
-
-type Sponsor struct {
-	Name  string
-	Image string
-	Link  string
-}
-
-func GetHomepage(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "index", "index", "Sponge - Minecraft Modding API")
-}
-
-func GetSponsors(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "sponsors", "sponsors", "Sponge - Sponsoring")
-}
-
-func GetChat(ctx *macaron.Context) {
-	html(ctx, "chat", "chat", "Sponge - Chat")
-}
+new Vue({
+    el: '#content',
+    data: {
+        announcements: null
+    },
+    created() {
+        this.$http.get('/announcements.json').then(response => {
+            this.announcements = response.body
+        }, () => {
+            console.log("Failed to load announcements"); // TODO
+        });
+    },
+    components: {
+        announcement: Announcement,
+        platforms: Platforms
+    }
+});

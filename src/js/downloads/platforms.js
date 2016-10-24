@@ -23,51 +23,29 @@
  * THE SOFTWARE.
  */
 
-package controllers
-
-import "gopkg.in/macaron.v1"
-
-var (
-	Sponsors = []Sponsor{
-		{
-			Name:  "MC Pro Hosting",
-			Image: "/assets/img/sponsors/mcprohosting.png",
-			Link:  "https://mcprohosting.com/?promo=Sponge",
-		},
-		{
-			Name:  "CreeperHost",
-			Image: "/assets/img/sponsors/creeperhost.svg",
-			Link:  "https://billing.creeperhost.net/link.php?id=8",
-		},
-		{
-			Name:  "Enjin",
-			Image: "/assets/img/sponsors/enjin.png",
-			Link:  "https://www.enjin.com/",
-		},
-		{
-			Name:  "BeastNode",
-			Image: "/assets/img/sponsors/beastnode.png",
-			Link:  "https://www.beastnode.com/",
-		},
-	}
-)
-
-type Sponsor struct {
-	Name  string
-	Image string
-	Link  string
-}
-
-func GetHomepage(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "index", "index", "Sponge - Minecraft Modding API")
-}
-
-func GetSponsors(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "sponsors", "sponsors", "Sponge - Sponsoring")
-}
-
-func GetChat(ctx *macaron.Context) {
-	html(ctx, "chat", "chat", "Sponge - Chat")
-}
+export const Platforms = {
+    spongevanilla: {
+        id: 'spongevanilla',
+        name: "SpongeVanilla",
+        suffix: "Vanilla",
+        description: "SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.",
+        recommendation: "Recommended for running plugins without Forge mods.",
+        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/"
+    },
+    spongeforge: {
+        id: 'spongeforge',
+        name: "SpongeForge",
+        suffix: "Forge",
+        description: "SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.",
+        recommendation: "Recommended for running plugins together with Forge mods.",
+        url: "http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/"
+    },
+    spongeapi: {
+        id: 'spongeapi',
+        name: "SpongeAPI",
+        suffix: "API",
+        description: "SpongeAPI is the tool developers use to create plugins for the Sponge platform.",
+        recommendation: "Recommended for plugin developers.",
+        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/"
+    }
+};

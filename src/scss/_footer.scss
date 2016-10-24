@@ -23,51 +23,31 @@
  * THE SOFTWARE.
  */
 
-package controllers
+footer {
+  color: #fff;
+  text-align: center;
 
-import "gopkg.in/macaron.v1"
+  h3 {
+    margin-bottom: 30px;
+  }
 
-var (
-	Sponsors = []Sponsor{
-		{
-			Name:  "MC Pro Hosting",
-			Image: "/assets/img/sponsors/mcprohosting.png",
-			Link:  "https://mcprohosting.com/?promo=Sponge",
-		},
-		{
-			Name:  "CreeperHost",
-			Image: "/assets/img/sponsors/creeperhost.svg",
-			Link:  "https://billing.creeperhost.net/link.php?id=8",
-		},
-		{
-			Name:  "Enjin",
-			Image: "/assets/img/sponsors/enjin.png",
-			Link:  "https://www.enjin.com/",
-		},
-		{
-			Name:  "BeastNode",
-			Image: "/assets/img/sponsors/beastnode.png",
-			Link:  "https://www.beastnode.com/",
-		},
-	}
-)
+  .footer-above {
+    background-color: $sponge_grey;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-type Sponsor struct {
-	Name  string
-	Image string
-	Link  string
+  .footer-below {
+    background-color: #262626;
+    padding: 15px 0;
+    font-size: 0.8em;
+
+    p {
+      font-size: 1em;
+    }
+  }
 }
 
-func GetHomepage(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "index", "index", "Sponge - Minecraft Modding API")
-}
-
-func GetSponsors(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "sponsors", "sponsors", "Sponge - Sponsoring")
-}
-
-func GetChat(ctx *macaron.Context) {
-	html(ctx, "chat", "chat", "Sponge - Chat")
+#fastly {
+  margin: 0;
 }

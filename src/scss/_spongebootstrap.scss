@@ -23,51 +23,40 @@
  * THE SOFTWARE.
  */
 
-package controllers
-
-import "gopkg.in/macaron.v1"
-
-var (
-	Sponsors = []Sponsor{
-		{
-			Name:  "MC Pro Hosting",
-			Image: "/assets/img/sponsors/mcprohosting.png",
-			Link:  "https://mcprohosting.com/?promo=Sponge",
-		},
-		{
-			Name:  "CreeperHost",
-			Image: "/assets/img/sponsors/creeperhost.svg",
-			Link:  "https://billing.creeperhost.net/link.php?id=8",
-		},
-		{
-			Name:  "Enjin",
-			Image: "/assets/img/sponsors/enjin.png",
-			Link:  "https://www.enjin.com/",
-		},
-		{
-			Name:  "BeastNode",
-			Image: "/assets/img/sponsors/beastnode.png",
-			Link:  "https://www.beastnode.com/",
-		},
-	}
-)
-
-type Sponsor struct {
-	Name  string
-	Image string
-	Link  string
+.btn {
+  transition: all .3s ease-in-out;
 }
 
-func GetHomepage(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "index", "index", "Sponge - Minecraft Modding API")
+.btn-primary {
+  background-color: $sponge_grey;
+  border: 1px solid $sponge_grey;
+
+  &:hover {
+    background-color: $sponge_yellow;
+    color: $sponge_grey;
+    border: 1px solid $sponge_dark_yellow;
+  }
 }
 
-func GetSponsors(ctx *macaron.Context) {
-	ctx.Data["sponsors"] = Sponsors
-	html(ctx, "sponsors", "sponsors", "Sponge - Sponsoring")
+.btn-primary.current {
+  background-color: $sponge_yellow;
+  color: $sponge_grey;
+  border: 1px solid $sponge_dark_yellow;
+  transition: all .3s ease-in-out;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #f9ed9e;
+  }
 }
 
-func GetChat(ctx *macaron.Context) {
-	html(ctx, "chat", "chat", "Sponge - Chat")
+.btn-default {
+  background-color: #848485;
+  border: 1px solid #848485;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background-color: $sponge_grey;
+    border: 1px solid $sponge_grey;
+  }
 }

@@ -1,40 +1,52 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    cssmin = require('gulp-cssmin'),
+const
+    gulp = require('gulp'),
+    util = require('gulp-util'),
+    named = require('vinyl-named'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
 
-gulp.task('watch', ['build'], function () {
-    gulp.watch('./public/assets/scss/**/*.scss', ['build']);
+    webpack = require('webpack'),
+    gulpWebpack = require('webpack-stream'),
 
-    gulp.watch('./public/assets/js/**/*.js', ['build']);
-});
+    sass = require('gulp-sass'),
 
-gulp.task('scss', function () {
-    return gulp.src('./public/assets/scss/spongehome.scss')
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+
+    uglify = require('gulp-uglify'),
+    cleanCSS = require('gulp-clean-css');
+
+gulp.task('scss', () =>
+    gulp.src('./src/scss/spongehome.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./public/assets/css'));
-});
+        .pipe(postcss([
+            autoprefixer()
+        ]))
+        .pipe(gulp.dest('./public/assets/css'))
+        .pipe(cleanCSS())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./public/assets/css'))
+);
 
-gulp.task('js', function () {
-    gulp.src('./public/assets/js/jquery.truncate.js')
+gulp.task('js', ()  =>
+    gulp.src('./src/js/static/*.js')
+        .pipe(gulp.dest('./public/assets/js'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./public/assets/js'))
+);
+
+const runWebpack = (env) =>
+    gulp.src(['./src/js/index.js'])
+        .pipe(named())
+        .pipe(gulpWebpack(require('./webpack.config.js')(env), webpack))
         .pipe(gulp.dest('./public/assets/js'));
 
-    return gulp.src('./public/assets/js/spongehome.js')
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./public/assets/js'));
-});
+gulp.task('webpack-dev', () => runWebpack('development'));
+gulp.task('webpack', ['webpack-dev'], () => runWebpack('production'));
 
-gulp.task('build', ['scss', 'js'], function () {
-    return gulp.src('./public/assets/css/spongehome.css')
-        .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./public/assets/css'));
-});
+gulp.task('build', ['scss', 'js', 'webpack']);
+gulp.task('default', ['build']);
 
-gulp.task('default', ['build'], function () {
-
-});
+gulp.task('watch', ['build'], () =>
+    gulp.watch('./src/**', ['build'])
+);
