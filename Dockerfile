@@ -42,4 +42,4 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Build minified CSS/JS
 RUN npm install && npm run gulp
 
-CMD ["sh", "go run spongehome.go"]
+CMD ["/go/bin/SpongeHome"]
