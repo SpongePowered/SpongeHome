@@ -6,7 +6,7 @@ RUN mkdir -p /go/src/github.com/SpongePowered/SpongeHome
 WORKDIR /go/src/github.com/SpongePowered/SpongeHome
 ADD . /go/src/github.com/SpongePowered/SpongeHome
 
-run go get -v github.com/SpongePowered/SpongeHome && go install
+RUN go get -v github.com/SpongePowered/SpongeHome
 
 # Install xz-utils (needed for extracting the package below)
 RUN apt-get update && apt-get install -y --no-install-recommends xz-utils
