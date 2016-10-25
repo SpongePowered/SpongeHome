@@ -1,6 +1,12 @@
-FROM golang:1.7-onbuild
+FROM golang:1.7
 MAINTAINER ProgWML6 <progwml6@gmail.com>
 EXPOSE 4000
+
+RUN mkdir -p /go/src/app
+WORKDIR /go/src/app
+ADD . /go/src/app
+
+run go get && go install
 
 # Install xz-utils (needed for extracting the package below)
 RUN apt-get update && apt-get install -y --no-install-recommends xz-utils
@@ -35,3 +41,5 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 # Build minified CSS/JS
 RUN npm install && npm run gulp
+
+CMD ["sh", "go run spongehome.go"]
