@@ -44,6 +44,11 @@ var (
 			Image: "/assets/img/sponsors/enjin.png",
 			Link:  "https://www.enjin.com/",
 		},
+        {
+			Name:  "Apex Hosting",
+			Image: "/assets/img/sponsors/apexhosting.png",
+			Link:  "https://apexminecrafthosting.com/",
+		},
 		{
 			Name:  "BeastNode",
 			Image: "/assets/img/sponsors/beastnode.png",
