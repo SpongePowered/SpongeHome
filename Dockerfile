@@ -2,11 +2,11 @@ FROM golang:1.7
 MAINTAINER ProgWML6 <progwml6@gmail.com>
 EXPOSE 4000
 
-RUN mkdir -p /go/src/app
-WORKDIR /go/src/app
-ADD . /go/src/app
+RUN mkdir -p /go/src/github.com/SpongePowered/SpongeHome
+WORKDIR /go/src/github.com/SpongePowered/SpongeHome
+ADD . /go/src/github.com/SpongePowered/SpongeHome
 
-run go get && go install
+run go get -v github.com/SpongePowered/SpongeHome && go install
 
 # Install xz-utils (needed for extracting the package below)
 RUN apt-get update && apt-get install -y --no-install-recommends xz-utils
