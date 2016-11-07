@@ -1,11 +1,9 @@
 const
     gulp = require('gulp'),
-    util = require('gulp-util'),
-    named = require('vinyl-named'),
+    gutil = require('gulp-util'),
     rename = require('gulp-rename'),
 
     webpack = require('webpack'),
-    gulpWebpack = require('webpack-stream'),
 
     sass = require('gulp-sass'),
 
@@ -35,14 +33,24 @@ gulp.task('js', ()  =>
         .pipe(gulp.dest('./public/assets/js'))
 );
 
-const runWebpack = (env) =>
-    gulp.src(['./src/js/index.js'])
-        .pipe(named())
-        .pipe(gulpWebpack(require('./webpack.config.js')(env), webpack))
-        .pipe(gulp.dest('./public/assets/js'));
+const webpackStatsOptions = {
+    colors: gutil.colors.supportsColor,
+    hash: false,
+    chunks: false
+};
 
-gulp.task('webpack-dev', () => runWebpack('development'));
-gulp.task('webpack', ['webpack-dev'], () => runWebpack('production'));
+const runWebpack = config => {
+    const compiler = webpack(config);
+    return done => compiler.run((err, stats) => {
+        if (err) throw new gutil.PluginError('webpack', err);
+        gutil.log(stats.toString(webpackStatsOptions));
+        done()
+    })
+};
+
+const webpackConfig = require('./webpack.config.js');
+gulp.task('webpack-dev', runWebpack(webpackConfig.development));
+gulp.task('webpack', ['webpack-dev'], runWebpack(webpackConfig.production));
 
 gulp.task('build', ['scss', 'js', 'webpack']);
 gulp.task('default', ['build']);

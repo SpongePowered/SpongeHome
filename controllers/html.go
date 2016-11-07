@@ -31,9 +31,10 @@ import (
 )
 
 func html(ctx *macaron.Context, file string, page string, title string) {
-	ctx.Data["min"] = ""
 	if macaron.Env == macaron.PROD {
 		ctx.Data["min"] = ".min"
+	} else {
+		ctx.Data["min"] = ""
 	}
 
 	ctx.Data["title"] = title

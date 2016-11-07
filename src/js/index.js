@@ -30,7 +30,7 @@ import {Platforms as PlatformData} from 'downloads/platforms'
 // Dummy router-link for index page, uses vue-router on downloads page
 Vue.component('router-link', {
     props: {
-        to: [String, Object],
+        to: Object,
         tag: {
             type: String,
             default: 'a'
