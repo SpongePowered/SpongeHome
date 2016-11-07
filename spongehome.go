@@ -88,8 +88,11 @@ func main() {
 	m.Get("/", controllers.GetHomepage)
 	m.Get("/sponsors", controllers.GetSponsors)
 	m.Get("/chat", controllers.GetChat)
-	m.Get("/statusz", controllers.GetStatusz)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
+
+	if statuszHandler := controllers.StatuszHandler(); statuszHandler != nil {
+		m.Get("/statusz", statuszHandler)
+	}
 
 	go clearFastly()
 
