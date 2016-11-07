@@ -1,11 +1,15 @@
-var webpack = require('webpack'),
-    path = require('path');
+const webpack = require('webpack');
 
-module.exports = function (env) {
+function createConfig(env) {
     var config = {
         devtool: 'eval',
 
+        entry: {
+            index: 'index'
+        },
+
         output: {
+            path: __dirname + '/public/assets/js',
             filename: '[name].js'
         },
 
@@ -19,21 +23,22 @@ module.exports = function (env) {
                 {
                     test: /\.vue$/,
                     loader: 'vue',
+                    exclude: /node_modules/
                 }
             ],
         },
 
         resolve: {
             modules: [
-                path.resolve(__dirname, 'src/js'),
-                path.resolve(__dirname, 'src/vue'),
+                'src/js',
+                'src/vue'
             ]
         },
 
         plugins: [
             new webpack.DefinePlugin({
                 'process.env': {
-                    NODE_ENV: '"' + env + '"'
+                    NODE_ENV: JSON.stringify(env),
                 }
             })
         ]
@@ -52,4 +57,7 @@ module.exports = function (env) {
     }
 
     return config
-};
+}
+
+exports.development = createConfig('development');
+exports.production = createConfig('production');
