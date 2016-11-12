@@ -23,37 +23,16 @@
  * THE SOFTWARE.
  */
 
-import Announcement from 'Announcement.vue'
-import Platforms from 'downloads/Platforms.vue'
-
-// Dummy router-link for index page, uses vue-router on downloads page
-Vue.component('router-link', {
+export default {
     props: {
-        to: Object,
+        t: String,
         tag: {
             type: String,
-            default: 'a'
+            default: 'span'
         }
     },
     render(create) {
-        return create(this.tag, {attrs:{href: `/downloads/${this.to.params.project}`}}, this.$slots.default)
+        const m = moment(this.t);
+        return create(this.tag, {attrs:{title: m.local().format("LLL")}}, m.fromNow())
     }
-});
-
-new Vue({
-    el: '#content',
-    data: {
-        announcements: null
-    },
-    created() {
-        this.$http.get('/announcements.json').then(response => {
-            this.announcements = response.body
-        }, () => {
-            console.log("Failed to load announcements"); // TODO
-        });
-    },
-    components: {
-        announcement: Announcement,
-        platforms: Platforms
-    }
-});
+}

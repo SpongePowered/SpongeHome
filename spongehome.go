@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  */
 
-package main
+package main // import "github.com/SpongePowered/SpongeHome"
 
 import (
 	"fmt"
@@ -94,9 +94,11 @@ func main() {
 		m.Get("/statusz", statuszHandler)
 	}
 
+	m.Get("/downloads", controllers.GetDownloads)
+	m.Get("/downloads/*", controllers.GetDownloads)
+
 	go clearFastly()
 
 	// Run SpongeHome
 	m.Run()
-
 }

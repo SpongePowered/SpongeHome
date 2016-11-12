@@ -28,7 +28,89 @@ router-link {
   display: none;
 }
 
+#downloads-page {
+  header {
+    margin-top: 50px;
+    padding-bottom: 20px;
+
+    .logo {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @media (max-width: 767px) {
+        font-size: 3vmin;
+      }
+
+      &> * {
+        display: inline-block;
+        vertical-align: middle;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        height: 8em;
+      }
+
+      h1 {
+        font-size: 4.5em;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  #downloads {
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    @media (max-width: 767px) {
+      padding-top: 5px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.download-category {
+  text-align: center;
+
+  .dropdown-menu {
+    margin-top: -1px;
+    min-width: 0;
+
+    .current {
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 24px;
+  }
+}
+
+#download-loader {
+  padding-top: 20px;
+  padding-bottom: 35px;
+
+  img {
+    margin-top: 32px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 10px;
+    text-align: center;
+
+    img {
+      margin-top: 16px;
+    }
+  }
+}
+
 #downloads {
+  text-align: center;
+
   i {
     margin-right: 5px;
   }
@@ -43,6 +125,10 @@ router-link {
 
   .description {
     @media (min-width: 768px) {
+      height: 150px;
+    }
+
+    @media (min-width: 992px) {
       height: 100px;
     }
   }
@@ -55,6 +141,13 @@ router-link {
     font-weight: bold;
     margin-top: 10px;
   }
+
+  @media (max-width: 767px) {
+    .platform:nth-child(n+2) {
+      margin-top: 20px;
+      border-top: 1px solid #f2f2f2;
+    }
+  }
 }
 
 .platform-badge {
@@ -63,7 +156,6 @@ router-link {
   padding: 5px;
 
   border-radius: 2px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 
   color: white;
   font-size: 0.5em;
@@ -80,5 +172,242 @@ router-link {
 
   &.spongeapi {
     background-color: #009172;
+  }
+}
+
+#build-types {
+  padding: 0;
+  font-size: 19px;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+
+  li {
+    margin-top: 2px;
+    display: block;
+  }
+
+  .current span {
+    border-bottom: 2px solid white;
+  }
+}
+
+#builds {
+  h3 {
+    margin-left: 15px;
+  }
+
+  .navigation {
+    margin-bottom: 20px;
+
+    .newer {
+      float: left;
+      margin-left: 30px;
+    }
+
+    .older {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+}
+
+#recommended-build {
+  margin-top: 0;
+  background: #f2f2f2;
+
+  .build-time {
+    font-size: 19px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
+}
+
+#all-builds {
+  margin-top: 10px;
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4, .build-time {
+    font-size: 17px;
+  }
+}
+
+#no-builds {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  h4 {
+    margin-top: 30px;
+  }
+
+  .label {
+    display: inline-block;
+  }
+}
+
+.builds {
+  list-style-type: none;
+  padding-left: 20px;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
+.build {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 2px;
+
+  h4 {
+    margin: 0 0 10px;
+    font-weight: normal;
+    float: left;
+    line-height: 1.4;
+  }
+
+  .label {
+    margin-left: 4px;
+  }
+
+  /*h4 a {
+    color: inherit;
+  }*/
+
+  // TODO: :target
+
+  &:nth-child(even) {
+    background: #fafafa;
+  }
+}
+
+.artifacts {
+  float: right;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  a {
+    margin-left: 2px;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 767px) {
+    float: left;
+    clear: left;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .btn-default span {
+      display: none;
+    }
+
+    i {
+      margin-right: 0;
+    }
+  }
+}
+
+.build-time {
+  display: block;
+
+  float: right;
+  clear: right;
+
+  @extend .sponge-headline;
+  font-weight: normal;
+
+  a {
+    color: inherit;
+  }
+
+  @media (max-width: 767px) {
+    display: none; // TODO
+  }
+}
+
+.changelog-comment {
+  font-style: italic;
+}
+
+.commits {
+  list-style-type: none;
+}
+
+.changelog-comment, .commits {
+  padding-left: 20px;
+
+  @media (max-width: 767px) {
+    padding-left: 10px;
+  }
+}
+
+.changelog {
+  clear: left;
+  padding-left: 20px;
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.commit {
+  margin-bottom: 5px;
+
+  a {
+    color: $sponge_dark_grey;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.ellipsis-expander {
+  display: inline-block;
+  height: 12px;
+  margin-left: 5px;
+  padding: 0 5px 5px;
+
+  vertical-align: middle;
+
+  border: 0;
+  border-radius: 1px;
+
+  color: #555;
+
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 6px;
+
+  background: rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.commit-message {
+  border: none;
+  border-radius: 0;
+  background: none;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.commit-submodules {
+  margin-top: 0;
+  margin-left: 10px;
+
+  h5 {
+    margin-bottom: 8px;
   }
 }

@@ -23,11 +23,41 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 {% endcomment %}
 
-{% extends "base.html" %}
+{% extends "vue.html" %}
 
-{% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue{{ min }}.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource{{ min }}.js"></script>
-{% block vue_javascript %}{% endblock %}
-<script src="/assets/js/{{ page }}{{ min }}.js"></script>
+{% block links %}
+{% verbatim %}
+<li v-for="platform in platforms" v-once>
+    <router-link :to="{name: 'downloads-project', params: {project: platform.id}}">{{ platform.name }}</router-link>
+</li>
+{% endverbatim %}
+{% endblock %}
+
+{% block content %}
+<div v-if="loadingVue">
+    <header id="downloads">
+        <div class="container">
+            <div class="logo">
+                <img src="/assets/img/icons/spongie-mark-reverse-dark.svg" />
+                <h1>Sponge</h1>
+            </div>
+            <h2>Downloads</h2>
+        </div>
+    </header>
+
+    <section id="download-loader">
+        <div class="container">
+            <h1>Loading...</h1>
+            <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
+            <img src="/assets/img/icons/spongie-mascot.png" alt="Spongie" />
+        </div>
+    </section>
+</div>
+
+<router-view api="{{ downloads_api_url }}"></router-view>
+{% endblock %}
+
+{% block vue_javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.3/vue-router{{ min }}.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment{{ min }}.js"></script>
 {% endblock %}

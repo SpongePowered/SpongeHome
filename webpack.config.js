@@ -5,7 +5,8 @@ function createConfig(env) {
         devtool: 'eval',
 
         entry: {
-            index: 'index'
+            index: 'index',
+            downloads: 'downloads'
         },
 
         output: {
@@ -17,12 +18,12 @@ function createConfig(env) {
             rules: [
                 {
                     test: /\.js$/,
-                    loader: 'babel',
+                    loader: 'babel-loader',
                     exclude: /node_modules/
                 },
                 {
                     test: /\.vue$/,
-                    loader: 'vue',
+                    loader: 'vue-loader',
                     exclude: /node_modules/
                 }
             ],
@@ -30,6 +31,7 @@ function createConfig(env) {
 
         resolve: {
             modules: [
+                'node_modules',
                 'src/js',
                 'src/vue'
             ]
