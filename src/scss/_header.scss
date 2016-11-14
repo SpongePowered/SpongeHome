@@ -24,10 +24,9 @@
  */
 
 header {
-  background-attachment: fixed;
   background-image: url(../img/backgrounds/sponsors-content.jpg);
   background-repeat: no-repeat;
-  background-size: 1920px 100%;
+  background-size: cover;
   background-position: center;
   color: $sponge_dark_grey;
   padding: 50px 0;
