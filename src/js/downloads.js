@@ -23,37 +23,59 @@
  * THE SOFTWARE.
  */
 
-import Announcement from 'Announcement.vue'
-import Platforms from 'downloads/Platforms.vue'
+import {Platforms} from 'downloads/platforms'
 
-// Dummy router-link for index page, uses vue-router on downloads page
-Vue.component('router-link', {
-    props: {
-        to: Object,
-        tag: {
-            type: String,
-            default: 'a'
-        }
+import Main from 'downloads/Main.vue'
+import Downloads from 'downloads/Downloads.vue'
+
+const routes = [
+    {
+        name: 'main',
+        path: '/downloads',
+        component: Main
     },
-    render(create) {
-        return create(this.tag, {attrs:{href: `/downloads/${this.to.params.project}`}}, this.$slots.default)
+    {
+        name: 'downloads-project',
+        path: '/downloads/:project',
+        component: Downloads
+    },
+    {
+        name: 'downloads-build-type',
+        path: '/downloads/:project/:buildType',
+        component: Downloads
+    },
+    {
+        name: 'downloads',
+        path: '/downloads/:project/:buildType/:category',
+        component: Downloads
     }
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes,
+    linkActiveClass: 'current',
+    scrollBehavior() {
+        return {x: 0, y: 0}
+    }
+});
+
+router.afterEach(to => {
+    const suffix = to.params.project ? Platforms[to.params.project].suffix : "";
+    document.title = `Sponge${suffix} Downloads`
 });
 
 new Vue({
     el: '#content',
+    router: router,
     data: {
-        announcements: null
-    },
-    created() {
-        this.$http.get('/announcements.json').then(response => {
-            this.announcements = response.body
-        }, () => {
-            console.log("Failed to load announcements"); // TODO
-        });
-    },
-    components: {
-        announcement: Announcement,
+        loadingVue: false,
         platforms: Platforms
     }
+});
+
+// Based on: http://stackoverflow.com/a/12809794
+$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function() {
+    const $target = $(this).parent().children('.collapse');
+    $target.data('bs.collapse') ? $target.collapse('toggle') : $target.collapse()
 });

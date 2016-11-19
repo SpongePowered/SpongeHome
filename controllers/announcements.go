@@ -28,6 +28,7 @@ package controllers
 import (
 	"encoding/json"
 	"gopkg.in/macaron.v1"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -82,17 +83,19 @@ type Announcement struct {
 	URL     string `json:"url"`
 }
 
-func GetAnnouncements(ctx *macaron.Context) {
+func GetAnnouncements(ctx *macaron.Context, logger *log.Logger) {
 	var res Category
 
 	r, err := http.Get("https://forums.spongepowered.org/c/announcements.json?order=created")
 	if err != nil {
+		logger.Println("Failed to fetch announcements:", err)
 		ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
 		return
 	}
 
 	err = json.NewDecoder(r.Body).Decode(&res)
 	if err != nil {
+		logger.Println("Failed to parse announcements:", err)
 		ctx.Error(http.StatusInternalServerError, "Can't access announcements!")
 		return
 	}
@@ -101,12 +104,14 @@ func GetAnnouncements(ctx *macaron.Context) {
 
 	first, err := getAnnouncement(topics[0])
 	if err != nil {
+		logger.Println("Failed to parse the first topic:", err)
 		ctx.Error(http.StatusInternalServerError, "Can't access the first topic!")
 		return
 	}
 
 	second, err := getAnnouncement(topics[1])
 	if err != nil {
+		logger.Println("Failed to parse the second topic:", err)
 		ctx.Error(http.StatusInternalServerError, "Can't access the second topic!")
 		return
 	}

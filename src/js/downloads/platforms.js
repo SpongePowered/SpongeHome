@@ -23,29 +23,135 @@
  * THE SOFTWARE.
  */
 
+export const BuildTypes = [
+    {
+        name: "Stable",
+        id: 'stable',
+        color: 'primary'
+    },
+    {
+        name: "Experimental",
+        id: 'bleeding',
+        color: 'warning'
+    }
+];
+
+export const Labels = {
+    recommended: {
+        name: "Recommended",
+        color: 'success',
+        title: "Recommended build"
+    },
+    latest: {
+        name: "Latest",
+        color: 'success',
+        title: "Latest build"
+    },
+    unsupported: {
+        name: "Unsupported",
+        color: 'danger'
+    }
+};
+
+const ArtifactTypes = {
+    Main: {
+        name: "Main",
+        classifier: '',
+        icon: 'fa-download',
+        title: "Download"
+    },
+    Sources: {
+        name: "Sources",
+        classifier: 'sources',
+        icon: 'fa-code',
+        title: "Download the source code"
+    },
+    Javadocs: {
+        name: "Javadocs",
+        classifier: 'javadoc',
+        icon: 'fa-graduation-cap',
+        title: "Download the Java API documentation"
+    },
+    Shaded: {
+        name: "Shaded",
+        classifier: 'shaded',
+        icon: 'fa-archive',
+        title: "Download a package with all dependencies"
+    },
+    DevShaded: {
+        name: "Dev",
+        classifier: 'dev-shaded',
+        icon: 'fa-wrench',
+        title: "Download an un-obfuscated build with all dependencies for testing in a development environment"
+    }
+};
+
 export const Platforms = {
     spongevanilla: {
+        group: 'org.spongepowered',
         id: 'spongevanilla',
         name: "SpongeVanilla",
         suffix: "Vanilla",
         description: "SpongeVanilla is the implementation of the Sponge API on top of Vanilla Minecraft.",
         recommendation: "Recommended for running plugins without Forge mods.",
-        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/"
+        category: createDependencyCategory('minecraft', "Minecraft"),
+        artifactTypes: [
+            ArtifactTypes.Main,
+            ArtifactTypes.Sources,
+            ArtifactTypes.DevShaded
+        ]
     },
     spongeforge: {
+        group: 'org.spongepowered',
         id: 'spongeforge',
         name: "SpongeForge",
         suffix: "Forge",
         description: "SpongeForge is the implementation of the Sponge API on the Minecraft Forge platform.",
         recommendation: "Recommended for running plugins together with Forge mods.",
-        url: "http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/"
+        category: createDependencyCategory('minecraft', "Minecraft"),
+        artifactTypes: [
+            ArtifactTypes.Main,
+            ArtifactTypes.Sources,
+            ArtifactTypes.DevShaded
+        ]
     },
     spongeapi: {
+        group: 'org.spongepowered',
         id: 'spongeapi',
         name: "SpongeAPI",
         suffix: "API",
         description: "SpongeAPI is the tool developers use to create plugins for the Sponge platform.",
         recommendation: "Recommended for plugin developers.",
-        url: "https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/"
+        category: {
+            name: 'API',
+            id: 'version',
+            extractVersion(version) {
+                return version.split('.')[0]
+            },
+            forBuildType(build) {
+                return this.extractVersion(build.version)
+            },
+            forProject(project) {
+                return project.versions.map(this.extractVersion)
+            }
+        },
+        artifactTypes: [
+            ArtifactTypes.Shaded,
+            ArtifactTypes.Sources,
+            ArtifactTypes.Javadocs
+        ]
     }
 };
+
+function createDependencyCategory(dependency, name) {
+    return {
+        name: name,
+        id: dependency,
+        forBuildType(build) {
+            return build.dependencies[this.id]
+        },
+        forProject(project) {
+            return project.dependencies[this.id]
+        }
+    }
+}

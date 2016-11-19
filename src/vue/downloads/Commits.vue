@@ -24,30 +24,32 @@
 -->
 
 <template>
-    <div class="container" v-once>
-        <div class="row">
-            <div class="col-sm-4 platform" v-for="platform in platforms">
-                <h3><span>Sponge<span :class="['platform-badge', platform.id]">{{ platform.suffix }}</span></span></h3>
-                <p class="description">{{ platform.description }}</p>
-                <router-link class="btn btn-primary styled-btn"
-                             :to="{name: 'downloads-project', params: {project: platform.id}}">
-                    <i class="fa fa-download"></i>Download</router-link>
-                <p class="recommendation">{{ platform.recommendation }}</p>
+    <ol class="commits">
+        <li class="commit" v-for="commit in l">
+            <a :href="'https://github.com/SpongePowered/' + project + '/commit/' + commit.id" target="_blank">{{ commit.title }}</a>
+            <button class="ellipsis-expander" data-toggle="collapse-next" v-if="commit.description || commit.submodules">…</button>
+            <div>{{ commit.author }} - <small><relative-time :t="commit.date"></relative-time></small></div>
+            <div class="collapse" v-if="commit.description || commit.submodules">
+                <pre class="commit-message" v-if="commit.description">{{ commit.description }}</pre>
+                <div class="commit-submodules" v-if="commit.submodules">
+                    <div v-for="(commits, submodule) in commit.submodules">
+                        <h5>{{ submodule }}</h5>
+                        <commits :project="submodule" :l="commits"></commits>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </li>
+    </ol>
 </template>
 
 <script>
-    import {Platforms} from 'downloads/platforms'
-
-    const data = {
-        platforms: Platforms
-    };
+    import RelativeTime from 'downloads/relative-time'
 
     export default {
-        data() {
-            return data
+        name: 'commits',
+        props: ['project', 'l'],
+        components: {
+            'relative-time': RelativeTime
         }
     }
 </script>
