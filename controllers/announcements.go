@@ -27,6 +27,8 @@ package controllers
 
 import (
 	"encoding/json"
+	"github.com/SpongePowered/SpongeWebGo/cache"
+	"github.com/SpongePowered/SpongeWebGo/fastly"
 	"gopkg.in/macaron.v1"
 	"log"
 	"net/http"
@@ -84,6 +86,12 @@ type Announcement struct {
 }
 
 func GetAnnouncements(ctx *macaron.Context, logger *log.Logger) {
+	header := ctx.Header()
+
+	// Override cache headers
+	header.Add(cache.CacheControlHeader, cache.DynamicContentOptions)
+	header.Add(fastly.SurrogateControlHeader, cache.SurrogateDynamicContentOptions)
+
 	var res Category
 
 	r, err := http.Get("https://forums.spongepowered.org/c/announcements.json?order=created")
