@@ -48,3 +48,9 @@ command line. SpongeHome will now be running locally on port 4000.
 
 **NOTE:** You will need to rerun this when you make a change to the Golang
 source.
+
+## Environment variables
+**Optional**:
+- `MACARON_ENV=production`: Set the application in production mode
+- `PORT`: Modify the port of the HTTP server
+- `FASTLY_CACHE=API_KEY/SERVICE_ID[;healthcheck]`: Purge Fastly cache after start and hide health checks from the log
