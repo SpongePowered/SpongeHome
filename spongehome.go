@@ -33,6 +33,7 @@ import (
 	"gopkg.in/macaron.v1"
 	"log"
 	"os"
+	"github.com/SpongePowered/SpongeWebGo"
 )
 
 func main() {
@@ -56,6 +57,8 @@ func main() {
 	}
 
 	m.Use(macaron.Recovery())
+
+	m.Use(swg.AddHeaders)
 
 	m.Use(pongo2.Pongoer())
 	m.Use(gzip.Gziper())
