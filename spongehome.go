@@ -27,13 +27,14 @@ package main // import "github.com/SpongePowered/SpongeHome"
 
 import (
 	"github.com/SpongePowered/SpongeHome/controllers"
+	"github.com/SpongePowered/SpongeWebGo"
 	"github.com/SpongePowered/SpongeWebGo/fastly"
 	"github.com/go-macaron/gzip"
-	"github.com/go-macaron/pongo2"
 	"gopkg.in/macaron.v1"
 	"log"
+	"net/http"
 	"os"
-	"github.com/SpongePowered/SpongeWebGo"
+	"strings"
 )
 
 func main() {
@@ -60,24 +61,31 @@ func main() {
 
 	m.Use(swg.AddHeaders)
 
-	m.Use(pongo2.Pongoer())
+	m.Use(macaron.Renderer(macaron.RenderOptions{IndentJSON: macaron.Env == macaron.DEV}))
 	m.Use(gzip.Gziper())
+
+	// Disallow accessing the html pages directly
+	m.Use(func(w http.ResponseWriter, r *http.Request) {
+		if strings.HasSuffix(r.URL.Path, ".html") {
+			http.NotFound(w, r)
+		}
+	})
+
 	m.Use(macaron.Static("public"))
+	m.Use(macaron.Static(controllers.DistDir))
 
 	m.Use(controllers.AddHeaders)
 
 	// Routes
-	m.Get("/", controllers.GetHomepage)
-	m.Get("/sponsors", controllers.GetSponsors)
-	m.Get("/chat", controllers.GetChat)
+	m.Get("/:page", controllers.ServePage)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
 
 	if statuszHandler := controllers.StatuszHandler(); statuszHandler != nil {
 		m.Get("/statusz", statuszHandler)
 	}
 
-	m.Get("/downloads", controllers.GetDownloads)
-	m.Get("/downloads/*", controllers.GetDownloads)
+	// Additional route for downloads page (uses routing on the client)
+	m.Get("/downloads/*", controllers.ServeDownloadsPage)
 
 	if c != nil {
 		// Attempt to purge fastly cache

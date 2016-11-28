@@ -24,30 +24,35 @@
 -->
 
 <template>
-    <div class="container" v-once>
-        <div class="row">
-            <div class="col-sm-4 platform" v-for="platform in platforms">
-                <h3><span>Sponge<span :class="['platform-badge', platform.id]">{{ platform.suffix }}</span></span></h3>
-                <p class="description">{{ platform.description }}</p>
-                <router-link class="btn btn-primary styled-btn"
-                             :to="{name: 'downloads-project', params: {project: platform.id}}">
-                    <i class="fa fa-download"></i>Download</router-link>
-                <p class="recommendation">{{ platform.recommendation }}</p>
+    <div>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="logo">
+                        <img src="/assets/img/icons/spongie-mark-reverse-dark.svg" />
+                        <h1>Sponge</h1>
+                    </div>
+                    <h2>Downloads</h2>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <section id="downloads">
+        <div class="container">
+            <platforms></platforms>
+        </div>
+    </section></div>
 </template>
 
 <script>
-    import {Platforms} from 'downloads/platforms'
-
-    const data = {
-        platforms: Platforms
-    };
+    import Platforms from 'downloads/Platforms.vue'
 
     export default {
-        data() {
-            return data
+        name: 'main',
+        components: {
+            platforms: Platforms
         }
     }
 </script>
