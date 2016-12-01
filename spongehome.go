@@ -71,8 +71,12 @@ func main() {
 		}
 	})
 
-	m.Use(macaron.Static("public"))
-	m.Use(macaron.Static(controllers.DistDir))
+	staticOptions := macaron.StaticOptions{
+		SkipLogging: macaron.Env == macaron.PROD,
+	}
+
+	m.Use(macaron.Static("public", staticOptions))
+	m.Use(macaron.Static(controllers.DistDir, staticOptions))
 
 	m.Use(controllers.AddHeaders)
 
