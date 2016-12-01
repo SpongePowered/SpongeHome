@@ -23,35 +23,42 @@
     THE SOFTWARE.
 -->
 
-<template>
-    <div>
+{% set title = "Sponge Downloads" %}
+{% extends "include/vue.html" %}
+
+{% block links %}
+{% verbatim %}
+<li v-for="platform in platforms" v-once>
+    <router-link :to="{name: 'downloads-project', params: {project: platform.id}}">{{ platform.name }}</router-link>
+</li>
+{% endverbatim %}
+{% endblock %}
+
+{% block content %}
+<div v-if="loadingVue">
     <header>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-6">
-                    <div class="logo">
-                        <img src="/assets/img/icons/spongie-mark-reverse-dark.svg" />
-                        <h1>Sponge</h1>
-                    </div>
-                    <h2>Downloads</h2>
-                </div>
+            <div class="logo">
+                <img src="/assets/img/icons/spongie-mark-reverse-dark.svg" />
+                <h1>Sponge</h1>
             </div>
+            <h2>Downloads</h2>
         </div>
     </header>
 
-    <section id="downloads">
+    <section id="download-loader">
         <div class="container">
-            <platforms></platforms>
+            <h1>Loading...</h1>
+            <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
+            <img src="/assets/img/icons/spongie-mascot.png" alt="Spongie" />
         </div>
-    </section></div>
-</template>
+    </section>
+</div>
 
-<script>
-    import Platforms from 'downloads/Platforms.vue'
+<router-view></router-view>
+{% endblock %}
 
-    export default {
-        components: {
-            platforms: Platforms
-        }
-    }
-</script>
+{% block vue_javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.3/vue-router{{ min }}.js" {%if min%}integrity="sha256-FasqH+B0Sw9thkvdI9USAL3mZVOu0dy4CCxtKKVNkhA="{%endif%} crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment{{ min }}.js" {%if min%}integrity="sha256-Q1iNs8Pv5aDBQqByxUM4pQmdzbPFyNooDFJKojYnVpg="{%endif%} crossorigin="anonymous"></script>
+{% endblock %}

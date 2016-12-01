@@ -28,17 +28,28 @@ package controllers
 import (
 	"gopkg.in/macaron.v1"
 	"net/http"
+	"path/filepath"
 )
 
-func html(ctx *macaron.Context, file string, page string, title string) {
-	if macaron.Env == macaron.PROD {
-		ctx.Data["min"] = ".min"
-	} else {
-		ctx.Data["min"] = ""
-	}
+var DistDir string
 
-	ctx.Data["title"] = title
-	ctx.Data["page"] = page
-	ctx.Data["menu"] = map[string]interface{}{page: "active"}
-	ctx.HTML(http.StatusOK, file)
+func init() {
+	switch macaron.Env {
+	case macaron.DEV:
+		DistDir = "dist/dev"
+	case macaron.PROD:
+		DistDir = "dist/prod"
+	}
+}
+
+func ServePage(ctx *macaron.Context) {
+	serveHtmlPage(ctx, ctx.Params("page"))
+}
+
+func ServeDownloadsPage(ctx *macaron.Context) {
+	serveHtmlPage(ctx, "downloads")
+}
+
+func serveHtmlPage(ctx *macaron.Context, page string) {
+	http.ServeFile(ctx.Resp, ctx.Req.Request, filepath.Join(DistDir, page+".html"))
 }

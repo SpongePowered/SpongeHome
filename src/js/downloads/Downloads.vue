@@ -78,7 +78,7 @@
                 <builds :platform="platform.name" :builds="builds"></builds>
             </div>
 
-            <div class="container" id="no-builds" v-else v-if="!recommended">
+            <div class="container" id="no-builds" v-else-if="!recommended">
                 <p><strong>Oh no!</strong> Unfortunately, there are no builds available for the current selection.</p>
                 <h4>Possible solutions:</h4>
                 <p><ul>
@@ -120,13 +120,11 @@
     import 'core-js/fn/array/find';
     import 'core-js/fn/array/includes';
 
-    import {Platforms, BuildTypes, Labels} from 'downloads/platforms'
+    import {API, Platforms, BuildTypes, Labels} from 'downloads/platforms'
     import Builds from 'downloads/Builds.vue'
 
     export default {
-        props: {
-            api: String
-        },
+        name: 'downloads',
         data() {
             // Required to initialize properties properly
             return {
@@ -164,7 +162,7 @@
                 }
             },
             fetchPlatform() {
-                this.$http.get(`${this.api}/v1/${this.platform.group}/${this.platform.id}`).then(response => {
+                this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}`).then(response => {
                     const project = response.body;
 
                     const buildTypes = [], buildTypesData = {};
@@ -230,7 +228,7 @@
 
                     if (recommendedBuild == null) {
                         this.loadingRecommended = true;
-                        this.$http.get(`${this.api}/v1/${this.platform.group}/${this.platform.id}/downloads/recommended`,{params: params}).then(response => {
+                        this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}/downloads/recommended`,{params: params}).then(response => {
                             const recommendedBuild = response.body;
 
                             recommendedBuild.label = Labels.recommended;
@@ -259,7 +257,7 @@
                 params.until = this.$route.query.until;
                 params.since = this.$route.query.since;
 
-                this.$http.get(`${this.api}/v1/${this.platform.group}/${this.platform.id}/downloads`, {params: params}).then(response => {
+                this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}/downloads`, {params: params}).then(response => {
                     const unsupported = this.platform.category.versions.unsupported.includes(this.$route.params.category)
                             && Labels.unsupported;
 

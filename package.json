@@ -14,20 +14,23 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.16.0",
+    "buble": "^0.14.2",
+    "buble-loader": "^0.3.2",
     "core-js": "^2.4.1",
     "css-loader": "^0.26.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
+    "gulp-data": "^1.2.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-nunjucks-render": "git+https://github.com/mohitsinghs/gulp-nunjucks-render.git",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "vue-loader": "^10.0.1",
     "vue-template-compiler": "^2.1.3",
-    "webpack": "^2.1.0-beta.25"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.12"
   },
   "scripts": {
     "build": "gulp"
