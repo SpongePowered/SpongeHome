@@ -59,10 +59,12 @@ func main() {
 
 	m.Use(macaron.Recovery())
 
-	m.Use(swg.AddHeaders)
-
 	m.Use(macaron.Renderer(macaron.RenderOptions{IndentJSON: macaron.Env == macaron.DEV}))
 	m.Use(gzip.Gziper())
+
+	// Add headers before any requests are handled
+	m.Use(swg.AddHeaders)
+	m.Use(controllers.AddHeaders)
 
 	// Disallow accessing the html pages directly
 	m.Use(func(w http.ResponseWriter, r *http.Request) {
@@ -77,8 +79,6 @@ func main() {
 
 	m.Use(macaron.Static("public", staticOptions))
 	m.Use(macaron.Static(controllers.DistDir, staticOptions))
-
-	m.Use(controllers.AddHeaders)
 
 	// Routes
 	m.Get("/:page", controllers.ServePage)
