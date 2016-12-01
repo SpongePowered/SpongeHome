@@ -75,7 +75,7 @@ exports.prod = extendConfig('production', {
 
     output: {
         path: __dirname + '/dist/prod/assets/js',
-        filename: '[name].js'
+        filename: '[name].min.js'
     },
 
     plugins: [
