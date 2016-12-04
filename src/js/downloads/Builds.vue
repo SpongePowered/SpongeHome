@@ -39,7 +39,7 @@
             <div class="changelog" v-if="!primary || build.changelog">
                 <commits :project="platform" :l="build.changelog" v-if="build.changelog && build.changelog.length > 0"></commits>
                 <div class="changelog-comment" v-else>
-                    <span v-if="build.changelog">No changes!a.</span>
+                    <span v-if="build.changelog">No changes.</span>
                     <span v-else>No changelog available.</span>
                 </div>
             </div>
