@@ -167,8 +167,8 @@
 
                     const buildTypes = [], buildTypesData = {};
 
-                    const currentCategoryVersions = new Set();
-                    const unsupportedCategoryVersions = new Set(this.platform.category.forProject(project));
+                    const currentCategoryVersions = new Set(this.platform.category.forProject(project));
+                    const unsupportedCategoryVersions = new Set(currentCategoryVersions);
 
                     for (const type of BuildTypes) {
                         if (!type.id in project.buildTypes) {
@@ -191,9 +191,14 @@
                         const category = this.platform.category.forBuild(data.latest);
                         if (category) {
                             buildTypeData.categoryVersion = category;
-                            currentCategoryVersions.add(category);
                             unsupportedCategoryVersions.delete(category);
                         }
+                    }
+
+                    const unsupportedCategoryVersionsArray = Array.from(unsupportedCategoryVersions);
+
+                    for (const version of unsupportedCategoryVersionsArray) {
+                        currentCategoryVersions.delete(version)
                     }
 
                     this.platform.buildTypes = buildTypes;
@@ -201,7 +206,7 @@
                     // Vue does not support iterating over sets currently, https://github.com/vuejs/vue/issues/2410
                     this.platform.category.versions = {
                         current: Array.from(currentCategoryVersions),
-                        unsupported: Array.from(unsupportedCategoryVersions)
+                        unsupported: unsupportedCategoryVersionsArray
                     };
 
                     this.platform.buildTypesData = buildTypesData;
