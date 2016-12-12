@@ -99,7 +99,7 @@ function createServerConfig() {
             .concat(config.entry[key])
     }
 
-    config.plugins = config.plugins.concat(new webpack.HotModuleReplacementPlugin());
+    config.plugins = config.plugins.concat(new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin());
     return config
 }
 
