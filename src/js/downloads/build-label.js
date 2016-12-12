@@ -24,16 +24,18 @@
  */
 
 export default {
-    name: 'relative-time',
+    name: 'build-label',
     props: {
-        t: String,
-        tag: {
-            type: String,
-            default: 'span'
-        }
+        l: Object
     },
     render(create) {
-        const m = moment(this.t);
-        return create(this.tag, {attrs:{title: m.local().format("LLL")}}, m.fromNow())
+        return create(this.l.link ? 'a' : 'span', {
+            class: ['label', `label-${this.l.color}`],
+            attrs: {
+                title: this.l.title,
+                href: this.l.link,
+                target: this.l.link && '_blank'
+            }
+        }, this.l.name)
     }
 }

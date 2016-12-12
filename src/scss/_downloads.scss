@@ -175,6 +175,14 @@ router-link {
   }
 }
 
+.label-forge {
+  background-color: #910020;
+
+  &:hover {
+    background-color: darken(#910020, 5%)
+  }
+}
+
 #build-types {
   padding: 0;
   font-size: 19px;

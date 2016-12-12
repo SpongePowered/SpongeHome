@@ -188,7 +188,7 @@
 
                         buildTypesData[type.id] = buildTypeData;
 
-                        const category = this.platform.category.forBuildType(data.latest);
+                        const category = this.platform.category.forBuild(data.latest);
                         if (category) {
                             buildTypeData.categoryVersion = category;
                             currentCategoryVersions.add(category);
@@ -275,6 +275,7 @@
                             }
                         }
 
+                        this.platform.addLabels && this.platform.addLabels(build);
                         this.readArtifacts(build)
                     }
 

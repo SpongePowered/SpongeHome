@@ -26,7 +26,7 @@
 <template>
     <ol class="builds">
         <li v-for="build in builds" class="build" :id="build.version">
-            <h4>{{ build.version }} <span v-for="label in build.labels" :class="['label', 'label-' + label.color]">{{ label.name }}</span></h4>
+            <h4>{{ build.version }} <build-label v-for="label in build.labels" :l="label"></build-label></h4>
 
             <div class="artifacts">
                 <a v-for="artifact in build.artifacts" :href="artifact.url" :title="artifact.type.title"
@@ -50,6 +50,7 @@
 
 <script>
     import RelativeTime from 'downloads/relative-time'
+    import BuildLabel from 'downloads/build-label'
     import Commits from 'downloads/Commits.vue'
 
     export default {
@@ -69,6 +70,7 @@
         },
         components: {
             'relative-time': RelativeTime,
+            'build-label': BuildLabel,
             commits: Commits
         }
     }
