@@ -43,6 +43,7 @@
                     <span v-else>No changelog available.</span>
                 </div>
             </div>
+
             <div class="clearfix"></div>
         </li>
     </ol>
