@@ -50,12 +50,14 @@
                         <router-link v-for="version of platform.category.versions.current"
                                      :to="routeForCategory(version)"
                                      class="btn btn-primary">{{ version }}</router-link>
-                        <a aria-expanded="false" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li v-for="version of platform.category.versions.unsupported">
-                                <router-link :to="routeForCategory(version)">{{ version }}</router-link>
-                            </li>
-                        </ul>
+                        <template v-if="platform.category.versions.unsupported.length > 0">
+                            <a aria-expanded="false" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li v-for="version of platform.category.versions.unsupported">
+                                    <router-link :to="routeForCategory(version)">{{ version }}</router-link>
+                                </li>
+                            </ul>
+                        </template>
                     </div>
                 </div>
             </div>
