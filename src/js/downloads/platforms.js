@@ -115,7 +115,19 @@ export const Platforms = {
             ArtifactTypes.Main,
             ArtifactTypes.Sources,
             ArtifactTypes.DevShaded
-        ]
+        ],
+        addLabels(build) {
+            const minecraftVersion = this.category.forBuild(build);
+            const forgeVersion = build.dependencies.forge;
+            if (forgeVersion) {
+                build.labels.push({
+                    name: `Forge ${forgeVersion.split('.')[3]}`,
+                    color: 'forge',
+                    title: "Recommended Forge version",
+                    link: `http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_${minecraftVersion}.html`
+                })
+            }
+        }
     },
     spongeapi: {
         group: 'org.spongepowered',
@@ -130,7 +142,7 @@ export const Platforms = {
             extractVersion(version) {
                 return version.split('.')[0]
             },
-            forBuildType(build) {
+            forBuild(build) {
                 return this.extractVersion(build.version)
             },
             forProject(project) {
@@ -149,7 +161,7 @@ function createDependencyCategory(dependency, name) {
     return {
         name: name,
         id: dependency,
-        forBuildType(build) {
+        forBuild(build) {
             return build.dependencies[this.id]
         },
         forProject(project) {

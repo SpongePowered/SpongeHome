@@ -61,6 +61,10 @@ function extendConfig(env, config) {
 exports.dev = extendConfig('development', {
     devtool: 'eval',
 
+    performance: {
+        hints: false
+    },
+
     output: {
         path: __dirname + '/dist/dev/assets/js',
         filename: '[name].js',
@@ -99,7 +103,7 @@ function createServerConfig() {
             .concat(config.entry[key])
     }
 
-    config.plugins = config.plugins.concat(new webpack.HotModuleReplacementPlugin());
+    config.plugins = config.plugins.concat(new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin());
     return config
 }
 

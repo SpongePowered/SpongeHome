@@ -175,6 +175,14 @@ router-link {
   }
 }
 
+.label-forge {
+  background-color: #910020;
+
+  &:hover {
+    background-color: darken(#910020, 5%)
+  }
+}
+
 #build-types {
   padding: 0;
   font-size: 19px;
@@ -363,7 +371,7 @@ router-link {
 .commit {
   margin-bottom: 5px;
 
-  a {
+  &> a {
     color: $sponge_dark_grey;
     font-weight: bold;
     word-wrap: break-word;
@@ -409,5 +417,11 @@ router-link {
 
   h5 {
     margin-bottom: 8px;
+  }
+}
+
+.more-commits {
+  a {
+    cursor: pointer;
   }
 }

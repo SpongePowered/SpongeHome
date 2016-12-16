@@ -50,12 +50,14 @@
                         <router-link v-for="version of platform.category.versions.current"
                                      :to="routeForCategory(version)"
                                      class="btn btn-primary">{{ version }}</router-link>
-                        <a aria-expanded="false" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li v-for="version of platform.category.versions.unsupported">
-                                <router-link :to="routeForCategory(version)">{{ version }}</router-link>
-                            </li>
-                        </ul>
+                        <template v-if="platform.category.versions.unsupported.length > 0">
+                            <a aria-expanded="false" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li v-for="version of platform.category.versions.unsupported">
+                                    <router-link :to="routeForCategory(version)">{{ version }}</router-link>
+                                </li>
+                            </ul>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -167,8 +169,8 @@
 
                     const buildTypes = [], buildTypesData = {};
 
-                    const currentCategoryVersions = new Set();
-                    const unsupportedCategoryVersions = new Set(this.platform.category.forProject(project));
+                    const currentCategoryVersions = new Set(this.platform.category.forProject(project));
+                    const unsupportedCategoryVersions = new Set(currentCategoryVersions);
 
                     for (const type of BuildTypes) {
                         if (!type.id in project.buildTypes) {
@@ -188,12 +190,17 @@
 
                         buildTypesData[type.id] = buildTypeData;
 
-                        const category = this.platform.category.forBuildType(data.latest);
+                        const category = this.platform.category.forBuild(data.latest);
                         if (category) {
                             buildTypeData.categoryVersion = category;
-                            currentCategoryVersions.add(category);
                             unsupportedCategoryVersions.delete(category);
                         }
+                    }
+
+                    const unsupportedCategoryVersionsArray = Array.from(unsupportedCategoryVersions);
+
+                    for (const version of unsupportedCategoryVersionsArray) {
+                        currentCategoryVersions.delete(version)
                     }
 
                     this.platform.buildTypes = buildTypes;
@@ -201,7 +208,7 @@
                     // Vue does not support iterating over sets currently, https://github.com/vuejs/vue/issues/2410
                     this.platform.category.versions = {
                         current: Array.from(currentCategoryVersions),
-                        unsupported: Array.from(unsupportedCategoryVersions)
+                        unsupported: unsupportedCategoryVersionsArray
                     };
 
                     this.platform.buildTypesData = buildTypesData;
@@ -275,6 +282,7 @@
                             }
                         }
 
+                        this.platform.addLabels && this.platform.addLabels(build);
                         this.readArtifacts(build)
                     }
 
