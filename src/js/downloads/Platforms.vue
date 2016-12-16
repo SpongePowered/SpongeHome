@@ -41,14 +41,12 @@
 <script>
     import {Platforms} from 'downloads/platforms'
 
-    const data = {
-        platforms: Platforms
-    };
-
     export default {
         name: 'platforms',
         data() {
-            return data
+            return {
+                platforms: Platforms
+            }
         }
     }
 </script>

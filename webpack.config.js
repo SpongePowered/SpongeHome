@@ -61,6 +61,10 @@ function extendConfig(env, config) {
 exports.dev = extendConfig('development', {
     devtool: 'eval',
 
+    performance: {
+        hints: false
+    },
+
     output: {
         path: __dirname + '/dist/dev/assets/js',
         filename: '[name].js',
