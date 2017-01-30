@@ -5,7 +5,7 @@ const
 
     path = require('path'),
     data = require('gulp-data'),
-    nunjucksRender = require('gulp-nunjucks-render'),
+    nunjucksRender = require('gulp-nunjucks-md'),
 
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
