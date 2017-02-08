@@ -1,7 +1,7 @@
 {
   "name": "spongehome",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "description": "A brand new homepage for SpongePowered",
   "repository": {
     "type": "git",
@@ -33,6 +33,6 @@
     "webpack-dev-server": "^2.3.0"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp build"
   }
 }
