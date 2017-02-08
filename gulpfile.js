@@ -23,6 +23,7 @@ const sponsors = require('./sponsors.json');
 function htmlData(file) {
     const name = path.basename(file.path, '.html');
     return {
+        base: process.env.HTML_BASE || '/',
         page: name,
         menu: {
             [name]: 'active'

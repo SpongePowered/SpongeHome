@@ -10,27 +10,26 @@ A preview for this pull request is available at %s/%s/.
 Here are some links to the pages that were modified:
 
 %s
-
-_Since the preview frequently changes, please link to [this comment](%s), not to the direct url to the preview._
 """
 
 
-def mk_comment(commit, comment, changes):
-    return {'body': comment_tpl % (rawgit, commit, '\n'.join('- %s: %s/%s/%s' % (change['status'], rawgit, commit, change['filename']) for change in changes), comment)}
+def mk_comment(pr, changes):
+    return {'body': comment_tpl % (rawgit, pr, '\n'.join('- %s: %s/%s/%s' % (change['status'], rawgit, pr, change['filename']) for change in changes))}
 
 
 pr = os.environ['TRAVIS_PULL_REQUEST']
 token = os.environ['GH_TOKEN']
 
-rawgit = 'https://cdn.rawgit.com/Spongy/SpongeHome-PRs'
+rawgit = 'https://spongy.github.io/SpongeHome-PRs'
 repo = 'https://api.github.com/repos/SpongePowered/SpongeHome'
-
-commit = sys.argv[1]
 
 
 def map_change(change):
     filename = change['filename']
-    return {'filename': filename[filename.find('/')+1:filename.rfind('.')], 'status': change['status']}
+    filename = filename[len('src/html/'):filename.rfind('.')]
+    if filename == 'index':
+        filename = ''
+    return {'filename': filename, 'status': change['status']}
 
 
 def filter_change(change):
@@ -64,9 +63,8 @@ else:
     comment = r.json()
 
 comment_id = comment['id']
-comment_url = comment['html_url']
 r = requests.patch(
     '%s/issues/comments/%s' % (repo, comment_id),
     auth=('x-oauth-basic', token),
-    data=json.dumps(mk_comment(commit, comment_url, changes)))
+    data=json.dumps(mk_comment(pr, changes)))
 r.raise_for_status()
