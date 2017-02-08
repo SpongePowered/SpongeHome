@@ -75,6 +75,7 @@ func main() {
 
 	staticOptions := macaron.StaticOptions{
 		SkipLogging: macaron.Env == macaron.PROD,
+		ETag: true,
 	}
 
 	m.Use(macaron.Static("public", staticOptions))
