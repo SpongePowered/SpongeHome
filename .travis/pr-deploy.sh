@@ -9,40 +9,29 @@ fi
 branch=$TRAVIS_PULL_REQUEST
 echo "Deploying PR #$branch"
 
-# Copy assets
-cp -r public/assets dist/prod
+git config --global user.name "Spongie"
+git config --global user.email "Spongy@users.noreply.github.com"
 
-# Switch to target directory
-pushd dist/prod
+# Clone git repository
+git clone "https://spongy:$GH_TOKEN@github.com/Spongy/SpongeHome-PRs.git" dist/deploy >/dev/null
 
-# Initialize new Git repository
-git init
-git config user.name "Spongie"
-git config user.email "Spongy@users.noreply.github.com"
-git remote add origin "https://spongy:$GH_TOKEN@github.com/Spongy/SpongeHome-PRs" >/dev/null
+# Delete current version
+rm -rf dist/deploy/$branch
 
-# Check if the branch already exists
-if git ls-remote -h origin | grep -s "refs\/heads\/$branch$" &> /dev/null; then
-    # Fetch branch from GitHub
-    git fetch origin $branch
-    # Create new branch that tracks the remote branch
-    git branch $branch origin/$branch
-    # Move HEAD to the new branch (but keep current working directory)
-    git symbolic-ref HEAD refs/heads/$branch
-else
-    # Create a new branch for the PR
-    git checkout --orphan $branch
-fi
+# Copy new version
+mkdir dist/deploy/$branch
+cp -r dist/prod/* dist/deploy/$branch
+cp -r public/assets dist/deploy/$branch
 
+pushd dist/deploy
+
+# Commit changes
 git add -A
 git commit -q -m "Deploy $(date)" &> /dev/null
-git push -q origin $branch &> /dev/null
-
-# Get current commit for PR preview
-commit=`git rev-parse --short HEAD`
+git push -q &> /dev/null
 
 popd
 
 # Update preview comment on PR
 pip install --user requests
-python .travis/pr-comment.py "$commit"
+python .travis/pr-comment.py

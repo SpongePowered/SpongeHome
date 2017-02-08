@@ -32,6 +32,8 @@
     <meta name="description" content="Minecraft Modding API">
     <meta name="author" content="SpongePowered">
 
+    <base href="{{ base }}">
+
     <title>{{ title }}</title>
     <link rel="icon" type="image/png" href="https://forums-cdn.spongepowered.org/uploads/default/original/2X/9/9ba706a80e45cf427617525ee2a19fad7bb6b109.png">
 
@@ -39,7 +41,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap{{ min }}.css" rel="stylesheet" {%if min%}integrity="sha256-r1WijW/SNMgOwk5LDk7QRHr6oVYYbYWMw/1kOXfYJfg="{%endif%} crossorigin="anonymous" />
 
     <!-- Custom CSS -->
-    <link href="/assets/css/spongehome{{ min }}.css" rel="stylesheet">
+    <link href="assets/css/spongehome{{ min }}.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome{{ min }}.css" rel="stylesheet" {%if min%}integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="{%endif%} crossorigin="anonymous" />
@@ -53,20 +55,20 @@
     <div class="container">
         <div id="sp-logo-container" class="page-scroll">
             <a class="logo" href="#top">
-                <img src="/assets/img/icons/spongie-mark.svg" style="height: 40px">
+                <img src="assets/img/icons/spongie-mark.svg" style="height: 40px">
                 <span>Sponge</span>
                 <i class="fa fa-fw fa-chevron-down"></i>
             </a>
             <div id="sp-logo-menu">
                 <ul id="sp-logo-dropdown">
-                    <li class="{{ menu.index }}"><a href="/"><i class="fa-fw fa fa-home"></i>Homepage</a></li>
+                    <li class="{{ menu.index }}"><a href=""><i class="fa-fw fa fa-home"></i>Homepage</a></li>
                     <li><a href="https://forums.spongepowered.org"><i class="fa-fw fa fa-comments"></i>Forums</a></li>
                     <li><a href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i>Code</a></li>
                     <li><a href="https://docs.spongepowered.org"><i class="fa-fw fa fa-book"></i>Docs</a></li>
                     <li><a href="https://jd.spongepowered.org"><i class="fa-fw fa fa-graduation-cap"></i>Javadocs</a></li>
                     <li><a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa-fw fa fa-plug"></i>Plugins</a></li>
-                    <li class="{{ menu.downloads }}"><a href="/downloads"><i class="fa-fw fa fa-download"></i>Downloads</a></li>
-                    <li class="{{ menu.chat }}"><a href="/chat"><i class="fa-fw fa fa-comment"></i>Chat</a></li>
+                    <li class="{{ menu.downloads }}"><a href="downloads"><i class="fa-fw fa fa-download"></i>Downloads</a></li>
+                    <li class="{{ menu.chat }}"><a href="chat"><i class="fa-fw fa fa-comment"></i>Chat</a></li>
                 </ul>
             </div>
         </div>
@@ -127,7 +129,7 @@
                 <p>Copyright &copy; SpongePowered 2014-2017</p>
                 <p id="fastly">Accelerated by<br>
                     <a href="https://www.fastly.com">
-                        <img src="/assets/img/fastly.png" alt="Fastly" />
+                        <img src="assets/img/fastly.png" alt="Fastly" />
                     </a>
                 </p>
             </div>
@@ -145,7 +147,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" {%if min%}integrity="sha256-rD86dXv7/J2SvI9ebmNi5dSuQdvzzrrN2puPca/ILls="{%endif%} crossorigin="anonymous"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/assets/js/spongehome{{ min }}.js"></script>
+<script src="assets/js/spongehome{{ min }}.js"></script>
 
 {% block javascript %}{% endblock %}
 
