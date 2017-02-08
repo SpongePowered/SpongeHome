@@ -26,8 +26,8 @@
 {% extends "include/base.html" %}
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue{{ min }}.js" {%if min%}integrity="sha256-WcJDyxpvFLMHHA7kQuvbE5kWgRwV3zukWdjvbTUcXh8="{%endif%} crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource{{ min }}.js" {%if min%}integrity="sha256-r1pzeA1LCRPQD9oeuNDP4T8ftytq7waSglmmISCfE9I="{%endif%} crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue{{ min }}.js" {%if min%}integrity="sha256-WOtCa7Y+m56k3rvuOvcScNSH45UHE/9femrsdrwnDb4="{%endif%} crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.0/vue-resource{{ min }}.js" {%if min%}integrity="sha256-D4sWi2cF/OuLp7GKNfzRHeTiFQxI/qyprXUuYl8UyeE="{%endif%} crossorigin="anonymous"></script>
 {% block vue_javascript %}{% endblock %}
 <script src="/assets/js/{{ page }}{{ min }}.js"></script>
 {% endblock %}
