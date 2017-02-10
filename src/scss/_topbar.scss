@@ -76,6 +76,7 @@ $sp_logo_width: 200px;
     padding-top: 11px;
 
     @extend .sponge-headline;
+    font-weight: 600;
 
     * {
       display: inline-block;
@@ -89,7 +90,6 @@ $sp_logo_width: 200px;
     span {
       margin-left: 3px;
       font-size: 23px;
-      letter-spacing: -1px;
     }
 
     i {

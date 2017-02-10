@@ -159,7 +159,7 @@ router-link {
 
   color: white;
   font-size: 0.5em;
-  font-weight: normal;
+  font-weight: 500;
   text-align: center;
 
   &.spongevanilla {
@@ -186,8 +186,11 @@ router-link {
 #build-types {
   padding: 0;
   font-size: 19px;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  @extend .sponge-headline;
+
+  .label {
+    font-weight: 500;
+  }
 
   li {
     margin-top: 2px;
@@ -273,7 +276,7 @@ router-link {
 
   h4 {
     margin: 0 0 10px;
-    font-weight: normal;
+    font-weight: 500;
     float: left;
     line-height: 1.4;
   }
