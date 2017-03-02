@@ -5,9 +5,9 @@
     "link":  "https://mcprohosting.com/?promo=Sponge"
   },
   {
-    "name":  "CreeperHost",
-    "image": "assets/img/sponsors/creeperhost.svg",
-    "link":  "https://billing.creeperhost.net/link.php?id=8"
+    "name":  "BeastNode",
+    "image": "assets/img/sponsors/beastnode.png",
+    "link":  "https://www.beastnode.com/"
   },
   {
     "name":  "Enjin",
@@ -15,13 +15,18 @@
     "link":  "https://www.enjin.com/"
   },
   {
+    "name":  "Negafinity",
+    "image": "assets/img/sponsors/negafinity.png",
+    "link":  "http://www.negafinity.com//"
+  },
+  {
     "name":  "Apex Hosting",
     "image": "assets/img/sponsors/apexhosting.png",
     "link":  "https://apexminecrafthosting.com/"
-  },
+  },  
   {
-    "name":  "BeastNode",
-    "image": "assets/img/sponsors/beastnode.png",
-    "link":  "https://www.beastnode.com/"
+    "name":  "CreeperHost",
+    "image": "assets/img/sponsors/creeperhost.svg",
+    "link":  "https://billing.creeperhost.net/link.php?id=8"
   }
 ]
