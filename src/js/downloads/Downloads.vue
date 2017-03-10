@@ -47,7 +47,7 @@
                 <div class="col-lg-4 col-md-3 col-sm-6 download-category" v-if="platform.category.versions">
                     <h3>{{ platform.category.name }} version</h3>
                     <div class="btn-group">
-                        <router-link v-for="version of platform.category.versions.current"
+                        <router-link v-for="version of platform.category.versions.current" :key="version"
                                      :to="routeForCategory(version)"
                                      class="btn btn-primary">{{ version }}</router-link>
                         <template v-if="platform.category.versions.unsupported.length > 0">

@@ -26,7 +26,7 @@
 <template>
     <ol class="builds">
         <li v-for="build in builds" class="build" :id="build.version">
-            <h4>{{ build.version }} <build-label v-for="label in build.labels" :l="label"></build-label></h4>
+            <h4>{{ build.version }} <build-label v-for="label in build.labels" :key="label.name" :l="label"></build-label></h4>
 
             <div class="artifacts">
                 <a v-for="artifact in build.artifacts" :href="artifact.url" :title="artifact.type.title"
