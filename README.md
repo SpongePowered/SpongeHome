@@ -13,8 +13,8 @@ under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
 ### 1. Prerequisites
 
-- [Golang](http://golang.org/doc/install)
-- [node.js](http://nodejs.org/download/)
+- [Golang](https://golang.org/doc/install)
+- [node.js](https://nodejs.org/download/)
 
 ### 2. Cloning
 

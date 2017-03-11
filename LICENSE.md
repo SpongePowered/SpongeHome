@@ -1,4 +1,4 @@
-This project is based on Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
+This project is based on Start Bootstrap - Freelancer Bootstrap Theme (https://startbootstrap.com)
 which is licensed under the MIT license.
 
 All the original code in this project is also licensed under the MIT License:
