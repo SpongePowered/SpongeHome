@@ -36,6 +36,8 @@ import (
 func AddHeaders(resp http.ResponseWriter) {
 	header := resp.Header()
 
+	header.Set("Content-Security-Policy", "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com/ ; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self'; font-src https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/; connect-src 'self' https://dl-api.spongepowered.org/; frame-src https://kiwiirc.com; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; ")
+
 	// Set cache headers only in production environment
 	if macaron.Env == macaron.PROD {
 		header.Add(cache.CacheControlHeader, cache.StaticContentOptions)
