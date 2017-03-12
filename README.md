@@ -6,7 +6,7 @@ under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
 ### Branches
 
-- `production` is hooked up to [www prod](https://www.spongepowered.org/)
+- `master` is hooked up to [www prod](https://www.spongepowered.org/)
 
 ## Running locally
 

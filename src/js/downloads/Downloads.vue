@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-6">
                     <div class="logo">
-                        <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt="" />
+                        <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt="">
                         <h1>Sponge<span :class="['platform-badge', platform.id]">{{ platform.suffix }}</span></h1>
                     </div>
                     <h2>Downloads</h2>
@@ -110,7 +110,7 @@
         <div class="container">
             <h1>Loading builds...</h1>
             <p>Spongie is loading them as fast as possible!</p>
-            <img src="assets/img/icons/spongie-mascot.png" alt="Spongie" />
+            <img src="assets/img/icons/spongie-mascot.png" alt="Spongie">
         </div>
     </section>
     </div>

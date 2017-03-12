@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-6">
                     <div class="logo">
-                        <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt=""/>
+                        <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt="">
                         <h1>Sponge</h1>
                     </div>
                     <h2>Downloads</h2>
