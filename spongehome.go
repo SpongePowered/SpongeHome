@@ -26,15 +26,16 @@
 package main // import "github.com/SpongePowered/SpongeHome"
 
 import (
+	"log"
+	"net/http"
+	"os"
+	"strings"
+
 	"github.com/SpongePowered/SpongeHome/controllers"
 	"github.com/SpongePowered/SpongeWebGo"
 	"github.com/SpongePowered/SpongeWebGo/fastly"
 	"github.com/go-macaron/gzip"
 	"gopkg.in/macaron.v1"
-	"log"
-	"net/http"
-	"os"
-	"strings"
 )
 
 func main() {
@@ -75,7 +76,7 @@ func main() {
 
 	staticOptions := macaron.StaticOptions{
 		SkipLogging: macaron.Env == macaron.PROD,
-		ETag: true,
+		ETag:        true,
 	}
 
 	m.Use(macaron.Static("public", staticOptions))

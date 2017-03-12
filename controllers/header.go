@@ -26,20 +26,15 @@
 package controllers
 
 import (
+	"net/http"
+
 	"github.com/SpongePowered/SpongeWebGo/cache"
 	"github.com/SpongePowered/SpongeWebGo/fastly"
 	"gopkg.in/macaron.v1"
-	"net/http"
 )
 
 func AddHeaders(resp http.ResponseWriter) {
 	header := resp.Header()
-
-	// TODO: Needs more testing and a few changes to make it more restrictive
-	/*header.Add("Content-Security-Policy", "default-src 'self' https:; "+
-	"style-src 'self' 'unsafe-inline' https:; "+
-	"script-src 'self' 'unsafe-eval' https://cdnjs.cloudflare.com https://www.google-analytics.com; "+
-	"frame-ancestors 'none'")*/
 
 	// Set cache headers only in production environment
 	if macaron.Env == macaron.PROD {

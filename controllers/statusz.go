@@ -26,10 +26,11 @@
 package controllers
 
 import (
-	"gopkg.in/macaron.v1"
 	"net/http"
 	"os"
 	"regexp"
+
+	"gopkg.in/macaron.v1"
 )
 
 const service = "SpongeHome"
@@ -40,7 +41,7 @@ func readStatus() interface{} {
 		return nil
 	}
 
-	buildNameRe := regexp.MustCompile(`^(.+)-([0-9]+)$`)
+	buildNameRe := regexp.MustCompile(`^(.+)-(\d+)$`)
 	buildNamePieces := buildNameRe.FindStringSubmatch(buildName)
 	jobName := buildNamePieces[1]
 	buildNum := buildNamePieces[2]
