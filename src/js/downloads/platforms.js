@@ -124,7 +124,7 @@ export const Platforms = {
                     name: `Forge ${forgeVersion.split('.')[3]}`,
                     color: 'forge',
                     title: "Recommended Forge version",
-                    link: `http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_${minecraftVersion}.html`
+                    link: `https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_${minecraftVersion}.html`
                 })
             }
         }

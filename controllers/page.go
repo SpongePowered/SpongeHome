@@ -26,9 +26,10 @@
 package controllers
 
 import (
-	"gopkg.in/macaron.v1"
 	"net/http"
 	"path/filepath"
+
+	"gopkg.in/macaron.v1"
 )
 
 var DistDir string
@@ -43,13 +44,13 @@ func init() {
 }
 
 func ServePage(ctx *macaron.Context) {
-	serveHtmlPage(ctx, ctx.Params("page"))
+	serveHTMLPage(ctx, ctx.Params("page"))
 }
 
 func ServeDownloadsPage(ctx *macaron.Context) {
-	serveHtmlPage(ctx, "downloads")
+	serveHTMLPage(ctx, "downloads")
 }
 
-func serveHtmlPage(ctx *macaron.Context, page string) {
+func serveHTMLPage(ctx *macaron.Context, page string) {
 	http.ServeFile(ctx.Resp, ctx.Req.Request, filepath.Join(DistDir, page+".html"))
 }

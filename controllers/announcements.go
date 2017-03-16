@@ -27,12 +27,13 @@ package controllers
 
 import (
 	"encoding/json"
-	"github.com/SpongePowered/SpongeWebGo/cache"
-	"github.com/SpongePowered/SpongeWebGo/fastly"
-	"gopkg.in/macaron.v1"
 	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/SpongePowered/SpongeWebGo/cache"
+	"github.com/SpongePowered/SpongeWebGo/fastly"
+	"gopkg.in/macaron.v1"
 )
 
 type Topic struct {
@@ -47,7 +48,7 @@ type TopicList struct {
 }
 
 func (t *TopicList) GetRegularTopics() []Topic {
-	var topics []Topic = []Topic{}
+	var topics = []Topic{}
 
 	for _, topic := range t.Topics {
 		if topic.Archetype == "regular" {
@@ -108,7 +109,7 @@ func GetAnnouncements(ctx *macaron.Context, logger *log.Logger) {
 		return
 	}
 
-	var topics []Topic = res.TopicList.GetRegularTopics()
+	var topics = res.TopicList.GetRegularTopics()
 
 	first, err := getAnnouncement(topics[0])
 	if err != nil {
