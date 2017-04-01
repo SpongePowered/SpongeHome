@@ -140,6 +140,104 @@
       margin: 50px auto;
     }
   }
+
+  @keyframes spongieDance {
+    0% {
+      transform: translate(0, 0) rotate(-7deg);
+    }
+    25% {
+      transform: translate(0, -15px) rotate(0deg);
+    }
+    50% {
+      transform: translate(0, 0) rotate(7deg);
+    }
+    75% {
+      transform: translate(0, -15px) rotate(0deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(-7deg);
+    }
+  }
+
+  @-webkit-keyframes spongieDance {
+    0% {
+      -webkit-transform: translate(0, 0) rotate(-7deg);
+    }
+    25% {
+      -webkit-transform: translate(0, -15px) rotate(0deg);
+    }
+    50% {
+      -webkit-transform: translate(0, 0) rotate(7deg);
+    }
+    75% {
+      -webkit-transform: translate(0, -15px) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translate(0, 0) rotate(-7deg);
+    }
+  }
+
+  @-moz-keyframes spongieDance {
+    0% {
+      -moz-transform: translate(0, 0) rotate(-7deg);
+    }
+    25% {
+      -moz-transform: translate(0, -15px) rotate(0deg);
+    }
+    50% {
+      -moz-transform: translate(0, 0) rotate(7deg);
+    }
+    75% {
+      -moz-transform: translate(0, -15px) rotate(0deg);
+    }
+    100% {
+      -moz-transform: translate(0, 0) rotate(-7deg);
+    }
+  }
+
+  @-o-keyframes spongieDance {
+    0% {
+      -o-transform: translate(0, 0) rotate(-7deg);
+    }
+    25% {
+      -o-transform: translate(0, -15px) rotate(0deg);
+    }
+    50% {
+      -o-transform: translate(0, 0) rotate(7deg);
+    }
+    75% {
+      -o-transform: translate(0, -15px) rotate(0deg);
+    }
+    100% {
+      -o-transform: translate(0, 0) rotate(-7deg);
+    }
+  }
+
+  @-ms-keyframes spongieDance {
+    0% {
+      -ms-transform: translate(0, 0) rotate(-7deg);
+    }
+    25% {
+      -ms-transform: translate(0, -15px) rotate(0deg);
+    }
+    50% {
+      -ms-transform: translate(0, 0) rotate(7deg);
+    }
+    75% {
+      -ms-transform: translate(0, -15px) rotate(0deg);
+    }
+    100% {
+      -ms-transform: translate(0, 0) rotate(-7deg);
+    }
+  }
+
+  .spongie-dance {
+    animation: spongieDance ease-in 3s infinite;
+    -webkit-animation: spongieDance ease-in-out 3s infinite;
+    -moz-animation: spongieDance ease-in-out 3s infinite;
+    -o-animation: spongieDance ease-in-out 3s infinite;
+    -ms-animation: spongieDance ease-in-out 3s infinite;
+  }
 }
 
 .horizontal-bar {
