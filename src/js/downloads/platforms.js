@@ -49,10 +49,10 @@ export const Labels = {
         color: 'success',
         title: "Latest build"
     },
-    unsupported: {
+    /*unsupported: {
         name: "Unsupported",
         color: 'danger'
-    }
+    }*/
 };
 
 const ArtifactTypes = {
