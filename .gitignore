@@ -99,6 +99,7 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+package-lock.json
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
