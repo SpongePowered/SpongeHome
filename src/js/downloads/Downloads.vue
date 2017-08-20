@@ -28,23 +28,14 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-6">
+                <div class="col-md-6 col-sm-8">
                     <div class="logo">
                         <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt="">
                         <h1>Sponge<span :class="['platform-badge', platform.id]">{{ platform.suffix }}</span></h1>
                     </div>
                     <h2>Downloads</h2>
                 </div>
-                <div class="col-md-3 col-sm-6 download-category" v-if="platform.buildTypes">
-                    <h3>Build type</h3>
-                    <ul id="build-types">
-                        <li v-for="type in platform.buildTypes">
-                            <router-link :to="routeForBuildType(type)"
-                                         :class="['label', 'label-' + type.color]"><span>{{ type.name }}</span></router-link>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-3 col-sm-6 download-category" v-if="platform.category.versions">
+                <div class="col-md-6 col-sm-4 download-category" v-if="platform.category.versions">
                     <h3>{{ platform.category.name }} version</h3>
                     <div class="btn-group">
                         <router-link v-for="version of platform.category.versions.current" :key="version"
@@ -83,16 +74,6 @@
             <div class="container" id="no-builds" v-else-if="!recommended">
                 <p><strong>Oh no!</strong> Unfortunately, there are no builds available for the current selection.</p>
                 <h4>Possible solutions:</h4>
-                <p><ul>
-                <li v-for="type in getAlternativeBuildTypes()">
-                    <router-link :to="adaptRouteForBuildType(type)"
-                    >Search for <span :class="['label', 'label-' + type.color]">{{ type.name }}</span> builds.</router-link>
-                </li>
-                <li v-if="$route.query.until"><router-link :to="{query: {since: $route.query.until}}"
-                >Search for newer builds.</router-link></li>
-                <li v-if="$route.query.since"><router-link :to="{query: {until: $route.query.since}}"
-                >Search for older builds.</router-link></li>
-                </ul></p>
             </div>
 
             <div class="row navigation" v-if="builds.length > 0">
@@ -117,13 +98,11 @@
 </template>
 
 <script>
-    import 'core-js/fn/set';
-    import 'core-js/fn/array/from';
-    import 'core-js/fn/array/find';
     import 'core-js/fn/array/includes';
 
     import {API, Platforms, BuildTypes, Labels} from 'downloads/platforms'
     import Builds from 'downloads/Builds.vue'
+    import VersionComparator from 'downloads/version-comparator'
 
     export default {
         name: 'downloads',
@@ -167,96 +146,89 @@
                 this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}`).then(response => {
                     const project = response.body;
 
-                    const buildTypes = [], buildTypesData = {};
+                    const categories = {};
 
-                    const currentCategoryVersions = new Set(this.platform.category.forProject(project));
-                    const unsupportedCategoryVersions = new Set(currentCategoryVersions);
+                    const categoryVersions = [];
+                    const allCategoryVersions = this.platform.category.forProject(project);
 
-                    for (const type of BuildTypes) {
-                        if (!type.id in project.buildTypes) {
-                            continue
-                        }
-
-                        buildTypes.push(type);
-
-                        const data = project.buildTypes[type.id];
-                        const buildTypeData = {
-                            type: type,
-                        };
-
-                        if (data.recommended) {
-                            buildTypeData.recommended = {}
-                        }
-
-                        buildTypesData[type.id] = buildTypeData;
+                    for (const branchName of Object.keys(project.branches)) {
+                        const data = project.branches[branchName];
 
                         const category = this.platform.category.forBuild(data.latest);
-                        if (category) {
-                            buildTypeData.categoryVersion = category;
-                            unsupportedCategoryVersions.delete(category);
+                        if (!category) {
+                            console.error(`Cannot locate category version for branch '${branchName}'`);
+                            continue;
+                        }
+
+                        let categoryData = categories[category];
+                        if (!categoryData) {
+                            categoryData = {};
+                            categories[category] = categoryData;
+                            categoryVersions.push(category);
+                        }
+
+                        if (BuildTypes[data.buildType] === BuildTypes.stable) {
+                            categoryData.stable = true;
+                        }
+
+                        if (data.recommended) {
+                            if (categoryData.recommended) {
+                                console.error(`Multiple branches with recommended build for category ${category}`)
+                            } else {
+                                categoryData.recommended = data.recommended;
+                            }
                         }
                     }
 
-                    const unsupportedCategoryVersionsArray = Array.from(unsupportedCategoryVersions);
+                    this.platform.categories = categories;
 
-                    for (const version of unsupportedCategoryVersionsArray) {
-                        currentCategoryVersions.delete(version)
-                    }
-
-                    this.platform.buildTypes = buildTypes;
-
-                    // Vue does not support iterating over sets currently, https://github.com/vuejs/vue/issues/2410
                     this.platform.category.versions = {
-                        current: Array.from(currentCategoryVersions),
-                        unsupported: unsupportedCategoryVersionsArray
+                        current: categoryVersions.sort(VersionComparator),
+                        unsupported: allCategoryVersions.filter(version => !categories[version])
                     };
 
-                    this.platform.buildTypesData = buildTypesData;
+                    // Find latest stable category
+                    let stableCategory;
+                    for (let i = categoryVersions.length - 1; i >= 0; --i) {
+                        if (categories[categoryVersions[i]].stable) {
+                            stableCategory = categoryVersions[i];
+                            break;
+                        }
+                    }
+
+                    this.platform.defaultCategory = stableCategory || categoryVersions[categoryVersions.length - 1];
                     this.platform.loaded = true;
 
                     if (!this.redirectToDefaultVersion()) {
                         this.fetchBuilds()
                     }
-                }, response => console.log("ERROR"))
+                }, response => console.error("Failed to fetch platform info"))
             },
             fetchBuilds() {
                 const params = {
-                    type: this.$route.params.buildType,
+                    [this.platform.category.id]: this.$route.params.category,
                 };
 
-                params[this.platform.category.id] = this.$route.params.category;
-
-                const buildTypeData = this.platform.buildTypesData[this.$route.params.buildType];
+                const categoryData = this.platform.categories[this.$route.params.category];
 
                 // Load recommended build (if necessary)
-                const showRecommended = !this.$route.query.until && !this.$route.query.since;
-                if (showRecommended && buildTypeData.recommended) {
-                    const recommendedBuild = buildTypeData.recommended[this.$route.params.category];
-
-                    if (recommendedBuild == null) {
+                const showRecommended = categoryData && !this.$route.query.until && !this.$route.query.since;
+                if (showRecommended && categoryData.recommended) {
+                    if (!categoryData.recommended.build) {
                         this.loadingRecommended = true;
-                        this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}/downloads/recommended`,{params: params}).then(response => {
+                        this.$http.get(`${API}/v1/${this.platform.group}/${this.platform.id}/downloads/${categoryData.recommended.version}`).then(response => {
                             const recommendedBuild = response.body;
 
                             recommendedBuild.label = Labels.recommended;
-                            recommendedBuild.labels = [buildTypeData.type, Labels.recommended];
+                            recommendedBuild.labels = [BuildTypes[recommendedBuild.type], Labels.recommended];
                             this.readArtifacts(recommendedBuild);
 
-                            buildTypeData.recommended[this.$route.params.category] = recommendedBuild;
+                            categoryData.recommended.build = recommendedBuild;
                             this.recommended = recommendedBuild;
                             this.loadingRecommended = false;
-                        }, response => {
-                            if (response.status == 404) {
-                                // No recommended build available
-                                buildTypeData.recommended[this.$route.params.category] = false;
-                                this.loadingRecommended = false;
-                                this.markLatestBuild(this.builds)
-                            }
-
-                            console.log("ERROR")
-                        })
-                    } else if (recommendedBuild) {
-                        this.recommended = recommendedBuild
+                        }, response => console.error("Failed to load recommended build"))
+                    } else {
+                        this.recommended = categoryData.recommended.build
                     }
                 }
 
@@ -270,7 +242,7 @@
 
                     const builds = response.body;
                     for (const build of builds) {
-                        build.labels = [buildTypeData.type];
+                        build.labels = [BuildTypes[build.type]];
 
                         if (unsupported) {
                             build.labels.push(unsupported)
@@ -278,7 +250,7 @@
                             if (build.label in Labels) {
                                 build.labels.push(Labels[build.label])
                             } else {
-                                console.log(`Unknown label: ${build.label}`)
+                                console.error(`Unknown label: ${build.label}`)
                             }
                         }
 
@@ -292,7 +264,7 @@
 
                     this.loading = false;
                     this.builds = builds
-                }, response => console.log("ERROR"))
+                }, response => console.error("Failed to fetch builds"))
             },
             readArtifacts(build) {
                 const artifacts = [];
@@ -312,7 +284,7 @@
                 build.artifacts = artifacts
             },
             markLatestBuild(builds) {
-                if (this.loadingRecommended || this.recommended || !builds || builds.length == 0) {
+                if (this.loadingRecommended || this.recommended || !builds || builds.length === 0) {
                     return
                 }
 
@@ -328,19 +300,6 @@
 
                 this.recommended = latestBuild;
             },
-            routeForBuildType(buildType) {
-                return {name: 'downloads-build-type', params: {
-                    project: this.platform.id,
-                    buildType: buildType.id
-                }}
-            },
-            adaptRouteForBuildType(buildType) {
-                return {name: 'downloads', params: {
-                    project: this.platform.id,
-                    buildType: buildType.id,
-                    category: this.$route.params.category
-                }, query: this.$route.query}
-            },
             routeForCategory(category) {
                 return {name: 'downloads', params: {
                     project: this.platform.id,
@@ -349,21 +308,16 @@
                 }}
             },
             redirectToDefaultVersion() {
-                if (this.platform.loaded && (!this.$route.params.buildType || !this.$route.params.category)) {
-                    const buildType = this.$route.params.buildType || this.platform.buildTypes[0].id;
+                if (this.platform.loaded && !this.$route.params.category) {
                     this.$router.replace({name: 'downloads', params: {
                         project: this.platform.id,
-                        buildType: buildType,
-                        category: this.$route.params.category || this.platform.buildTypesData[buildType].categoryVersion
+                        category: this.platform.defaultCategory,
                     }});
                     return true
                 } else {
                     return false
                 }
             },
-            getAlternativeBuildTypes() {
-                return this.platform.buildTypes.filter(type => type.id != this.$route.params.buildType);
-            }
         },
         components: {
             builds: Builds

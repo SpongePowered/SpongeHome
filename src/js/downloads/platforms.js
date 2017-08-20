@@ -25,18 +25,23 @@
 
 export const API = process.env.DOWNLOADS_API_URL || "https://dl-api.spongepowered.org";
 
-export const BuildTypes = [
-    {
+export const BuildTypes = {
+    stable: {
         name: "Stable",
         id: 'stable',
         color: 'primary'
     },
-    {
+    bleeding: {
         name: "Experimental",
         id: 'bleeding',
         color: 'warning'
+    },
+    unstable: {
+        name: "Unstable",
+        id: 'unstable',
+        color: 'danger'
     }
-];
+};
 
 export const Labels = {
     recommended: {
@@ -49,10 +54,10 @@ export const Labels = {
         color: 'success',
         title: "Latest build"
     },
-    /*unsupported: {
+    unsupported: {
         name: "Unsupported",
         color: 'danger'
-    }*/
+    }
 };
 
 const ArtifactTypes = {
