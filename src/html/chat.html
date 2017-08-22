@@ -33,7 +33,40 @@
 {% endblock %}
 
 {% block content %}
-<div id="chat-wrapper">
-    <iframe id="chat-frame" src="https://kiwiirc.com/client/irc.esper.net:+6697/?nick=sponge|?#sponge"></iframe>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="assets/img/icons/spongie-mark-reverse-dark.svg" alt="">
+            <h1>Sponge</h1>
+        </div>
+        <h2>Chat</h2>
+    </div>
+</header>
+
+<div class="container chat-content">
+    <section id="chat-overview">
+        <p>
+            SpongePowered provides several IRC channels and a Discord server for you to discuss the Sponge project on.
+            The IRC channels and Discord server are linked, so feel free to use either.
+        </p>
+    </section>
+
+    <section id="chat-irc">
+        <h3>IRC</h3>
+        <p>
+            The official Sponge channels are <code>#sponge</code>, <code>#spongedev</code>, and <code>#spongedocs</code> on <a href="irc://irc.esper.net:6667">irc.esper.net</a>.
+        </p>
+
+        <p>
+            If you don't have an IRC client installed, you can <a href="https://kiwiirc.com/client/irc.esper.net:+6697/?nick=sponge|?#sponge" target="_blank">use the web client</a>.
+        </p>
+    </section>
+
+    <section id="chat-discord">
+        <h3>Discord</h3>
+        <p>
+            <a href="https://discord.gg/PtaGRAs">Click here</a> to join the SpongePowered Discord server.
+        </p>
+    </section>
 </div>
 {% endblock %}
