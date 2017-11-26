@@ -28,5 +28,15 @@
     "name":  "CreeperHost",
     "image": "assets/img/sponsors/creeperhost.svg",
     "link":  "https://billing.creeperhost.net/link.php?id=8"
+  },
+  {
+    "name": "JetBrains",
+    "image": "assets/img/sponsors/jetbrains.svg",
+    "link": "https://www.jetbrains.com/"
+  },
+  {
+    "name": "YourKit",
+    "image": "assets/img/sponsors/yourkit.png",
+    "link": "https://www.yourkit.com/"
   }
 ]
