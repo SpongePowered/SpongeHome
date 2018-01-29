@@ -24,35 +24,41 @@
  */
 
 #chat-page {
-  footer {
-    position: absolute;
+  header {
+    margin-top: 50px;
+    padding-bottom: 20px;
 
-    top: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    .logo {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
 
-    width: 100%;
+      @media (max-width: 767px) {
+        font-size: 3vmin;
+      }
+
+      &> * {
+        display: inline-block;
+        vertical-align: middle;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        height: 8em;
+      }
+
+      h1 {
+        font-size: 4.5em;
+        margin-left: 20px;
+      }
+    }
   }
-}
 
-#chat-wrapper {
-  margin-top: $sp_topbar_height;
+  .chat-content {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-#chat-frame {
-  display: block;
-
-  border: 0;
-  margin: 0;
-  padding: 0;
-
-  width: 100%;
-  height: 100%;
 }
