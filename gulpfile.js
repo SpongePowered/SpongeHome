@@ -5,7 +5,7 @@ const
 
     path = require('path'),
     data = require('gulp-data'),
-    nunjucksRender = require('gulp-nunjucks-md'),
+    nunjucks = require('gulp-nunjucks'),
 
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
@@ -41,7 +41,7 @@ function htmlDataProduction(file) {
 const renderNunjucks = renderData =>
     gulp.src('./src/html/*.html')
         .pipe(data(renderData))
-        .pipe(nunjucksRender({
+        .pipe(nunjucks.compile({
             path: 'src/html'
         }));
 
