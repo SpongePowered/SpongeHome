@@ -36,10 +36,10 @@ var DistDir string
 
 func init() {
 	switch macaron.Env {
-	case macaron.DEV:
-		DistDir = "dist/dev"
 	case macaron.PROD:
 		DistDir = "dist/prod"
+	default:
+		DistDir = "dist/dev"
 	}
 }
 
