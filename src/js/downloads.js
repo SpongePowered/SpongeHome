@@ -40,13 +40,8 @@ const routes = [
         component: Downloads
     },
     {
-        name: 'downloads-build-type',
-        path: '/downloads/:project/:buildType',
-        component: Downloads
-    },
-    {
         name: 'downloads',
-        path: '/downloads/:project/:buildType/:category',
+        path: '/downloads/:project/:category',
         component: Downloads
     }
 ];
