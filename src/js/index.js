@@ -23,37 +23,27 @@
  * THE SOFTWARE.
  */
 
-import Announcement from 'Announcement.vue'
-import Platforms from 'downloads/Platforms.vue'
+function addAnnouncement(announcement) {
+    var article = $('<article>').trunk8({
+        lines: 16,
+        tooltip: false
+    });
 
-// Dummy router-link for index page, uses vue-router on downloads page
-Vue.component('router-link', {
-    props: {
-        to: Object,
-        tag: {
-            type: String,
-            default: 'a'
-        }
-    },
-    render(create) {
-        return create(this.tag, {attrs:{href: `/downloads/${this.to.params.project}`}}, this.$slots.default)
-    }
-});
+    $('#announcements').append(
+        $('<div>').addClass('col-lg-6').append(
+            $('<h3>').addClass('title').text(announcement.title)
+        ).append(article).append(
+            $('<h4>').addClass('continue-reading').append(
+                $('<a>').attr('ref', '_blank').attr('href', announcement.url).text('Continue Reading')
+            )
+        )
+    );
 
-new Vue({
-    el: '#content',
-    data: {
-        announcements: null
-    },
-    created() {
-        this.$http.get('/announcements.json').then(response => {
-            this.announcements = response.body
-        }, () => {
-            console.log("Failed to load announcements"); // TODO
-        });
-    },
-    components: {
-        announcement: Announcement,
-        platforms: Platforms
-    }
+    article.trunk8('update', announcement.content);
+}
+
+$.getJSON('/announcements.json', function(data) {
+    $('#announcements').empty();
+    addAnnouncement(data.first);
+    addAnnouncement(data.second);
 });

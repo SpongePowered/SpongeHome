@@ -47,10 +47,6 @@ func ServePage(ctx *macaron.Context) {
 	serveHTMLPage(ctx, ctx.Params("page"))
 }
 
-func ServeDownloadsPage(ctx *macaron.Context) {
-	serveHTMLPage(ctx, "downloads")
-}
-
 func serveHTMLPage(ctx *macaron.Context, page string) {
 	http.ServeFile(ctx.Resp, ctx.Req.Request, filepath.Join(DistDir, page+".html"))
 }

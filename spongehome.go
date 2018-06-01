@@ -90,9 +90,6 @@ func main() {
 		m.Get("/statusz", statuszHandler)
 	}
 
-	// Additional route for downloads page (uses routing on the client)
-	m.Get("/downloads/*", controllers.ServeDownloadsPage)
-
 	if c != nil {
 		// Attempt to purge fastly cache
 		go c.PurgeAll()
