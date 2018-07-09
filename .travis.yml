@@ -3,7 +3,7 @@ node_js: lts/*
 
 env:
   global:
-    - GIMME_GO_VERSION=1.7.6
+    - GIMME_GO_VERSION=stable
     - GOPATH=$HOME/go
     - GO_PROJECT=github.com/SpongePowered/SpongeHome
     - GO_PROJECT_DIR=$GOPATH/src/$GO_PROJECT
