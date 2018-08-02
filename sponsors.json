@@ -8,7 +8,12 @@
     "name":  "Apex Hosting",
     "image": "assets/img/sponsors/apexhosting.png",
     "link":  "https://apexminecrafthosting.com/"
-  },  
+  },
+  {
+    "name": "MC Server Hosting",
+    "image": "assets/img/sponsors/mcserverhosting.png",
+    "link": "https://mcserverhosting.net/?ref=sponge"
+  },
   {
     "name":  "CreeperHost",
     "image": "assets/img/sponsors/creeperhost.svg",
