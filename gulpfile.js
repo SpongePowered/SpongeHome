@@ -22,7 +22,7 @@ function htmlData(file) {
         base: process.env.HTML_BASE || '/',
         page: name,
         menu: {
-            [name]: 'active'
+            [name === 'chat' ? 'chat' : 'index']: 'active'
         },
         sponsors: sponsors
     };

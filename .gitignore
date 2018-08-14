@@ -100,6 +100,7 @@ jspm_packages
 .node_repl_history
 
 package-lock.json
+yarn.lock
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
