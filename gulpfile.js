@@ -15,6 +15,7 @@ const
     cleanCSS = require('gulp-clean-css');
 
 const sponsors = require('./sponsors.json');
+const staff    = require('./staff.json');
 
 function htmlData(file) {
     const name = path.basename(file.path, '.html');
@@ -24,7 +25,8 @@ function htmlData(file) {
         menu: {
             [name === 'chat' ? 'chat' : 'index']: 'active'
         },
-        sponsors: sponsors
+        sponsors: sponsors,
+        staff: staff
     };
 }
 

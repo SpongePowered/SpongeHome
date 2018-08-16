@@ -1,0 +1,322 @@
+{
+    "current": [
+        {
+            "name": "Leaders",
+            "width": "4",
+            "members": [
+                {
+                    "name": "blood",
+                    "img": "https://avatars3.githubusercontent.com/u/2998171?s=400&v=4",
+                    "url": "https://github.com/bloodmc"
+                },
+                {
+                    "name": "gabizou",
+                    "img": "https://avatars3.githubusercontent.com/u/1203877?s=400&v=4",
+                    "url": "https://github.com/gabizou"
+                },
+                {
+                    "name": "Zidane",
+                    "img": "https://avatars0.githubusercontent.com/u/744482?s=400&v=4",
+                    "url": "https://github.com/Zidane"
+                }
+            ]
+        },
+        {
+            "name": "Managers",
+            "width": "3",
+            "members": [
+                {
+                    "name": "Dockter",
+                    "img": "https://avatars3.githubusercontent.com/u/1034770?s=400&v=4",
+                    "url": "https://github.com/Dockter"
+                },
+                {
+                    "name": "Inscrutable",
+                    "img": "https://avatars0.githubusercontent.com/u/1009532?s=400&v=4",
+                    "url": "https://github.com/Inscrutable"
+                },
+                {
+                    "name": "kashike",
+                    "img": "https://avatars0.githubusercontent.com/u/5474071?s=400&v=4",
+                    "url": "https://github.com/kashike"
+                },
+                {
+                    "name": "lukegb",
+                    "img": "https://avatars3.githubusercontent.com/u/246745?s=400&v=4",
+                    "url": "https://github.com/lukegb"
+                },
+                {
+                    "name": "mbaxter",
+                    "img": "https://avatars0.githubusercontent.com/u/181668?s=400&v=4",
+                    "url": "https://github.com/mbax"
+                },
+                {
+                    "name": "Me4502",
+                    "img": "https://avatars1.githubusercontent.com/u/546754?s=400&v=4",
+                    "url": "https://github.com/Me4502"
+                },
+                {
+                    "name": "Owexz",
+                    "img": "https://avatars3.githubusercontent.com/u/1373064?s=400&v=4",
+                    "url": "https://github.com/Owexz"
+                },
+                {
+                    "name": "phase",
+                    "img": "https://avatars0.githubusercontent.com/u/7685133?s=400&v=4",
+                    "url": "https://github.com/phase"
+                },
+                {
+                    "name": "phroa",
+                    "img": "https://avatars3.githubusercontent.com/u/6373176?s=400&v=4",
+                    "url": "https://github.com/phroa"
+                },
+                {
+                    "name": "progwml6",
+                    "img": "https://avatars3.githubusercontent.com/u/4653903?s=400&v=4",
+                    "url": "https://github.com/progwml6"
+                }
+            ]
+        },
+        {
+            "name": "Developers",
+            "width": "2",
+            "members": [
+                {
+                    "name": "Aaron1011",
+                    "img": "https://avatars3.githubusercontent.com/u/1408859?s=400&v=4",
+                    "url": "https://github.com/Aaron1011"
+                },
+                {
+                    "name": "dualspiral",
+                    "img": "https://avatars1.githubusercontent.com/u/1904167?s=400&v=4",
+                    "url": "https://github.com/dualspiral"
+                },
+                {
+                    "name": "Faithcaio",
+                    "img": "https://avatars0.githubusercontent.com/u/1575592?s=400&v=4",
+                    "url": "https://github.com/Faithcaio"
+                },
+                {
+                    "name": "JBYoshi",
+                    "img": "https://avatars2.githubusercontent.com/u/12983479?s=400&v=4",
+                    "url": "https://github.com/JBYoshi"
+                },
+                {
+                    "name": "Luck",
+                    "img": "https://avatars2.githubusercontent.com/u/296868?s=400&v=4",
+                    "url": "https://github.com/Luck"
+                },
+                {
+                    "name": "Minecrell",
+                    "img": "https://avatars1.githubusercontent.com/u/3035868?s=400&v=4",
+                    "url": "https://github.com/Minecrell"
+                },
+                {
+                    "name": "Mumfrey",
+                    "img": "https://avatars3.githubusercontent.com/u/1147071?s=400&v=4",
+                    "url": "https://github.com/Mumfrey"
+                },
+                {
+                    "name": "parlough",
+                    "img": "https://avatars1.githubusercontent.com/u/18372958?s=400&v=4",
+                    "url": "https://github.com/parlough"
+                },
+                {
+                    "name": "simon816",
+                    "img": "https://avatars0.githubusercontent.com/u/1497508?s=400&v=4",
+                    "url": "https://github.com/simon816"
+                }
+            ]
+        },
+        {
+            "name": "System Administrators",
+            "width": "2",
+            "members": [
+                {
+                    "name": "Snowie",
+                    "img": "https://avatars3.githubusercontent.com/u/4595790?s=400&v=4",
+                    "url": "https://github.com/d4rkfly3r"
+                }
+            ]
+        },
+        {
+            "name": "Issue Managers",
+            "width": "2",
+            "members": [
+                {
+                    "name": "phit",
+                    "img": "https://avatars0.githubusercontent.com/u/2097483?s=400&v=4",
+                    "url": "https://github.com/phit"
+                },
+                {
+                    "name": "ryantheleach",
+                    "img": "https://avatars1.githubusercontent.com/u/141554?s=400&v=4",
+                    "url": "https://github.com/ryantheleach"
+                }
+            ]
+        },
+        {
+            "name": "Ore Developers",
+            "width": "2",
+            "members": [
+                {
+                    "name": "ewoutvs_",
+                    "img": "https://avatars0.githubusercontent.com/u/3961526?s=400&v=4",
+                    "url": "https://github.com/Ewoutvans"
+                },
+                {
+                    "name": "felixoi",
+                    "img": "https://avatars2.githubusercontent.com/u/14966472?s=400&v=4",
+                    "url": "https://github.com/felixoi"
+                },
+                {
+                    "name": "Katrix",
+                    "img": "https://avatars2.githubusercontent.com/u/11007080?s=400&v=4",
+                    "url": "https://github.com/Katrix"
+                }
+            ]
+        },
+        {
+            "name": "Web Developers",
+            "width": "2",
+            "members": [
+                {
+                    "name": "jamierocks",
+                    "img": "https://avatars2.githubusercontent.com/u/5103549?s=400&v=4",
+                    "url": "https://github.com/jamierocks"
+                }
+            ]
+        },
+        {
+            "name": "Docs Editors",
+            "width": "2",
+            "members": [
+                {
+                    "name": "Nari",
+                    "img": "https://avatars3.githubusercontent.com/u/5409394?s=400&v=4",
+                    "url": "https://github.com/NariKiro"
+                },
+                {
+                    "name": "ST-DDT",
+                    "img": "https://avatars1.githubusercontent.com/u/1579362?s=400&v=4",
+                    "url": "https://github.com/ST-DDT"
+                },
+                {
+                    "name": "worm424",
+                    "img": "https://avatars3.githubusercontent.com/u/10191668?s=400&v=4",
+                    "url": "https://github.com/worm424"
+                },
+                {
+                    "name": "ZephireNZ",
+                    "img": "https://avatars2.githubusercontent.com/u/1644496?s=400&v=4",
+                    "url": "https://github.com/ZephireNZ"
+                },
+                {
+                    "name": "Zirconium",
+                    "img": "https://avatars0.githubusercontent.com/u/10094956?s=400&v=4",
+                    "url": "https://github.com/Zirconium"
+                }
+            ]
+        },
+        {
+            "name": "Moderators",
+            "width": "2",
+            "members": [
+                {
+                    "name": "gravityfox",
+                    "img": "https://avatars0.githubusercontent.com/u/2382882?s=400&v=4",
+                    "url": "https://github.com/gravityfox"
+                },
+                {
+                    "name": "Grinch",
+                    "img": "https://avatars3.githubusercontent.com/u/963480?s=400&v=4",
+                    "url": "https://github.com/Grinch"
+                },
+                {
+                    "name": "Lemonous",
+                    "img": "https://avatars1.githubusercontent.com/u/2099030?s=400&v=4",
+                    "url": "https://github.com/afriestad"
+                },
+                {
+                    "name": "Vectrix",
+                    "img": "https://avatars2.githubusercontent.com/u/22254644?s=280&v=4",
+                    "url": "https://github.com/Vectrix"
+                }
+            ]
+        },
+        {
+            "name": "Ore Reviewers",
+            "width": "2",
+            "members": [
+                {
+                    "name": "DotDash",
+                    "img": "https://avatars3.githubusercontent.com/u/230962?s=400&v=4",
+                    "url": "https://github.com/DotDash"
+                },
+                {
+                    "name": "Eufranio",
+                    "img": "https://avatars2.githubusercontent.com/u/17598280?s=400&v=4",
+                    "url": "https://github.com/Eufranio"
+                },
+                {
+                    "name": "liach",
+                    "img": "https://avatars2.githubusercontent.com/u/7806504?s=400&v=4",
+                    "url": "https://github.com/liach"
+                },
+                {
+                    "name": "mosemister",
+                    "img": "https://avatars1.githubusercontent.com/u/3740689?s=400&v=4",
+                    "url": "https://github.com/mosemister"
+                },
+                {
+                    "name": "RedNesto",
+                    "img": "https://avatars0.githubusercontent.com/u/13600250?s=400&v=4",
+                    "url": "https://github.com/RedNesto"
+                },
+                {
+                    "name": "Simon_Flash",
+                    "img": "https://avatars2.githubusercontent.com/u/25996030?s=400&v=4",
+                    "url": "https://github.com/SimonFlash"
+                },
+                {
+                    "name": "Yeregorix",
+                    "img": "https://avatars2.githubusercontent.com/u/10995968?s=400&v=4",
+                    "url": "https://github.com/Yeregorix"
+                }
+            ]
+        }
+    ],
+    "retired": [
+        "AzureusNation",
+        "Boformer",
+        "Cedeel",
+        "Dark_Arc",
+        "DarkArcana",
+        "DDoS",
+        "Deamon",
+        "Disconsented",
+        "drtshock",
+        "FerusGrim",
+        "GenPage",
+        "gratimax",
+        "Hassans6000",
+        "hawtre",
+        "jckf",
+        "kitsub",
+        "kobata",
+        "Kodfod",
+        "Kornagan",
+        "modwizcode",
+        "Pandette",
+        "Saladoc",
+        "sibomots",
+        "sk89q",
+        "theresajayne",
+        "TnT",
+        "Tzk",
+        "Tyrannokapi",
+        "Voltasalt",
+        "windy",
+        "zml"
+    ]
+}

@@ -23,17 +23,79 @@
  * THE SOFTWARE.
  */
 
-@import "sponge_variables";
-@import "spongebootstrap";
+#staff-page {
+  header {
+    margin-top: 50px;
+    padding-bottom: 20px;
 
-@import "base";
-@import "header";
-@import "topbar";
-@import "footer";
+    .logo {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
 
-@import "index";
-@import "index_sections";
-@import "sponsors";
-@import "chat";
-@import "downloads";
-@import "staff";
+      @media (max-width: 767px) {
+        font-size: 3vmin;
+      }
+
+      &> * {
+        display: inline-block;
+        vertical-align: middle;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        height: 8em;
+      }
+
+      h1 {
+        font-size: 4.5em;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .current {
+    background-color: #5C6BC0;
+    &:nth-child(2n + 1) {
+      background-color: #4FC3F7;
+    }
+
+    text-align: center;
+
+    img {
+      width: 70%;
+
+      border-radius: 50%;
+      border: 10px solid rgba($color: #212121, $alpha: 0.4);
+
+      &:hover {
+        transform: scale(1.05);
+        border: 10px solid rgba($color: #212121, $alpha: 0.5);
+      }
+    }
+
+    .link {
+      &:link, &:visited, &:active {
+        color: rgba($color: #212121, $alpha: 0.8);
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: #212121; // material grey 900
+        text-decoration: none;
+      }
+    }
+  }
+
+  .retired {
+    background-color: #80CBC4;
+
+    text-align: center;
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
