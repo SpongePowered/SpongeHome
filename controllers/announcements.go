@@ -90,8 +90,8 @@ func GetAnnouncements(ctx *macaron.Context, logger *log.Logger) {
 	header := ctx.Header()
 
 	// Override cache headers
-	header.Add(cache.CacheControlHeader, cache.DynamicContentOptions)
-	header.Add(fastly.SurrogateControlHeader, cache.SurrogateDynamicContentOptions)
+	header.Set(cache.CacheControlHeader, cache.DynamicContentOptions)
+	header.Set(fastly.SurrogateControlHeader, cache.SurrogateDynamicContentOptions)
 
 	var res Category
 

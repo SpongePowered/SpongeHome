@@ -48,13 +48,6 @@ command line. SpongeHome will now be running locally on port 4000.
 **NOTE:** You will need to rerun this when you make a change to the Golang
 source.
 
-#### Using the Node.js development server
-If you are developing the downloads page you should consider using the Node.js development server instead of the Go
-server. The `webpack-dev-server` will automatically inject the latest changes to the JS files into the running session
-in your browser. You can start the Node.js development server using `gulp dev`.
-
-**NOTE:** Loading announcements is not supported using the Node.js development server.
-
 ## Environment variables
 **Optional**:
 - `MACARON_ENV=production`: Set the application in production mode

@@ -36,19 +36,15 @@ var DistDir string
 
 func init() {
 	switch macaron.Env {
-	case macaron.DEV:
-		DistDir = "dist/dev"
 	case macaron.PROD:
 		DistDir = "dist/prod"
+	default:
+		DistDir = "dist/dev"
 	}
 }
 
 func ServePage(ctx *macaron.Context) {
 	serveHTMLPage(ctx, ctx.Params("page"))
-}
-
-func ServeDownloadsPage(ctx *macaron.Context) {
-	serveHTMLPage(ctx, "downloads")
 }
 
 func serveHTMLPage(ctx *macaron.Context, page string) {

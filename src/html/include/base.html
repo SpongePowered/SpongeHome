@@ -67,7 +67,8 @@
                     <li><a href="https://docs.spongepowered.org"><i class="fa-fw fa fa-book"></i>Docs</a></li>
                     <li><a href="https://jd.spongepowered.org"><i class="fa-fw fa fa-graduation-cap"></i>Javadocs</a></li>
                     <li><a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa-fw fa fa-plug"></i>Plugins</a></li>
-                    <li class="{{ menu.downloads }}"><a href="downloads"><i class="fa-fw fa fa-download"></i>Downloads</a></li>
+                    <li><a href="https://ore.spongepowered.org/"><img src="assets/img/icons/ore.svg" alt="" class="fa-fw fa ore-nav">Ore <sup>Beta</sup></a></li>
+                    <li><a href="https://www.spongepowered.org/downloads"><i class="fa-fw fa fa-download"></i>Downloads</a></li>
                     <li class="{{ menu.chat }}"><a href="chat"><i class="fa-fw fa fa-comment"></i>Chat</a></li>
                 </ul>
             </div>
@@ -126,7 +127,7 @@
     <div class="footer-below">
         <div class="container">
             <div class="row">
-                <p>Copyright &copy; SpongePowered 2014-2017</p>
+                <p>Copyright &copy; SpongePowered 2014-2018</p>
                 <p id="fastly">Accelerated by<br>
                     <a href="https://www.fastly.com">
                         <img src="assets/img/fastly.png" alt="Fastly" height="45" width="100">
@@ -150,16 +151,6 @@
 <script src="assets/js/spongehome{{ min }}.js"></script>
 
 {% block javascript %}{% endblock %}
-
-<!-- Google Analytics -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-59476017-1', 'auto');
-    ga('send', 'pageview');
-</script>
 
 </body>
 </html>

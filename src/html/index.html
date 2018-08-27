@@ -24,7 +24,12 @@
 -->
 
 {% set title = "Sponge - Minecraft: Java Edition Modding API" %}
-{% extends "include/vue.html" %}
+{% extends "include/base.html" %}
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trunk8/1.3.3/trunk8.min.js" integrity="sha256-r2/aTIHrpMiedh+4T1JPMLkQ6VcVDZ8XkRE/7i5piLs=" crossorigin="anonymous"></script>
+<script src="assets/js/{{ page }}{{ min }}.js"></script>
+{% endblock %}
 
 {% block links %}
 <li class="page-scroll"><a href="#news">News</a></li>
@@ -72,7 +77,7 @@
         <div class="row">
             <a class="col-xs-6 col-md-2 col-sm-4 icon" href="https://forums.spongepowered.org/"><i class="fa-fw fa fa-comments"></i><p>Forums</p></a>
             <a class="col-xs-6 col-md-2 col-sm-4 icon" href="https://github.com/SpongePowered"><i class="fa-fw fa fa-code"></i><p>Code</p></a>
-            <a class="col-xs-6 col-md-2 col-sm-4 icon" href="downloads"><i class="fa-fw fa fa-download"></i><p>Downloads</p></a>
+            <a class="col-xs-6 col-md-2 col-sm-4 icon" href="https://www.spongepowered.org/downloads"><i class="fa-fw fa fa-download"></i><p>Downloads</p></a>
             <a class="col-xs-6 col-md-2 col-sm-4 icon" href="https://docs.spongepowered.org/"><i class="fa-fw fa fa-book"></i><p>Docs</p></a>
             <a class="col-xs-6 col-md-2 col-sm-4 icon" href="https://forums.spongepowered.org/c/plugins/plugin-releases"><i class="fa fa-plug"></i><p>Plugins</p></a>
             <a class="col-xs-6 col-md-2 col-sm-4 icon" href="chat"><i class="fa fa-comment"></i><p>Chat</p></a>
@@ -90,15 +95,8 @@
         </div>
 
         <div class="row" id="announcements">
-            <div v-if="announcements">
-                <announcement :a="announcements.first"></announcement>
-                <announcement :a="announcements.second"></announcement>
-            </div>
-
-            <div v-else>
-                <h3>Loading...</h3>
-                <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
-            </div>
+            <h3>Loading...</h3>
+            <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
         </div>
     </div>
 </section>
@@ -173,11 +171,30 @@
 <section id="downloads">
     <div class="container">
         <h2 class="row">Downloads</h2>
-        <platforms></platforms>
-
-        <div v-if="false" v-once>
-            <h4>Loading...</h4>
-            <p>If this message does not disappear, make sure that JavaScript is enabled in your browser.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 platform">
+                    <h3><span>Sponge<span class="platform-badge spongevanilla">Vanilla</span></span></h3>
+                    <p class="description">SpongeVanilla is the implementation of the Sponge API on top of Vanilla
+                        Minecraft.</p>
+                    <a href="https://www.spongepowered.org/downloads/spongevanilla" class="btn btn-primary styled-btn">
+                        <i class="fa fa-download"></i>Download</a>
+                    <p class="recommendation">Recommended for running plugins without Forge mods.</p></div>
+                <div class="col-sm-4 platform">
+                    <h3><span>Sponge<span class="platform-badge spongeforge">Forge</span></span></h3>
+                    <p class="description">SpongeForge is the implementation of the Sponge API on the Minecraft Forge
+                        platform.</p>
+                    <a href="https://www.spongepowered.org/downloads/spongeforge" class="btn btn-primary styled-btn">
+                        <i class="fa fa-download"></i>Download</a>
+                    <p class="recommendation">Recommended for running plugins together with Forge mods.</p></div>
+                <div class="col-sm-4 platform">
+                    <h3><span>Sponge<span class="platform-badge spongeapi">API</span></span></h3>
+                    <p class="description">SpongeAPI is the tool developers use to create plugins for the Sponge
+                        platform.</p>
+                    <a href="https://www.spongepowered.org/downloads/spongeapi" class="btn btn-primary styled-btn">
+                        <i class="fa fa-download"></i>Download</a>
+                    <p class="recommendation">Recommended for plugin developers.</p></div>
+            </div>
         </div>
     </div>
 </section>
