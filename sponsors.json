@@ -28,5 +28,11 @@
     "name": "YourKit",
     "image": "assets/img/sponsors/yourkit.png",
     "link": "https://www.yourkit.com/"
+  },
+  {
+    "name": "Tripleqoute Hydra",
+    "image": "assets/img/sponsors/hydra.svg",
+    "link": "https://triplequote.com/hydra"
   }
 ]
+
