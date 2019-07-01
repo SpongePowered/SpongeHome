@@ -4,10 +4,6 @@ SpongeHome
 The Sponge Project [website](https://www.spongepowered.org/), licensed
 under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
-### Branches
-
-- `master` is hooked up to [www prod](https://www.spongepowered.org/)
-
 ## Running locally
 
 ### 1. Prerequisites
@@ -49,12 +45,14 @@ command line. SpongeHome will now be running locally on port 4000.
 source.
 
 ## Environment variables
+
 **Optional**:
 - `MACARON_ENV=production`: Set the application in production mode
 - `PORT`: Modify the port of the HTTP server
 - `FASTLY_CACHE=API_KEY/SERVICE_ID[;healthcheck]`: Purge Fastly cache after start and hide health checks from the log
 
 ## Build directories
+
 - `public` contains the static assets that are served directly (e.g. images)
 - `dist/dev` contains the static files to serve in the development environment
 - `dist/prod` contains the static files to serve in the production environment
