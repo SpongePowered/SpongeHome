@@ -1,14 +1,4 @@
-[  
-  {
-    "name":  "Enjin",
-    "image": "assets/img/sponsors/enjin.png",
-    "link":  "https://www.enjin.com/"
-  },
-  {
-    "name": "GameServerKings",
-    "image": "assets/img/sponsors/gameserverkings.png",
-    "link": "https://www.gameserverkings.com/"
-  },
+[
   {
     "name": "MC Server Hosting",
     "image": "assets/img/sponsors/mcserverhosting.png",
@@ -35,4 +25,3 @@
     "link": "https://triplequote.com/hydra"
   }
 ]
-
