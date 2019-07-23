@@ -58,6 +58,13 @@ $sp_logo_width: 200px;
     position: relative;
     padding: 0;
   }
+
+  // Need the sponge icon to be the right size and colour
+  #sponge-mark {
+    font-size: 40px;
+    color: #f7cf0d !important;
+    vertical-align: middle;
+  }
 }
 
 #sp-logo-container {
