@@ -1,5 +1,15 @@
 [
   {
+    "name": "Zap Hosting",
+    "image": "assets/img/sponsors/zap-hosting.png",
+    "link": "https://zap-hosting.com/sponge"
+  },
+  {
+    "name": "BisectHosting",
+    "image": "assets/img/sponsors/bisecthosting.svg",
+    "link": "https://bisecthosting.com/sponge"
+  },
+  {
     "name": "MC Server Hosting",
     "image": "assets/img/sponsors/mcserverhosting.png",
     "link": "https://mcserverhosting.net/?ref=sponge"
