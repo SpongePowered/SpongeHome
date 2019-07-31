@@ -91,7 +91,8 @@
       padding: 1.5em 0;
 
       img {
-        width: 95%;
+        max-width: 95%;
+        max-height: 70px;
         transition: all 0.2s ease-in-out;
 
         &:hover {
