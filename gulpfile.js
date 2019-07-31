@@ -41,15 +41,13 @@ const renderNunjucks = renderData =>
             path: 'src/html'
         }));
 
-function htmlDev(cb) {
-    renderNunjucks(htmlData)
+function htmlDev() {
+    return renderNunjucks(htmlData)
         .pipe(gulp.dest('./dist/dev'));
-
-    cb();
 }
 
-function html(cb) {
-    renderNunjucks(htmlDataProduction)
+function html() {
+    return renderNunjucks(htmlDataProduction)
         .pipe(htmlmin({
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
@@ -63,12 +61,10 @@ function html(cb) {
             useShortDoctype: true
         }))
         .pipe(gulp.dest('./dist/prod'));
-
-    cb();
 }
 
-function scss(cb) {
-    gulp.src('./src/scss/spongehome.scss')
+function scss() {
+    return gulp.src('./src/scss/spongehome.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([
             autoprefixer()
@@ -77,18 +73,14 @@ function scss(cb) {
         .pipe(cleanCSS())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./dist/prod/assets/css'));
-
-    cb();
 }
 
-function js(cb) {
-    gulp.src('./src/js/*.js')
+function js() {
+    return gulp.src('./src/js/*.js')
         .pipe(gulp.dest('./dist/dev/assets/js'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./dist/prod/assets/js'));
-
-    cb();
 }
 
 function watch() {
