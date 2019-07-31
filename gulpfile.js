@@ -41,13 +41,13 @@ const renderNunjucks = renderData =>
             path: 'src/html'
         }));
 
-gulp.task('html:dev', () =>
-    renderNunjucks(htmlData)
-        .pipe(gulp.dest('./dist/dev'))
-);
+function htmlDev() {
+    return renderNunjucks(htmlData)
+        .pipe(gulp.dest('./dist/dev'));
+}
 
-gulp.task('html', () =>
-    renderNunjucks(htmlDataProduction)
+function html() {
+    return renderNunjucks(htmlDataProduction)
         .pipe(htmlmin({
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
@@ -60,11 +60,11 @@ gulp.task('html', () =>
             sortClassName: true,
             useShortDoctype: true
         }))
-        .pipe(gulp.dest('./dist/prod'))
-);
+        .pipe(gulp.dest('./dist/prod'));
+}
 
-gulp.task('scss', () =>
-    gulp.src('./src/scss/spongehome.scss')
+function scss() {
+    return gulp.src('./src/scss/spongehome.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([
             autoprefixer()
@@ -72,22 +72,23 @@ gulp.task('scss', () =>
         .pipe(gulp.dest('./dist/dev/assets/css'))
         .pipe(cleanCSS())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./dist/prod/assets/css'))
-);
+        .pipe(gulp.dest('./dist/prod/assets/css'));
+}
 
-gulp.task('js', ()  =>
-    gulp.src('./src/js/*.js')
+function js() {
+    return gulp.src('./src/js/*.js')
         .pipe(gulp.dest('./dist/dev/assets/js'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./dist/prod/assets/js'))
-);
+        .pipe(gulp.dest('./dist/prod/assets/js'));
+}
 
-gulp.task('build', ['html:dev', 'html', 'scss', 'js']);
-gulp.task('default', ['build']);
+function watch() {
+    gulp.watch('./src/html/**', gulp.series(htmlDev,  html));
+    gulp.watch('./src/scss/**', scss);
+    gulp.watch('./src/js/**', js);
+}
 
-gulp.task('watch', ['build'], () => {
-    gulp.watch('./src/html/**', ['html:dev', 'html']);
-    gulp.watch('./src/scss/**', ['scss']);
-    gulp.watch('./src/js/**', ['js']);
-});
+exports.build = gulp.series(htmlDev, html, scss, js);
+exports.watch = watch;
+exports.default = this.build;
