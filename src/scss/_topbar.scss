@@ -75,7 +75,8 @@ $sp_logo_width: 200px;
     padding-left: 20px;
     padding-top: 11px;
 
-    @extend .sponge-headline;
+    @include montserrat;
+    @include uppercase;
     font-weight: 700;
 
     * {

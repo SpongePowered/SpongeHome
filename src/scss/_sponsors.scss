@@ -23,6 +23,8 @@
  * THE SOFTWARE.
  */
 
+@import "mixins/sponsors";
+
 #sponsors-page #main-content {
   margin-top: $sp_topbar_height;
 
@@ -51,9 +53,9 @@
 
 #sponsors-introduction {
   .introduction {
+    @include montserrat;
+    @include uppercase;
     font-size: 18px;
-    font-family: $sponge_headline_font;
-    text-transform: uppercase;
     line-height: 1.1;
   }
 }
@@ -83,13 +85,8 @@
       margin-bottom: 50px;
 
       img {
+        @include sponsor-img;
         max-width: 85%;
-        max-height: 50px;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-        }
 
         @media (max-width: 560px) {
           width: 100%;

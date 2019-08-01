@@ -9,12 +9,31 @@ const
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
+    eyeglass = require("eyeglass"),
 
     htmlmin = require('gulp-htmlmin'),
     uglify = require('gulp-uglify'),
     cleanCSS = require('gulp-clean-css');
 
 const sponsors = require('./sponsors.json');
+
+const sassOptions = {
+    eyeglass: {
+        modules: [
+            {
+                name: "bootswatch",
+                main: function(eyeglass, sass) {
+                    return {
+                        sassDir: "node_modules/bootswatch/"
+                    }
+                },
+                eyeglass: {
+                    needs: "^2.4.1"
+                }
+            }
+        ]
+    }
+};
 
 function htmlData(file) {
     const name = path.basename(file.path, '.html');
@@ -65,7 +84,7 @@ function html() {
 
 function scss() {
     return gulp.src('./src/scss/spongehome.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
         .pipe(postcss([
             autoprefixer()
         ]))

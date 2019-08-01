@@ -23,19 +23,11 @@
  * THE SOFTWARE.
  */
 
-@import "sponge_variables";
-@import "bootstrap-sass/bootstrap";
-@import "bootswatch/flatly/bootswatch";
+@mixin sponsor-img {
+  max-height: 50px;
+  transition: all 0.2s ease-in-out;
 
-@import "spongebootstrap";
-
-@import "base";
-@import "header";
-@import "topbar";
-@import "footer";
-
-@import "index";
-@import "index_sections";
-@import "sponsors";
-@import "chat";
-@import "downloads";
+  &:hover {
+    transform: scale(1.1);
+  }
+}

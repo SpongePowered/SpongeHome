@@ -23,6 +23,8 @@
  * THE SOFTWARE.
  */
 
+@import "mixins/sponsors";
+
 #index-page {
   header {
     padding-top: 4em;
@@ -91,13 +93,8 @@
       padding: 1.5em 0;
 
       img {
+        @include sponsor-img;
         max-width: 95%;
-        max-height: 50px;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-        }
       }
     }
   }

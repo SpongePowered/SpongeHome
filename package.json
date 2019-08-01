@@ -14,6 +14,9 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "bootstrap-sass": "^3.4.1",
+    "bootswatch": "^3.4.1",
+    "eyeglass": "^2.4.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-data": "^1.2.1",
