@@ -23,6 +23,9 @@
  * THE SOFTWARE.
  */
 
+@import "variables";
+@import "mixins/font";
+
 html, body {
   height: 100%;
 }
@@ -34,11 +37,8 @@ html, body {
 }
 
 body {
-  color: $sponge_grey;
-
   position: relative;
   overflow-x: hidden;
-  margin: 0 auto;
 }
 
 p {

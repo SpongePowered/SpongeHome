@@ -23,15 +23,14 @@
  * THE SOFTWARE.
  */
 
-@import "sponge_variables";
+@import "variables";
 @import "bootstrap-sass/bootstrap";
 @import "bootswatch/flatly/bootswatch";
-
-@import "spongebootstrap";
 
 @import "base";
 @import "header";
 @import "topbar";
+@import "buttons";
 @import "footer";
 
 @import "index";

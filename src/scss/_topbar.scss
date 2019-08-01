@@ -23,6 +23,9 @@
  * THE SOFTWARE.
  */
 
+@import "variables";
+@import "mixins/font";
+
 $sp_logo_offset_x: 0;
 $sp_logo_offset_y: -20px;
 $sp_topbar_height: 63px;

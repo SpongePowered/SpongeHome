@@ -23,6 +23,9 @@
  * THE SOFTWARE.
  */
 
+@import "variables";
+@import "mixins/font";
+
 #index-page section {
   padding: 40px 0;
   border-bottom: 1px solid rgba(0, 0, 0, .2);

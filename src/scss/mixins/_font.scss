@@ -23,89 +23,13 @@
  * THE SOFTWARE.
  */
 
-@import "variables";
-@import "mixins/sponsors";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
+@mixin montserrat {
+  font-family: Montserrat, $font-family-base;
+}
 
-#index-page {
-  header {
-    padding-top: 4em;
-    padding-bottom: 0;
-
-    text-align: center;
-
-    img {
-      display: block;
-      margin: 0 auto 20px;
-    }
-
-    .logo {
-      height: 256px;
-      width: 256px;
-      padding: 28px;
-    }
-
-    .intro-text {
-      .name {
-        color: $sponge_dark_grey;
-        font-size: 3em;
-        padding-top: 0.4em;
-      }
-
-      .skills {
-        font-size: 1.5em;
-        color: rgba(0, 0, 0, 0.8);
-      }
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        padding: 40px 0;
-      }
-
-      .intro-text {
-        .name {
-          font-size: 4.75em;
-        }
-
-        .skills {
-          font-size: 1.75em;
-        }
-      }
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-    }
-
-    #main-display {
-      display: flex;
-      align-items: center;
-
-      @media (min-width: 992px) {
-        &.col-lg-8 {
-          width: 66% !important;
-        }
-      }
-    }
-
-    #sponsors-display {
-      padding: 1.5em 0;
-
-      img {
-        @include sponsor-img;
-        max-width: 95%;
-      }
-    }
-  }
-
-  h2 {
-    // Larger section titles
-    font-size: 39px;
-  }
-
-  #main-content {
-    text-align: center;
-  }
+// Styling
+@mixin uppercase {
+  text-transform: uppercase;
 }

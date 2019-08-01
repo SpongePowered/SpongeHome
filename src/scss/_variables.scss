@@ -23,14 +23,7 @@
  * THE SOFTWARE.
  */
 
-// Helper functions
-@function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
-}
+@import "mixins/colour";
 
 // Sponge brand colors
 $sponge_yellow: #f7cf0d;
@@ -51,12 +44,3 @@ $dropdown-link-active-color: black;
 $dropdown-link-active-bg: $sponge_yellow;
 
 @import "bootswatch/flatly/variables";
-
-// Mixins
-@mixin montserrat {
-  font-family: Montserrat, $font-family-base;
-}
-
-@mixin uppercase {
-  text-transform: uppercase;
-}
