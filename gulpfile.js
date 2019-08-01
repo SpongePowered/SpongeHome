@@ -90,5 +90,5 @@ function watch() {
 }
 
 exports.build = gulp.series(htmlDev, html, scss, js);
-exports.watch = watch;
+exports.watch = gulp.series(this.build, watch);
 exports.default = this.build;
