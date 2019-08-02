@@ -26,45 +26,35 @@
 package controllers
 
 import (
-	"net/http"
 	"os"
-	"regexp"
-
 	"gopkg.in/macaron.v1"
+	"net/http"
 )
 
-const service = "SpongeHome"
+const buildNum  = "BUILD_NUMBER"
+const gitBranch = "GIT_BRANCH"
+const gitCommit = "GIT_COMMIT"
+const jobName   = "JOB_NAME"
+const buildTag  = "BUILD_TAG"
+const spongeEnv = "SPONGE_ENV"
+const service   = "SERVICE"
 
-func readStatus() interface{} {
-	buildName := os.Getenv("OPENSHIFT_BUILD_NAME")
-	if buildName == "" {
-		return nil
+func env(name string) string {
+	val := os.Getenv(name)
+	if val == "" {
+		return "unknown"
 	}
-
-	buildNameRe := regexp.MustCompile(`^(.+)-(\d+)$`)
-	buildNamePieces := buildNameRe.FindStringSubmatch(buildName)
-	jobName := buildNamePieces[1]
-	buildNum := buildNamePieces[2]
-	buildTag := os.Getenv("OPENSHIFT_BUILD_NAMESPACE") + "/" + os.Getenv("OPENSHIFT_BUILD_NAME")
-
-	return map[string]string{
-		"BUILD_NUMBER": buildNum,
-		"GIT_BRANCH":   os.Getenv("OPENSHIFT_BUILD_REFERENCE"),
-		"GIT_COMMIT":   os.Getenv("OPENSHIFT_BUILD_COMMIT"),
-		"JOB_NAME":     jobName,
-		"BUILD_TAG":    buildTag,
-		"SPONGE_ENV":   os.Getenv("SPONGE_ENV"),
-		"SERVICE":      service,
-	}
+	return val
 }
 
-func StatuszHandler() macaron.Handler {
-	status := readStatus()
-	if status == nil {
-		return nil
-	}
-
-	return func(ctx macaron.Render) {
-		ctx.JSON(http.StatusOK, status)
-	}
+func GetStatusz(ctx *macaron.Context) {
+	ctx.JSON(http.StatusOK, map[string]string{
+		buildNum:  env(buildNum),
+		gitBranch: env(gitBranch),
+		gitCommit: env(gitCommit),
+		jobName:   env(jobName),
+		buildTag:  env(buildTag),
+		spongeEnv: env(spongeEnv),
+		service:   "SpongeHome",
+	})
 }

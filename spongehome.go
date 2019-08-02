@@ -85,10 +85,7 @@ func main() {
 	// Routes
 	m.Get("/:page", controllers.ServePage)
 	m.Get("/announcements.json", controllers.GetAnnouncements)
-
-	if statuszHandler := controllers.StatuszHandler(); statuszHandler != nil {
-		m.Get("/statusz", statuszHandler)
-	}
+	m.Get("/statusz", controllers.GetStatusz)
 
 	if c != nil {
 		// Attempt to purge fastly cache
