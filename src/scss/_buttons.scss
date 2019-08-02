@@ -27,6 +27,10 @@
 
 .btn {
   transition: all .3s ease-in-out;
+
+  &:focus, &:active, &.active {
+    outline: 0;
+  }
 }
 
 .btn-primary {
@@ -38,27 +42,37 @@
     color: $sponge_grey;
     border: 1px solid $sponge_dark_yellow;
   }
-}
 
-.btn-primary.current {
-  background-color: $sponge_yellow;
-  color: $sponge_grey;
-  border: 1px solid $sponge_dark_yellow;
-  transition: all .3s ease-in-out;
-  font-weight: bold;
+  &.current {
+    background-color: $sponge_yellow;
+    color: $sponge_grey;
+    border: 1px solid $sponge_dark_yellow;
+    font-weight: bold;
 
-  &:hover {
-    background-color: #f9ed9e;
+    &:hover {
+      background-color: #f9ed9e;
+    }
   }
 }
 
 .btn-default {
   background-color: #848485;
   border: 1px solid #848485;
-  transition: all .3s ease-in-out;
 
   &:hover {
     background-color: $sponge_grey;
     border: 1px solid $sponge_grey;
+  }
+}
+
+.btn-outline {
+  background: none;
+  color: #fff;
+  margin-top: 15px;
+  border: solid 2px #fff;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $sponge_yellow;
+    background-color: white;
   }
 }

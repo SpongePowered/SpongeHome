@@ -76,22 +76,3 @@ h3 {
 h4, h5, h6 {
   font-weight: 500;
 }
-
-.btn {
-  &:focus, &:active, &.active {
-    outline: 0;
-  }
-}
-
-.btn-outline {
-  background: none;
-  color: #fff;
-  margin-top: 15px;
-  border: solid 2px #fff;
-  transition: all .3s ease-in-out;
-
-  &:hover, &:focus, &:active, &.active {
-    color: $sponge_yellow;
-    background-color: white;
-  }
-}

@@ -23,6 +23,8 @@
  * THE SOFTWARE.
  */
 
+@import "variables";
+
 #downloads {
   text-align: center;
 
@@ -78,14 +80,14 @@
   text-align: center;
 
   &.spongevanilla {
-    background-color: #917300;
+    background-color: $spongevanilla_color;
   }
 
   &.spongeforge {
-    background-color: #910020;
+    background-color: $spongeforge_color;
   }
 
   &.spongeapi {
-    background-color: #009172;
+    background-color: $spongeapi_color;
   }
 }
