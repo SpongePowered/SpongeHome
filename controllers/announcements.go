@@ -37,10 +37,11 @@ import (
 )
 
 type Topic struct {
-	ID        int    `json:"id"`
-	Title     string `json:"title"`
-	Slug      string `json:"slug"`
-	Archetype string `json:"archetype"`
+	ID           int    `json:"id"`
+	Title        string `json:"title"`
+	UnicodeTitle string `json:"unicode_title"`
+	Slug         string `json:"slug"`
+	Archetype    string `json:"archetype"`
 }
 
 type TopicList struct {
@@ -48,7 +49,7 @@ type TopicList struct {
 }
 
 func (t *TopicList) GetRegularTopics() []Topic {
-	var topics = []Topic{}
+	var topics []Topic
 
 	for _, topic := range t.Topics {
 		if topic.Archetype == "regular" {
@@ -144,8 +145,18 @@ func getAnnouncement(topic Topic) (Announcement, error) {
 		return Announcement{}, err
 	}
 
+	// Titles with emojis in, will appear as `:emoji:` in the plain title,
+	// in those cases `unicode_title` exists, with the emoji in unicode form.
+	// We can use that to display emojis in titles.
+	var title string
+	if topic.UnicodeTitle != "" {
+		title = topic.UnicodeTitle
+	} else {
+		title = topic.Title
+	}
+
 	return Announcement{
-		Title:   topic.Title,
+		Title:   title,
 		Content: res.PostStream.Posts[0].Cooked,
 		URL:     "https://forums.spongepowered.org/t/" + topic.Slug,
 	}, nil

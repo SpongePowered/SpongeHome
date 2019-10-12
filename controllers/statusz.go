@@ -31,13 +31,15 @@ import (
 	"net/http"
 )
 
-const buildNum  = "BUILD_NUMBER"
-const gitBranch = "GIT_BRANCH"
-const gitCommit = "GIT_COMMIT"
-const jobName   = "JOB_NAME"
-const buildTag  = "BUILD_TAG"
-const spongeEnv = "SPONGE_ENV"
-const service   = "SERVICE"
+const (
+	buildNum  = "BUILD_NUMBER"
+	gitBranch = "GIT_BRANCH"
+	gitCommit = "GIT_COMMIT"
+	jobName   = "JOB_NAME"
+	buildTag  = "BUILD_TAG"
+	spongeEnv = "SPONGE_ENV"
+	service   = "SERVICE"
+)
 
 func env(name string) string {
 	val := os.Getenv(name)
