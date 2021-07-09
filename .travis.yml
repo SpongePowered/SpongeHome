@@ -2,24 +2,11 @@ language: node_js
 node_js: lts/*
 
 env:
-  global:
-    - GIMME_GO_VERSION=stable
-    - GOPATH=$HOME/go
-    - GO_PROJECT=github.com/SpongePowered/SpongeHome
-    - GO_PROJECT_DIR=$GOPATH/src/$GO_PROJECT
-
     # Pull request reviews
     - HTML_BASE=/SpongeHome-PRs/$TRAVIS_PULL_REQUEST/
     - secure: "LPC3F5uEKlPTTHXpgYiQKltmFRFCSGQJTeEF2YyXJqkDx8U6DjsgAQJbMshZiL1RtsbGhgyhTqXIFxzXg2Ya14U+Izy5+hjIsPF6/GvgQeQS0Q7lYMLorS3aa9Cx9OFWoIn/wfTcG5IF0+lBu+rdUEiw3XiqPKNdeYUEqZYVmKueLtqPfkqBW9339Sz1IsIN8FTi+kiFzo/bDO2/QeaRCFJ0RoKaQkRjUrZFYsOWqpkbs/kE/Qves1pTHvfSeilXPWGO8V9BqS2qAenJtDOv9gs9ao3MOP4tVFQSqOwd7ar57lldxPvQq+G8D4gxBTrg+F/evIlPOX6DoG5mhX9rTmkzKLJylQH9UKTNQt0f64uQBcOu58Ce3nFTzkiCjupbvA+zMst/Vema2SYVptq3FzwQypjD+elo68VLUMEvf5D5iET4Oa+s6gk+YAEfXlU04BRY0mC1+lZrJ9PbTSgtGKQu9P5dOHmZ922yDVMuoO4DIBzXhZJbU+uRkCQfeLqFsNc0aoFlwanzPjxXgDWbxE0HydmYLSBdCvHWjO80k1XB6lofm4D5SuhivvDsMqYRvrYWLpkgvNTlHc7JwoEHHgHuaNlw4GHAdXLmRN+amni41NSIC89j6ALUdGXEqqZVpz3696m4H9T93WV/XoY1fgSvF44H1WTkvC9jtzk6WKM="
 
-before_install:
-  - gimme version  # This seems to be outdated and installs outdated stable Go versions
-  - eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/v1.5.0/gimme | bash)"
-  - mkdir -p `dirname $GO_PROJECT_DIR`
-  - ln -s $TRAVIS_BUILD_DIR $GO_PROJECT_DIR
-
 install:
-  - go get -d -t -v $GO_PROJECT
   - npm install
 
 script:
