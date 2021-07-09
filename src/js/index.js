@@ -17,7 +17,7 @@ function addAnnouncement(announcement) {
     article.trunk8('update', announcement.content);
 }
 
-const forumsBase = <%= config %>;
+const forumsBase = '<%= forumsBase %>';
 const announcements = [];
 
 $.getJSON(forumsBase + '/c/announcements.json?order=created', function (data) {
