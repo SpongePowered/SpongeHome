@@ -6,7 +6,7 @@ const
     data = require('gulp-data'),
     nunjucks = require('gulp-nunjucks'),
 
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
 
@@ -43,7 +43,7 @@ const renderNunjucks = renderData =>
 
 function htmlDev() {
     return renderNunjucks(htmlData)
-        .pipe(gulp.dest('./dist/dev'));
+        .pipe(gulp.dest('./dist/dev/'));
 }
 
 function html() {
@@ -60,7 +60,7 @@ function html() {
             sortClassName: true,
             useShortDoctype: true
         }))
-        .pipe(gulp.dest('./dist/prod'));
+        .pipe(gulp.dest('./dist/prod/'));
 }
 
 function scss() {
@@ -83,12 +83,16 @@ function js() {
         .pipe(gulp.dest('./dist/prod/assets/js'));
 }
 
+function images() {
+    return gulp.src('./public/assets/img/**').pipe(gulp.dest('./dist/dev/assets/img'))
+}
+
 function watch() {
-    gulp.watch('./src/html/**', gulp.series(htmlDev,  html));
+    gulp.watch('./src/html/**', gulp.series(htmlDev,  html, images));
     gulp.watch('./src/scss/**', scss);
     gulp.watch('./src/js/**', js);
 }
 
-exports.build = gulp.series(htmlDev, html, scss, js);
+exports.build = gulp.series(htmlDev, html, scss, js, images);
 exports.watch = gulp.series(this.build, watch);
 exports.default = this.build;
