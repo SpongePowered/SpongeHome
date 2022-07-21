@@ -22,7 +22,7 @@ const announcements = [];
 
 $.getJSON(forumsBase + '/c/announcements.json?order=created', function (data) {
     const topics = data.topic_list.topics
-        .filter((t) => t.archetype === 'regular')
+        .filter((t) => ((t.archetype === 'regular') || (t.archetype === 'banner')))
         .splice(undefined, 2)
 
     Promise.all(
