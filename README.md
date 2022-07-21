@@ -4,55 +4,27 @@ SpongeHome
 The Sponge Project [website](https://www.spongepowered.org/), licensed
 under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
-## Running locally
+## Prerequisites
 
-### 1. Prerequisites
+- [Node.js](https://nodejs.org/download/)
 
-- [Golang](https://golang.org/doc/install)
-- [node.js](https://nodejs.org/download/)
+## Clone
+The following steps will ensure your project is cloned properly.
+1. `git clone https://github.com/SpongePowered/SpongeHome.git`
+2. `cd SpongeHome`
 
-### 2. Cloning
+## Install dependencies
 
-To clone SpongeHome and get all of it's dependencies you can run:
+To install all required dependencies run `npm i`.
 
-```
-go get github.com/SpongePowered/SpongeHome
-```
+## Running in development mode
 
-### 3. Installing Gulp
+To run SpongeHome for development execute `npm run dev`.
+SpongeHome will now be running locally on port 3000 and serving the directory 
+at `dist/dev` which has been automatically created. The webserver watches all important files and
+live-reloads changes made.
 
-To watch and compile the SASS files you will need Gulp installed.
+## Running in production mode
 
-```
-npm install gulp --global
-npm install
-```
-
-Now you are ready to use Gulp.
-
-### 4. Using Gulp
-
-For just building the sass files use `gulp build`.
-For watching the sass files use `gulp watch` - This will keep building the sass
-files as you edit them.
-
-### 5. Running the application
-
-To run SpongeHome, you can run `go run spongehome.go` in terminal, or the
-command line. SpongeHome will now be running locally on port 4000.
-
-**NOTE:** You will need to rerun this when you make a change to the Golang
-source.
-
-## Environment variables
-
-**Optional**:
-- `MACARON_ENV=production`: Set the application in production mode
-- `PORT`: Modify the port of the HTTP server
-- `FASTLY_CACHE=API_KEY/SERVICE_ID[;healthcheck]`: Purge Fastly cache after start and hide health checks from the log
-
-## Build directories
-
-- `public` contains the static assets that are served directly (e.g. images)
-- `dist/dev` contains the static files to serve in the development environment
-- `dist/prod` contains the static files to serve in the production environment
+To build the project for production run `npm run build` and serve 
+the directory at `dist/prod` using a production-ready webserver.

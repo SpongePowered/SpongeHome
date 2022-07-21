@@ -13,6 +13,8 @@ const
     htmlmin = require('gulp-htmlmin'),
     uglify = require('gulp-uglify'),
     cleanCSS = require('gulp-clean-css');
+    browserSync = require('browser-sync').create();
+    template = require('gulp-template');
 
 const sponsors = require('./sponsors.json');
 
@@ -35,7 +37,7 @@ function htmlDataProduction(file) {
 }
 
 const renderNunjucks = renderData =>
-    gulp.src('./src/html/*.html')
+    gulp.src(['./src/html/**/*.html', '!./src/html/include/*.html'])
         .pipe(data(renderData))
         .pipe(nunjucks.compile({
             path: 'src/html'
@@ -46,7 +48,7 @@ function htmlDev() {
         .pipe(gulp.dest('./dist/dev/'));
 }
 
-function html() {
+function htmlProd() {
     return renderNunjucks(htmlDataProduction)
         .pipe(htmlmin({
             collapseBooleanAttributes: true,
@@ -63,36 +65,81 @@ function html() {
         .pipe(gulp.dest('./dist/prod/'));
 }
 
-function scss() {
+function scssBase() {
     return gulp.src('./src/scss/spongehome.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([
             autoprefixer()
         ]))
-        .pipe(gulp.dest('./dist/dev/assets/css'))
+}
+
+function scssDev() {
+    return scssBase().pipe(gulp.dest('./dist/dev/assets/css'))
+}
+
+function scssProd() {
+    return scssBase()
         .pipe(cleanCSS())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./dist/prod/assets/css'));
 }
 
-function js() {
+function jsBase() {
     return gulp.src('./src/js/*.js')
+}
+
+function jsDev() {
+    return jsBase()
+        .pipe(template({forumsBase: 'https://staging-forums.spongeproject.net'}))
         .pipe(gulp.dest('./dist/dev/assets/js'))
+}
+
+function jsProd() {
+    return jsBase()
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
+        .pipe(template({forumsBase: 'https://forums.spongepowered.org'}))
         .pipe(gulp.dest('./dist/prod/assets/js'));
 }
 
-function images() {
-    return gulp.src('./public/assets/img/**').pipe(gulp.dest('./dist/dev/assets/img'))
+function imgBase() {
+    return gulp.src('./public/assets/img/**')
 }
 
-function watch() {
-    gulp.watch('./src/html/**', gulp.series(htmlDev,  html, images));
-    gulp.watch('./src/scss/**', scss);
-    gulp.watch('./src/js/**', js);
+function imgDev() {
+    return imgBase().pipe(gulp.dest('./dist/dev/assets/img'))
 }
 
-exports.build = gulp.series(htmlDev, html, scss, js, images);
-exports.watch = gulp.series(this.build, watch);
+function imgProd() {
+    return imgBase().pipe(gulp.dest('./dist/prod/assets/img'))
+}
+
+function faviconBase() {
+    return gulp.src('./public/favicon.ico')
+}
+
+function faviconDev() {
+    return faviconBase().pipe(gulp.dest('./dist/dev/'))
+}
+
+function faviconProd() {
+    return faviconBase().pipe(gulp.dest('./dist/prod/'))
+}
+
+const staticDev = gulp.series(imgDev, faviconDev);
+const staticProd = gulp.series(imgProd, faviconProd);
+
+exports.build = gulp.series(htmlProd, scssProd, jsProd, staticProd);
+exports.buildDev = gulp.series(htmlDev, scssDev, jsDev, staticDev);
+exports.dev = gulp.series(this.buildDev, function() {
+    browserSync.init({
+        server: "./dist/dev"
+    });
+
+    gulp.watch('./public/**', staticDev, browserSync.reload);
+    gulp.watch('./src/scss/**', scssDev, browserSync.reload);
+    gulp.watch("./src/js/**").on('change', gulp.series(jsDev, browserSync.reload));
+    gulp.watch("./src/html/**").on('change', gulp.series(htmlDev, browserSync.reload));
+});
+
 exports.default = this.build;
