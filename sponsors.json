@@ -20,6 +20,11 @@
     "link":  "https://billing.creeperhost.net/link.php?id=8"
   },
   {
+    "name":  "Shockbyte",
+    "image": "assets/img/sponsors/shockbyte.png",
+    "link":  "https://shockbyte.com/"
+  },
+  {
     "name": "JetBrains",
     "image": "assets/img/sponsors/jetbrains.svg",
     "link": "https://www.jetbrains.com/"
