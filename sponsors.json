@@ -1,23 +1,13 @@
 [
   {
+    "name": "ScalaCube",
+    "image": "assets/img/sponsors/scalacube.svg",
+    "link": "https://scalacube.com/p/_hosting_server_minecraft/sponsored/spongepowered"
+  },
+  {
     "name": "BisectHosting",
     "image": "assets/img/sponsors/bisecthosting.svg",
     "link": "https://bisecthosting.com/sponge"
-  },
-  {
-    "name":  "Apex Hosting",
-    "image": "assets/img/sponsors/apexhosting.png",
-    "link":  "https://apexminecrafthosting.com/"
-  },
-  {
-    "name": "Minecraft Index",
-    "image": "assets/img/sponsors/minecraftindex.svg",
-    "link": "https://minecraftindex.net/"
-  },
-  {
-    "name":  "CreeperHost",
-    "image": "assets/img/sponsors/creeperhost.svg",
-    "link":  "https://billing.creeperhost.net/link.php?id=8"
   },
   {
     "name":  "Shockbyte",
