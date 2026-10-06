@@ -23,15 +23,15 @@
  * THE SOFTWARE.
  */
 
-@import "sponge_variables";
-@import "spongebootstrap";
+@use "sponge_variables";
+@use "spongebootstrap";
 
-@import "base";
-@import "header";
-@import "topbar";
-@import "footer";
+@use "base";
+@use "header";
+@use "topbar";
+@use "footer";
 
-@import "index";
-@import "index_sections";
-@import "sponsors";
-@import "downloads";
+@use "index";
+@use "index_sections";
+@use "sponsors";
+@use "downloads";

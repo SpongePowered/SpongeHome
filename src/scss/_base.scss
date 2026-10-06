@@ -1,3 +1,5 @@
+@use "sponge_variables";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -34,7 +36,7 @@ html, body {
 }
 
 body {
-  color: $sponge_grey;
+  color: sponge_variables.$sponge_grey;
 
   position: relative;
   overflow-x: hidden;
@@ -50,11 +52,11 @@ p {
 }
 
 a {
-  color: $sponge_yellow;
+  color: sponge_variables.$sponge_yellow;
   outline: 0;
 
   &:hover, &:focus, &:active, &.active {
-    color: $sponge_yellow;
+    color: sponge_variables.$sponge_yellow;
     outline: 0;
   }
 }
@@ -85,7 +87,7 @@ h3, h4, h5, h6 {
   transition: all .3s ease-in-out;
 
   &:hover, &:focus, &:active, &.active {
-    color: $sponge_yellow;
+    color: sponge_variables.$sponge_yellow;
     background-color: white;
   }
 }

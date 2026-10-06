@@ -1,3 +1,5 @@
+@use "sponge_variables";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -43,7 +45,7 @@
 
     .intro-text {
       .name {
-        color: $sponge_dark_grey;
+        color: sponge_variables.$sponge_dark_grey;
         font-size: 3em;
         padding-top: 0.4em;
       }
