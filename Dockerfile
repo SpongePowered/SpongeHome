@@ -6,6 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
+ARG GIT_SHA
 RUN npm run build
 
 FROM nginx:1.30.0-alpine

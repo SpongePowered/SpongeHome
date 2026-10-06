@@ -21,6 +21,9 @@ import sponsors from './sponsors.json' with {type: 'json'};
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncFactory.create();
 
+// Cache-busting query for local assets: the commit SHA when GIT_SHA is provided, otherwise a build timestamp (YYYYMMDDHHmm)
+const version = process.env.GIT_SHA?.slice(0, 7) || new Date().toISOString().replace(/\D/g, '').slice(0, 12);
+
 function htmlData(file) {
     const name = path.basename(file.path, '.html');
     return {
@@ -29,7 +32,8 @@ function htmlData(file) {
         menu: {
             [name === 'chat' ? 'chat' : 'index']: 'active'
         },
-        sponsors: sponsors
+        sponsors: sponsors,
+        version: version
     };
 }
 

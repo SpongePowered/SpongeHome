@@ -3,7 +3,7 @@ node = "24"
 
 [tasks."docker:build"]
 description = "Build the spongehome image locally"
-run = "docker build -t spongehome:local ."
+run = "docker build --build-arg GIT_SHA=$(git rev-parse HEAD) -t spongehome:local ."
 
 [tasks."docker:run"]
 description = "Serve the local image on http://localhost:8080"
