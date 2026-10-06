@@ -1,2 +1,11 @@
 [tools]
 node = "24"
+
+[tasks."docker:build"]
+description = "Build the spongehome image locally"
+run = "docker build -t spongehome:local ."
+
+[tasks."docker:run"]
+description = "Serve the local image on http://localhost:8080"
+depends = ["docker:build"]
+run = "docker run --rm -it -p 8080:80 spongehome:local"
