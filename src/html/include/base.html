@@ -38,13 +38,13 @@
     <link rel="icon" href="favicon.ico">
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: https://bootswatch.com/flatly/ -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap{{ min }}.css" rel="stylesheet" {%if min%}integrity="sha256-r1WijW/SNMgOwk5LDk7QRHr6oVYYbYWMw/1kOXfYJfg="{%endif%} crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap{{ min }}.css" rel="stylesheet" {%if min%}integrity="sha512-eKDImTay+dzem1seYVlpQEXVUmjMXOd2SpnfIsqqkkCJd6pU0u4yGs5jSrFlTPwnugDdMdCm8WDrOiG8DXBwPg=="{%endif%} crossorigin="anonymous" />
 
     <!-- Custom CSS -->
-    <link href="assets/css/spongehome{{ min }}.css" rel="stylesheet">
+    <link href="assets/css/spongehome{{ min }}.css?v={{ version }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all{{ min }}.css" {%if min%}integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="{%endif%} crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all{{ min }}.css" {%if min%}integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="{%endif%} crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
 </head>
 <body id="{{ page }}-page">
@@ -133,16 +133,16 @@
 </footer>
 
 <!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery{{ min }}.js" {%if min%}integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="{%endif%} crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery{{ min }}.js" {%if min%}integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="{%endif%} crossorigin="anonymous"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap{{ min }}.js" {%if min%}integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="{%endif%} crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap{{ min }}.js" {%if min%}integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg=="{%endif%} crossorigin="anonymous"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing{{ min }}.js" {%if min%}integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k="{%endif%} crossorigin="anonymous"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="assets/js/spongehome{{ min }}.js"></script>
+<script src="assets/js/spongehome{{ min }}.js?v={{ version }}"></script>
 
 {% block javascript %}{% endblock %}
 

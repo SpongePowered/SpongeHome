@@ -1,3 +1,5 @@
+@use "sponge_variables";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -28,7 +30,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: $sponge_dark_grey;
+  color: sponge_variables.$sponge_dark_grey;
   padding: 50px 0;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }

@@ -1,3 +1,5 @@
+@use "sponge_variables";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -32,7 +34,7 @@ footer {
   }
 
   .footer-above {
-    background-color: $sponge_grey;
+    background-color: sponge_variables.$sponge_grey;
     padding-top: 50px;
     padding-bottom: 50px;
   }

@@ -1,3 +1,6 @@
+@use "sponge_variables";
+@use "topbar";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -24,7 +27,7 @@
  */
 
 #sponsors-page #main-content {
-  margin-top: $sp_topbar_height;
+  margin-top: topbar.$sp_topbar_height;
 
   .container {
     display: flex;
@@ -52,7 +55,7 @@
 #sponsors-introduction {
   .introduction {
     font-size: 18px;
-    font-family: $sponge_headline_font;
+    font-family: sponge_variables.$sponge_headline_font;
     text-transform: uppercase;
     line-height: 1.1;
   }

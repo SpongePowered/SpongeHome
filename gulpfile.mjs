@@ -1,22 +1,28 @@
-const
-    gulp = require('gulp'),
-    rename = require('gulp-rename'),
+import gulp from 'gulp';
+import rename from 'gulp-rename';
 
-    path = require('path'),
-    data = require('gulp-data'),
-    nunjucks = require('gulp-nunjucks'),
+import path from 'node:path';
+import data from 'gulp-data';
+import {nunjucksCompile} from 'gulp-nunjucks';
 
-    sass = require('gulp-sass')(require('sass')),
-    postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 
-    htmlmin = require('gulp-htmlmin'),
-    uglify = require('gulp-uglify'),
-    cleanCSS = require('gulp-clean-css');
-    browserSync = require('browser-sync').create();
-    template = require('gulp-template');
+import htmlmin from 'gulp-html-minifier-terser';
+import uglify from 'gulp-uglify';
+import cleanCSS from 'gulp-clean-css';
+import browserSyncFactory from 'browser-sync';
+import template from 'gulp-template';
 
-const sponsors = require('./sponsors.json');
+import sponsors from './sponsors.json' with {type: 'json'};
+
+const sass = gulpSass(dartSass);
+const browserSync = browserSyncFactory.create();
+
+// Cache-busting query for local assets: the commit SHA when GIT_SHA is provided, otherwise a build timestamp (YYYYMMDDHHmm)
+const version = process.env.GIT_SHA?.slice(0, 7) || new Date().toISOString().replace(/\D/g, '').slice(0, 12);
 
 function htmlData(file) {
     const name = path.basename(file.path, '.html');
@@ -26,7 +32,8 @@ function htmlData(file) {
         menu: {
             [name === 'chat' ? 'chat' : 'index']: 'active'
         },
-        sponsors: sponsors
+        sponsors: sponsors,
+        version: version
     };
 }
 
@@ -39,7 +46,7 @@ function htmlDataProduction(file) {
 const renderNunjucks = renderData =>
     gulp.src(['./src/html/**/*.html', '!./src/html/include/*.html'])
         .pipe(data(renderData))
-        .pipe(nunjucks.compile({
+        .pipe(nunjucksCompile({}, {
             path: 'src/html'
         }));
 
@@ -103,7 +110,7 @@ function jsProd() {
 }
 
 function imgBase() {
-    return gulp.src('./public/assets/img/**')
+    return gulp.src('./public/assets/img/**', {encoding: false})
 }
 
 function imgDev() {
@@ -115,7 +122,7 @@ function imgProd() {
 }
 
 function faviconBase() {
-    return gulp.src('./public/favicon.ico')
+    return gulp.src('./public/favicon.ico', {encoding: false})
 }
 
 function faviconDev() {
@@ -129,9 +136,9 @@ function faviconProd() {
 const staticDev = gulp.series(imgDev, faviconDev);
 const staticProd = gulp.series(imgProd, faviconProd);
 
-exports.build = gulp.series(htmlProd, scssProd, jsProd, staticProd);
-exports.buildDev = gulp.series(htmlDev, scssDev, jsDev, staticDev);
-exports.dev = gulp.series(this.buildDev, function() {
+export const build = gulp.series(htmlProd, scssProd, jsProd, staticProd);
+export const buildDev = gulp.series(htmlDev, scssDev, jsDev, staticDev);
+export const dev = gulp.series(buildDev, function() {
     browserSync.init({
         server: "./dist/dev"
     });
@@ -142,4 +149,4 @@ exports.dev = gulp.series(this.buildDev, function() {
     gulp.watch("./src/html/**").on('change', gulp.series(htmlDev, browserSync.reload));
 });
 
-exports.default = this.build;
+export default build;

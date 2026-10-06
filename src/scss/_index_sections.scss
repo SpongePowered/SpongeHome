@@ -1,3 +1,5 @@
+@use "sponge_variables";
+
 /*
  * This file is part of SpongeHome, licensed under the MIT License (MIT).
  *
@@ -138,7 +140,7 @@
   }
 
   .btn {
-    font-family: $sponge_headline_font;
+    font-family: sponge_variables.$sponge_headline_font;
   }
 }
 
@@ -157,7 +159,7 @@
 
 .horizontal-bar {
   background-color: #f2f2f2;
-  color: $sponge_dark_grey;
+  color: sponge_variables.$sponge_dark_grey;
 
   padding: 0;
 }
@@ -169,7 +171,7 @@
     transition: background .2s ease-in-out;
 
     * {
-      color: $sponge_grey;
+      color: sponge_variables.$sponge_grey;
     }
 
     i {
@@ -178,7 +180,7 @@
 
     &:hover {
       * {
-        color: $sponge_dark_grey;
+        color: sponge_variables.$sponge_dark_grey;
       }
 
       background-color: rgba(0, 0, 0, .2);
